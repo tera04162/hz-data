@@ -6822,9 +6822,9 @@
     "parts": [
       "근육/관절"
     ],
-    "type": "제품",
-    "price": 274,
-    "priceBand": "1만원 이하",
+    "type": "정보",
+    "price": null,
+    "priceBand": "",
     "brand": ""
   },
   {
@@ -8071,9 +8071,9 @@
     "parts": [
       "전신/면역"
     ],
-    "type": "제품",
-    "price": 150,
-    "priceBand": "1만원 이하",
+    "type": "정보",
+    "price": null,
+    "priceBand": "",
     "brand": ""
   },
   {
