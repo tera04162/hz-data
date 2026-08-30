@@ -632,7 +632,7 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 40000,
+  "price": 38000,
   "priceBand": "3~5만원",
   "brand": ""
  },
@@ -1020,7 +1020,7 @@
    "복부/체지방"
   ],
   "type": "제품",
-  "price": 24600,
+  "price": 29900,
   "priceBand": "1~3만원",
   "brand": ""
  },
@@ -1149,8 +1149,8 @@
    "복부/체지방"
   ],
   "type": "제품",
-  "price": 70000,
-  "priceBand": "5~10만원",
+  "price": 510000,
+  "priceBand": "10만원 이상",
   "brand": ""
  },
  {
@@ -1204,7 +1204,7 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 16000,
+  "price": 23940,
   "priceBand": "1~3만원",
   "brand": ""
  },
@@ -1828,7 +1828,7 @@
    "혈당/대사"
   ],
   "type": "제품",
-  "price": 1598820,
+  "price": 344300,
   "priceBand": "10만원 이상",
   "brand": ""
  },
@@ -2870,7 +2870,7 @@
    "모발"
   ],
   "type": "제품",
-  "price": 30000,
+  "price": 26500,
   "priceBand": "1~3만원",
   "brand": ""
  },
@@ -3200,8 +3200,8 @@
    "입/구강"
   ],
   "type": "제품",
-  "price": 39900,
-  "priceBand": "3~5만원",
+  "price": 99000,
+  "priceBand": "5~10만원",
   "brand": ""
  },
  {
@@ -4140,8 +4140,8 @@
    "심혈관/순환"
   ],
   "type": "제품",
-  "price": 57000,
-  "priceBand": "5~10만원",
+  "price": 50000,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -4416,7 +4416,7 @@
    "정신/수면"
   ],
   "type": "제품",
-  "price": 220000,
+  "price": 130000,
   "priceBand": "10만원 이상",
   "brand": ""
  },
@@ -4944,8 +4944,8 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 10000,
-  "priceBand": "1만원 이하",
+  "price": 25000,
+  "priceBand": "1~3만원",
   "brand": ""
  },
  {
@@ -5072,8 +5072,8 @@
    "근육/관절"
   ],
   "type": "제품",
-  "price": 12000,
-  "priceBand": "1~3만원",
+  "price": 289000,
+  "priceBand": "10만원 이상",
   "brand": ""
  },
  {
@@ -5255,8 +5255,8 @@
    "복부/체지방"
   ],
   "type": "제품",
-  "price": 24083,
-  "priceBand": "1~3만원",
+  "price": 39800,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -5517,7 +5517,7 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 31000,
+  "price": 30990,
   "priceBand": "3~5만원",
   "brand": ""
  },
@@ -5665,8 +5665,8 @@
    "정신/수면"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 59800,
+  "priceBand": "5~10만원",
   "brand": ""
  },
  {
@@ -5738,8 +5738,8 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 10000,
-  "priceBand": "1만원 이하",
+  "price": 18000,
+  "priceBand": "1~3만원",
   "brand": ""
  },
  {
@@ -5757,8 +5757,8 @@
    "다리/발"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 79000,
+  "priceBand": "5~10만원",
   "brand": ""
  },
  {
@@ -5885,8 +5885,8 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 66000,
-  "priceBand": "5~10만원",
+  "price": 38900,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -6102,8 +6102,8 @@
    "전신/면역"
   ],
   "type": "제품",
-  "price": 10000,
-  "priceBand": "1만원 이하",
+  "price": 38000,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -6213,8 +6213,8 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 16000,
-  "priceBand": "1~3만원",
+  "price": 55000,
+  "priceBand": "5~10만원",
   "brand": ""
  },
  {
@@ -6380,8 +6380,8 @@
    "장/배변"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 30000,
+  "priceBand": "1~3만원",
   "brand": ""
  },
  {
@@ -6434,7 +6434,7 @@
    "전신/면역"
   ],
   "type": "제품",
-  "price": 189000,
+  "price": 170000,
   "priceBand": "10만원 이상",
   "brand": ""
  },
@@ -6598,8 +6598,8 @@
    "다리/발"
   ],
   "type": "제품",
-  "price": 27000,
-  "priceBand": "1~3만원",
+  "price": 31900,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -6673,8 +6673,8 @@
    "복부/체지방"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 32500,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -6895,8 +6895,8 @@
    "심혈관/순환"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 145000,
+  "priceBand": "10만원 이상",
   "brand": ""
  },
  {
@@ -6913,8 +6913,8 @@
    "눈"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 3110,
+  "priceBand": "1만원 이하",
   "brand": ""
  },
  {
@@ -7003,8 +7003,8 @@
    "근육/관절"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 8220,
+  "priceBand": "1만원 이하",
   "brand": ""
  },
  {
@@ -7057,8 +7057,8 @@
    "심혈관/순환"
   ],
   "type": "제품",
-  "price": 50000,
-  "priceBand": "3~5만원",
+  "price": 60000,
+  "priceBand": "5~10만원",
   "brand": ""
  },
  {
@@ -7221,7 +7221,7 @@
    "입/구강"
   ],
   "type": "제품",
-  "price": 3000,
+  "price": 8000,
   "priceBand": "1만원 이하",
   "brand": ""
  },
@@ -7350,8 +7350,8 @@
    "다리/발"
   ],
   "type": "제품",
-  "price": 45000,
-  "priceBand": "3~5만원",
+  "price": 139000,
+  "priceBand": "10만원 이상",
   "brand": ""
  },
  {
@@ -7386,8 +7386,8 @@
    "심혈관/순환"
   ],
   "type": "제품",
-  "price": 25000,
-  "priceBand": "1~3만원",
+  "price": 125000,
+  "priceBand": "10만원 이상",
   "brand": ""
  },
  {
@@ -7477,8 +7477,8 @@
    "복부/체지방"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 25900,
+  "priceBand": "1~3만원",
   "brand": ""
  },
  {
@@ -7514,7 +7514,7 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 12000,
+  "price": 15000,
   "priceBand": "1~3만원",
   "brand": ""
  },
@@ -7717,8 +7717,8 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 34900,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -8086,8 +8086,8 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 20000,
-  "priceBand": "1~3만원",
+  "price": 34000,
+  "priceBand": "3~5만원",
   "brand": ""
  },
  {
@@ -8122,8 +8122,8 @@
    "간"
   ],
   "type": "제품",
-  "price": 152100,
-  "priceBand": "10만원 이상",
+  "price": 67300,
+  "priceBand": "5~10만원",
   "brand": ""
  },
  {
@@ -8159,8 +8159,8 @@
    "복부/체지방"
   ],
   "type": "제품",
-  "price": null,
-  "priceBand": "",
+  "price": 57000,
+  "priceBand": "5~10만원",
   "brand": ""
  },
  {
@@ -8195,8 +8195,8 @@
    "얼굴/피부"
   ],
   "type": "제품",
-  "price": 47900,
-  "priceBand": "3~5만원",
+  "price": 25900,
+  "priceBand": "1~3만원",
   "brand": ""
  },
  {
@@ -8231,8 +8231,8 @@
    "전신/면역"
   ],
   "type": "제품",
-  "price": 51900,
-  "priceBand": "5~10만원",
+  "price": 147000,
+  "priceBand": "10만원 이상",
   "brand": ""
  },
  {
