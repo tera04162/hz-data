@@ -293,7 +293,7 @@
  {
   "id": "hz017",
   "site": "healthzzang",
-  "title": " 비너톡이 체지방 감소와 활력 증진의 비결? 성분, 후기, 효과 분석과 다이어트 팁",
+  "title": "비너톡이 체지방 감소와 활력 증진의 비결? 성분, 후기, 효과 분석과 다이어트 팁",
   "url": "https://www.healthzzang.com/2024/11/vinnertok.html",
   "labels": [
    "건강기능식품"
@@ -438,7 +438,7 @@
  {
   "id": "hz025",
   "site": "healthzzang",
-  "title": " 볼렉시 바디샷프로 후기 및 효과 분석: 피부 탄력과 셀룰라이트 관리의 과학적 접근",
+  "title": "볼렉시 바디샷프로 후기 및 효과 분석: 피부 탄력과 셀룰라이트 관리의 과학적 접근",
   "url": "https://www.healthzzang.com/2024/09/volexy-bodyshot-pro.html",
   "labels": [
    "뷰티디바이스"
@@ -822,7 +822,7 @@
  {
   "id": "hz046",
   "site": "healthzzang",
-  "title": "수면장애 불면증 검사, 자가진단 테스트 ",
+  "title": "수면장애 불면증 검사, 자가진단 테스트",
   "url": "https://www.healthzzang.com/2025/01/sleep-disorder-test.html",
   "labels": [
    "자가진단",
@@ -1780,7 +1780,7 @@
  {
   "id": "hz098",
   "site": "healthzzang",
-  "title": "8체질 검사, 자가진단 테스트 ",
+  "title": "8체질 검사, 자가진단 테스트",
   "url": "https://www.healthzzang.com/2025/05/8constitution-test.html",
   "labels": [
    "자가진단",
@@ -2786,7 +2786,7 @@
  {
   "id": "hz153",
   "site": "healthzzang",
-  "title": " 청보리젤 클렌저: 피부에 매끈함을 선사하는 가성비 1등 비건 제품",
+  "title": "청보리젤 클렌저: 피부에 매끈함을 선사하는 가성비 1등 비건 제품",
   "url": "https://www.healthzzang.com/2024/07/vegancleanser.html",
   "labels": [
    "화장품"
@@ -3006,7 +3006,7 @@
  {
   "id": "hz165",
   "site": "healthzzang",
-  "title": "기침 가래 검사, 자가진단 테스트 ",
+  "title": "기침 가래 검사, 자가진단 테스트",
   "url": "https://www.healthzzang.com/2025/04/coughtest.html",
   "labels": [
    "자가진단",
@@ -4221,7 +4221,7 @@
  {
   "id": "ha058",
   "site": "h.assetreport",
-  "title": "탈모 치료, 탈모 관리, 탈모 예방을 위한 종합 치료방법은? ",
+  "title": "탈모 치료, 탈모 관리, 탈모 예방을 위한 종합 치료방법은?",
   "url": "https://h.assetreport.kr/2024/08/hair-loss.html",
   "labels": [
    "건강정보"
@@ -4258,7 +4258,7 @@
  {
   "id": "ha060",
   "site": "h.assetreport",
-  "title": "배에 가스빼는 법 다섯가지 핵심 정리: 배에 가스차서 불편하신가요? ",
+  "title": "배에 가스빼는 법 다섯가지 핵심 정리: 배에 가스차서 불편하신가요?",
   "url": "https://h.assetreport.kr/2023/06/blog-post_05.html",
   "labels": [
    "식품",
@@ -4609,7 +4609,7 @@
   "title": "마데카 프라임 종류, 후기, 가격, 그리고 효과 종합 가이드",
   "url": "https://h.assetreport.kr/2024/12/madeca-prime.html",
   "labels": [
-   "뷰티디바이스"
+   "화장품"
   ],
   "date": "2024-12-29",
   "tab": "뷰티",
@@ -8228,7 +8228,8 @@
   "date": "2026-08-14",
   "tab": "건강",
   "parts": [
-   "전신/면역"
+   "전신/면역",
+   "다리/발"
   ],
   "type": "제품",
   "price": 147000,
