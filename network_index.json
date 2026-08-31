@@ -8400,5 +8400,23 @@
   "price": null,
   "priceBand": "",
   "brand": ""
+ },
+ {
+  "id": "hb152",
+  "site": "health.assetreport",
+  "title": "리노이드 EA-포뮬라 후기 총정리 | 관절·근육 효과 성분 가격 2026",
+  "url": "https://health.assetreport.kr/2026/08/renoid-ea-formula-review-2026-joint-muscle.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-08-31",
+  "tab": "건강",
+  "parts": [
+   "근육/관절"
+  ],
+  "type": "제품",
+  "price": 40800,
+  "priceBand": "3~5만원",
+  "brand": ""
  }
 ]
