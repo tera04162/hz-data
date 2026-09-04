@@ -8418,5 +8418,62 @@
   "price": 40800,
   "priceBand": "3~5만원",
   "brand": ""
+ },
+ {
+  "id": "hb153",
+  "site": "health.assetreport",
+  "title": "덱카닉정 후기 12,209건 분석 | 별점 4.8 실체·성분·가격 총정리",
+  "url": "https://health.assetreport.kr/2026/09/dexcanic-review-12209cases-rating-ingredients-price-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-01",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방",
+   "장/배변"
+  ],
+  "type": "제품",
+  "price": 46900,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "hb154",
+  "site": "health.assetreport",
+  "title": "오쏘타민 아이크림 후기 4.8점 | 성분·효과·다크서클 개선 총정리",
+  "url": "https://health.assetreport.kr/2026/09/orthotamin-eye-cream-review-dark-circle-vitamin-c-2026.html",
+  "labels": [
+   "화장품"
+  ],
+  "date": "2026-09-02",
+  "tab": "뷰티",
+  "parts": [
+   "눈",
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 32000,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "hz175",
+  "site": "healthzzang",
+  "title": "뮤르디 카디넥스 컷 후기 2355건 분석 2026년 8월 | CDX-R3 효과·가격 총정리",
+  "url": "https://www.healthzzang.com/2026/09/murdi-cardinex-cut-cdx-r3-review-2026-august-update.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-04",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방",
+   "장/배변"
+  ],
+  "type": "제품",
+  "price": 31900,
+  "priceBand": "3~5만원",
+  "brand": ""
  }
 ]
