@@ -8475,5 +8475,62 @@
   "price": 31900,
   "priceBand": "3~5만원",
   "brand": ""
+ },
+ {
+  "id": "hb155",
+  "site": "health.assetreport",
+  "title": "운림가 김치 후기 15,367건 평점 4.8 | 전라도 대통령상 55년 총정리",
+  "url": "https://health.assetreport.kr/2026/09/unlimga-kimchi-review-jeonlla-55years-handmade-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-05",
+  "tab": "건강",
+  "parts": [
+   "위장/소화",
+   "장/배변"
+  ],
+  "type": "제품",
+  "price": 9800,
+  "priceBand": "1만원 이하",
+  "brand": ""
+ },
+ {
+  "id": "hb156",
+  "site": "health.assetreport",
+  "title": "저스트글로우 베르베린 종류 비교 후기 | 500mg·어드밴스드·리버스AG 총정리",
+  "url": "https://health.assetreport.kr/2026/09/justglow-berberine-types-comparison-review.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-05",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사",
+   "간"
+  ],
+  "type": "제품",
+  "price": 42800,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "hz176",
+  "site": "healthzzang",
+  "title": "마운엑스 후기 6,030건 최신 분석 | 성분·재고·가격 총정리(26.09)",
+  "url": "https://www.healthzzang.com/2026/09/maunex-review-ingredients-stock-price-sept2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-06",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방",
+   "장/배변"
+  ],
+  "type": "제품",
+  "price": 59000,
+  "priceBand": "5~10만원",
+  "brand": ""
  }
 ]
