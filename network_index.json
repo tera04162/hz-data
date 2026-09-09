@@ -8532,5 +8532,78 @@
   "price": 59000,
   "priceBand": "5~10만원",
   "brand": ""
+ },
+ {
+  "id": "ha135",
+  "site": "h.assetreport",
+  "title": "포레비타 프레쉬가드 후기 11198건 분석 | 성분·가격·부작용 총정리",
+  "url": "https://h.assetreport.kr/2026/09/forevita-freshguard-oral-probiotic-spray-review-2026.html",
+  "labels": [
+   "의약외품"
+  ],
+  "date": "2026-09-07",
+  "tab": "건강",
+  "parts": [
+   "입/구강"
+  ],
+  "type": "제품",
+  "price": 39000,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "ha136",
+  "site": "h.assetreport",
+  "title": "비피돌 구강 유산균 후기 4.8점 | 비피두스엑스 스프레이 효과·가격 총정리",
+  "url": "https://h.assetreport.kr/2026/09/bifidol-oral-probiotic-spray-bifidobacterium-review.html",
+  "labels": [
+   "의약외품"
+  ],
+  "date": "2026-09-08",
+  "tab": "건강",
+  "parts": [
+   "입/구강"
+  ],
+  "type": "제품",
+  "price": 39800,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "ha137",
+  "site": "h.assetreport",
+  "title": "리셀린정 후기 3774건 총정리 | GGP복합물 성분·가격·부작용",
+  "url": "https://h.assetreport.kr/2026/09/reselin-jeong-ggp-complex-review-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-09",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사",
+   "복부/체지방"
+  ],
+  "type": "제품",
+  "price": 51000,
+  "priceBand": "5~10만원",
+  "brand": ""
+ },
+ {
+  "id": "hz177",
+  "site": "healthzzang",
+  "title": "제로슬림디 후기 2632건 분석 | 브로멜라인 안티팻포뮬러 총정리",
+  "url": "https://www.healthzzang.com/2026/09/zeroslimd-bromelain-anti-fat-formula-review.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-10",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "제품",
+  "price": 52900,
+  "priceBand": "5~10만원",
+  "brand": ""
  }
 ]
