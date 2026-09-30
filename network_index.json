@@ -8605,5 +8605,188 @@
   "price": 52900,
   "priceBand": "5~10만원",
   "brand": ""
+ },
+ {
+  "id": "hz178",
+  "site": "healthzzang",
+  "title": "뽀앤믹스 최신 후기 81건 분석 | 니아신아마이드 100% 믹스파우더 효과·가격 총정리",
+  "url": "https://www.healthzzang.com/2026/09/poandmix-mixpowder-niacinamide-review.html",
+  "labels": [
+   "화장품"
+  ],
+  "date": "2026-09-12",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 19000,
+  "priceBand": "1~3만원",
+  "brand": ""
+ },
+ {
+  "id": "hz179",
+  "site": "healthzzang",
+  "title": "시리마젠 후기 9974건 분석 | 실리마린 밀크씨슬 효과·가격 총정리",
+  "url": "https://www.healthzzang.com/2026/09/silimazen-review-silymarin-milkthistle-liver.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-14",
+  "tab": "건강",
+  "parts": [
+   "간"
+  ],
+  "type": "제품",
+  "price": 89000,
+  "priceBand": "5~10만원",
+  "brand": ""
+ },
+ {
+  "id": "hz180",
+  "site": "healthzzang",
+  "title": "슬립맥싱 뜻 | 2026 수면 트렌드 완전정리",
+  "url": "https://www.healthzzang.com/2026/09/what-is-sleepmaxxing-2026-trend.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-09-17",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "brand": ""
+ },
+ {
+  "id": "hb157",
+  "site": "health.assetreport",
+  "title": "수면 영양제 추천 가이드 | 식약처 인정 성분 6종 완전정리",
+  "url": "https://health.assetreport.kr/2026/09/sleep-supplement-ingredients-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-09-16",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "brand": ""
+ },
+ {
+  "id": "hb158",
+  "site": "health.assetreport",
+  "title": "멜라토닌 vs 마그네슘 | 수면에 뭐가 더 나을까 (2026년 기준)",
+  "url": "https://health.assetreport.kr/2026/09/melatonin-vs-magnesium-sleep-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-09-17",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "brand": ""
+ },
+ {
+  "id": "hb159",
+  "site": "health.assetreport",
+  "title": "숙면 베개 추천 비교 | 라텍스 vs 메모리폼 소재별 선택 가이드",
+  "url": "https://health.assetreport.kr/2026/09/pillow-latex-vs-memory-foam-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-09-17",
+  "tab": "건강",
+  "parts": [
+   "정신/수면",
+   "목"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "brand": ""
+ },
+ {
+  "id": "ha138",
+  "site": "h.assetreport",
+  "title": "베르린정 후기 6354건 분석 | 성분·가격·부작용 총정리",
+  "url": "https://h.assetreport.kr/2026/09/berlin-jeong-review-ingredients-price-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-11",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방",
+   "장/배변"
+  ],
+  "type": "제품",
+  "price": 59800,
+  "priceBand": "5~10만원",
+  "brand": ""
+ },
+ {
+  "id": "ha139",
+  "site": "h.assetreport",
+  "title": "수면다원검사 비용과 보험 적용 총정리 | 2026년 9월 실비청구까지",
+  "url": "https://h.assetreport.kr/2026/09/sleep-study-polysomnography-cost-insurance-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-09-16",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "brand": ""
+ },
+ {
+  "id": "ha140",
+  "site": "h.assetreport",
+  "title": "양압기 가격 렌탈 비교 | 2026년 9월 건강보험 적용 총정리",
+  "url": "https://h.assetreport.kr/2026/09/cpap-machine-price-rental-insurance-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-09-17",
+  "tab": "건강",
+  "parts": [
+   "정신/수면",
+   "호흡기/폐"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "brand": ""
+ },
+ {
+  "id": "ha141",
+  "site": "h.assetreport",
+  "title": "불면증 병원 치료 인지행동치료 CBT-1 vs 수면제 | 비용과 효과 비교 (2026년 기준)",
+  "url": "https://h.assetreport.kr/2026/09/insomnia-treatment-vs-sleeping-pills-cost-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-09-17",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "brand": ""
  }
 ]
