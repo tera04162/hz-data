@@ -8788,5 +8788,83 @@
   "price": null,
   "priceBand": "",
   "brand": ""
+ },
+ {
+  "id": "ha142",
+  "site": "h.assetreport",
+  "title": "위시어 프로틴바 후기 4.9점 | 4종 맛·성분·가격 총정리 2026",
+  "url": "https://h.assetreport.kr/2026/10/wishier-protein-bar-review-2026-ingredients-price.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-05",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방",
+   "근육/관절"
+  ],
+  "type": "제품",
+  "price": 21700,
+  "priceBand": "1~3만원",
+  "brand": ""
+ },
+ {
+  "id": "hb160",
+  "site": "health.assetreport",
+  "title": "늘씬수 후기 281+3531건 분석 | 성분·가격 2026년 10월 최신",
+  "url": "https://health.assetreport.kr/2026/10/neulssinsu-review-ingredients-price-2026-october.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-04",
+  "tab": "건강",
+  "parts": [
+   "다리/발",
+   "심혈관/순환"
+  ],
+  "type": "제품",
+  "price": 41000,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "hb161",
+  "site": "health.assetreport",
+  "title": "헤어리듬 루트너 전성분·후기 11,545건 | 공식 상품정보고시 그대로 공개",
+  "url": "https://health.assetreport.kr/2026/10/hair-rhythm-rootner-ingredients-review-2026.html",
+  "labels": [
+   "화장품",
+   "뷰티정보"
+  ],
+  "date": "2026-10-06",
+  "tab": "뷰티",
+  "parts": [
+   "머리/두피",
+   "모발"
+  ],
+  "type": "제품",
+  "price": 28900,
+  "priceBand": "1~3만원",
+  "brand": ""
+ },
+ {
+  "id": "hz181",
+  "site": "healthzzang",
+  "title": "알트로겐 후기 9158건 솔직 분석 | 테아시톨 효과·가격 총정리",
+  "url": "https://www.healthzzang.com/2026/09/altrogen-teacitol-hair-loss-review-2026-update.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-09-30",
+  "tab": "건강",
+  "parts": [
+   "머리/두피",
+   "모발",
+   "자궁/여성"
+  ],
+  "type": "제품",
+  "price": 36900,
+  "priceBand": "3~5만원",
+  "brand": ""
  }
 ]
