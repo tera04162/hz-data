@@ -8866,5 +8866,78 @@
   "price": 36900,
   "priceBand": "3~5만원",
   "brand": ""
+ },
+ {
+  "id": "ha143",
+  "site": "h.assetreport",
+  "title": "청명백서 청명단 후기 10807건 | 성분·효능·부작용·가격 총정리",
+  "url": "https://h.assetreport.kr/2026/10/cheongmyeongbaekseo-cheongmyeongdan-review-2026-october.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-11",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "제품",
+  "price": 38000,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "ha144",
+  "site": "h.assetreport",
+  "title": "텐토렉실 후기 분석 | TENTOREXIL 성분·효과·가격 총정리 (2026)",
+  "url": "https://h.assetreport.kr/2026/10/tentorexil-review-ingredients-price.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-13",
+  "tab": "건강",
+  "parts": [
+   "생식기/전립선"
+  ],
+  "type": "제품",
+  "price": 43900,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "hb162",
+  "site": "health.assetreport",
+  "title": "그리너블 그린캔디 후기 7595건 총정리 | 성분·당류·혈당 분석",
+  "url": "https://health.assetreport.kr/2026/10/greenable-green-candy-review-ingredients-sugar.html.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-09",
+  "tab": "건강",
+  "parts": [
+   "장/배변",
+   "혈당/대사"
+  ],
+  "type": "제품",
+  "price": 32000,
+  "priceBand": "3~5만원",
+  "brand": ""
+ },
+ {
+  "id": "hb163",
+  "site": "health.assetreport",
+  "title": "쿼드쎄라 펜타 후기 | 5중 초음파 가격·티탄 비교·부작용 총정리",
+  "url": "https://health.assetreport.kr/2026/10/quadthera-penta-review-price-titan-comparison.html",
+  "labels": [
+   "뷰티디바이스"
+  ],
+  "date": "2026-10-15",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 1404000,
+  "priceBand": "10만원 이상",
+  "brand": ""
  }
 ]
