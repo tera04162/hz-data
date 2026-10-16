@@ -15,6 +15,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -33,6 +34,7 @@
   "type": "제품",
   "price": 20000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -51,6 +53,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -70,6 +73,7 @@
   "type": "제품",
   "price": 28900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -88,6 +92,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -106,6 +111,7 @@
   "type": "제품",
   "price": 122440,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -124,6 +130,7 @@
   "type": "제품",
   "price": 52200,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -142,6 +149,7 @@
   "type": "제품",
   "price": 55180,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -160,6 +168,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -179,6 +188,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -198,6 +208,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -216,6 +227,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -234,6 +246,7 @@
   "type": "제품",
   "price": 9900,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -252,6 +265,7 @@
   "type": "제품",
   "price": 38900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -270,6 +284,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -288,6 +303,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -306,6 +322,7 @@
   "type": "제품",
   "price": 38000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -324,6 +341,7 @@
   "type": "제품",
   "price": 119000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -342,6 +360,7 @@
   "type": "제품",
   "price": 30000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -360,6 +379,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -378,6 +398,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -396,6 +417,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -415,6 +437,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -433,6 +456,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -451,6 +475,7 @@
   "type": "제품",
   "price": 198000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -470,6 +495,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -488,6 +514,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -507,6 +534,7 @@
   "type": "제품",
   "price": 189000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -526,6 +554,7 @@
   "type": "제품",
   "price": 24900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -544,6 +573,7 @@
   "type": "제품",
   "price": 15900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -562,6 +592,7 @@
   "type": "제품",
   "price": 129000,
   "priceBand": "10만원 이상",
+  "device": "deviceLeg",
   "brand": ""
  },
  {
@@ -580,6 +611,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -598,6 +630,7 @@
   "type": "제품",
   "price": 8000,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -616,6 +649,7 @@
   "type": "제품",
   "price": 35900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -634,6 +668,7 @@
   "type": "제품",
   "price": 38000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -652,6 +687,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -670,6 +706,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -688,6 +725,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -706,6 +744,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -725,6 +764,7 @@
   "type": "제품",
   "price": 59900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -743,6 +783,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -761,6 +802,7 @@
   "type": "제품",
   "price": 62000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -779,6 +821,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -798,6 +841,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -817,6 +861,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -836,6 +881,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -854,6 +900,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -874,6 +921,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -893,6 +941,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -911,6 +960,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -929,6 +979,7 @@
   "type": "제품",
   "price": 119000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -948,6 +999,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -967,6 +1019,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -986,6 +1039,7 @@
   "type": "제품",
   "price": 55000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1004,6 +1058,7 @@
   "type": "제품",
   "price": 13000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1022,6 +1077,7 @@
   "type": "제품",
   "price": 29900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1040,6 +1096,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1058,6 +1115,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1077,6 +1135,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1095,6 +1154,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1113,6 +1173,7 @@
   "type": "제품",
   "price": 19800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1132,6 +1193,7 @@
   "type": "제품",
   "price": 27900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1151,6 +1213,7 @@
   "type": "제품",
   "price": 510000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -1170,6 +1233,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1188,6 +1252,7 @@
   "type": "제품",
   "price": 70000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1206,6 +1271,7 @@
   "type": "제품",
   "price": 23940,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1224,6 +1290,7 @@
   "type": "제품",
   "price": 32900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1243,6 +1310,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1263,6 +1331,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1282,6 +1351,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1300,6 +1370,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1318,6 +1389,7 @@
   "type": "제품",
   "price": 63900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1336,6 +1408,7 @@
   "type": "제품",
   "price": 29800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1354,6 +1427,7 @@
   "type": "제품",
   "price": 20000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1373,6 +1447,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1391,6 +1466,7 @@
   "type": "제품",
   "price": 23900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1409,6 +1485,7 @@
   "type": "제품",
   "price": 74000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1427,6 +1504,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1446,6 +1524,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1464,6 +1543,7 @@
   "type": "제품",
   "price": 16200,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1483,6 +1563,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1502,6 +1583,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1520,6 +1602,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1538,6 +1621,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1557,6 +1641,7 @@
   "type": "제품",
   "price": 23500,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1575,6 +1660,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1593,6 +1679,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1611,6 +1698,7 @@
   "type": "제품",
   "price": 62400,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1629,6 +1717,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1647,6 +1736,7 @@
   "type": "제품",
   "price": 49000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1666,6 +1756,7 @@
   "type": "제품",
   "price": 18330,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1684,6 +1775,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1702,6 +1794,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1721,6 +1814,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1739,6 +1833,7 @@
   "type": "제품",
   "price": 29800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1757,6 +1852,7 @@
   "type": "제품",
   "price": 44900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1775,6 +1871,7 @@
   "type": "제품",
   "price": 460600,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -1794,6 +1891,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1812,6 +1910,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1830,6 +1929,7 @@
   "type": "제품",
   "price": 344300,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -1849,6 +1949,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1868,6 +1969,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1887,6 +1989,7 @@
   "type": "제품",
   "price": 29700,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1905,6 +2008,7 @@
   "type": "제품",
   "price": 39000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1923,6 +2027,7 @@
   "type": "제품",
   "price": 34900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -1941,6 +2046,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1959,6 +2065,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1977,6 +2084,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -1995,6 +2103,7 @@
   "type": "제품",
   "price": 23000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2013,6 +2122,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2032,6 +2142,7 @@
   "type": "제품",
   "price": 85120,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2050,6 +2161,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2068,6 +2180,7 @@
   "type": "제품",
   "price": 33900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2086,6 +2199,7 @@
   "type": "제품",
   "price": 16900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2104,6 +2218,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2122,6 +2237,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2140,6 +2256,7 @@
   "type": "제품",
   "price": 1250000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -2158,6 +2275,7 @@
   "type": "제품",
   "price": 50000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2176,6 +2294,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2194,6 +2313,7 @@
   "type": "제품",
   "price": 58900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2213,6 +2333,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2231,6 +2352,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2249,6 +2371,7 @@
   "type": "제품",
   "price": 28000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2267,6 +2390,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2286,6 +2410,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2305,6 +2430,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2324,6 +2450,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2342,6 +2469,7 @@
   "type": "제품",
   "price": 40000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2361,6 +2489,7 @@
   "type": "제품",
   "price": 77610,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2379,6 +2508,7 @@
   "type": "제품",
   "price": 20000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2398,6 +2528,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2416,6 +2547,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2434,6 +2566,7 @@
   "type": "제품",
   "price": 39000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2452,6 +2585,7 @@
   "type": "제품",
   "price": 22800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2470,6 +2604,7 @@
   "type": "제품",
   "price": 62010,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2488,6 +2623,7 @@
   "type": "제품",
   "price": 34900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2506,6 +2642,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2524,6 +2661,7 @@
   "type": "제품",
   "price": 179000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -2542,6 +2680,7 @@
   "type": "제품",
   "price": 41300,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2560,6 +2699,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2578,6 +2718,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2596,6 +2737,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2615,6 +2757,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2633,6 +2776,7 @@
   "type": "제품",
   "price": 65000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2651,6 +2795,7 @@
   "type": "제품",
   "price": 21000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2669,6 +2814,7 @@
   "type": "제품",
   "price": 73000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2688,6 +2834,7 @@
   "type": "제품",
   "price": 29300,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2706,6 +2853,7 @@
   "type": "제품",
   "price": 35380,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2725,6 +2873,7 @@
   "type": "제품",
   "price": 17200,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2743,6 +2892,7 @@
   "type": "제품",
   "price": 21800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2763,6 +2913,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2781,6 +2932,7 @@
   "type": "제품",
   "price": 52800,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2799,6 +2951,7 @@
   "type": "제품",
   "price": 22000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2817,6 +2970,7 @@
   "type": "제품",
   "price": 23000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2835,6 +2989,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2853,6 +3008,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2872,6 +3028,7 @@
   "type": "제품",
   "price": 26500,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2891,6 +3048,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2911,6 +3069,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2929,6 +3088,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -2947,6 +3107,7 @@
   "type": "제품",
   "price": 23990,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2965,6 +3126,7 @@
   "type": "제품",
   "price": 59900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -2983,6 +3145,7 @@
   "type": "제품",
   "price": 20000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3001,6 +3164,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3020,6 +3184,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3038,6 +3203,7 @@
   "type": "제품",
   "price": 99000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3056,6 +3222,7 @@
   "type": "제품",
   "price": 62900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3074,6 +3241,7 @@
   "type": "제품",
   "price": 20000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3092,6 +3260,7 @@
   "type": "제품",
   "price": 25000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3110,6 +3279,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3129,6 +3299,7 @@
   "type": "자가진단",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3147,6 +3318,7 @@
   "type": "제품",
   "price": 34900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3165,6 +3337,7 @@
   "type": "제품",
   "price": 95000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3184,6 +3357,7 @@
   "type": "제품",
   "price": 37500,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3202,6 +3376,7 @@
   "type": "제품",
   "price": 99000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3220,6 +3395,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3239,6 +3415,7 @@
   "type": "제품",
   "price": 55900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3257,6 +3434,7 @@
   "type": "제품",
   "price": 39700,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3276,6 +3454,7 @@
   "type": "제품",
   "price": 40000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3294,6 +3473,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3312,6 +3492,7 @@
   "type": "제품",
   "price": 34800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3330,6 +3511,7 @@
   "type": "제품",
   "price": 50000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3348,6 +3530,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3366,6 +3549,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3384,6 +3568,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3403,6 +3588,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3421,6 +3607,7 @@
   "type": "제품",
   "price": 54900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3440,6 +3627,7 @@
   "type": "제품",
   "price": 29800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3458,6 +3646,7 @@
   "type": "제품",
   "price": 53000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3476,6 +3665,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3494,6 +3684,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3513,6 +3704,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3532,6 +3724,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3550,6 +3743,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3569,6 +3763,7 @@
   "type": "제품",
   "price": 21100,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3587,6 +3782,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3608,6 +3804,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3627,6 +3824,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3645,6 +3843,7 @@
   "type": "제품",
   "price": 20000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3663,6 +3862,7 @@
   "type": "제품",
   "price": 34800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3682,6 +3882,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3700,6 +3901,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3718,6 +3920,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3737,6 +3940,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3756,6 +3960,7 @@
   "type": "제품",
   "price": 42000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3775,6 +3980,7 @@
   "type": "제품",
   "price": 29800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3794,6 +4000,7 @@
   "type": "제품",
   "price": 28000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3812,6 +4019,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3830,6 +4038,7 @@
   "type": "제품",
   "price": 159000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -3848,6 +4057,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3866,6 +4076,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3884,6 +4095,7 @@
   "type": "제품",
   "price": 59800,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3902,6 +4114,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3920,6 +4133,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3939,6 +4153,7 @@
   "type": "제품",
   "price": 38800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3957,6 +4172,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -3976,6 +4192,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -3994,6 +4211,7 @@
   "type": "제품",
   "price": 19900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4013,6 +4231,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4031,6 +4250,7 @@
   "type": "제품",
   "price": 16000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4049,6 +4269,7 @@
   "type": "제품",
   "price": 69000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4067,6 +4288,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4087,6 +4309,7 @@
   "type": "제품",
   "price": 23625,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4105,6 +4328,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4123,6 +4347,7 @@
   "type": "제품",
   "price": 42800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4142,6 +4367,7 @@
   "type": "제품",
   "price": 50000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4160,6 +4386,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4179,6 +4406,7 @@
   "type": "제품",
   "price": 24000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4197,6 +4425,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4216,6 +4445,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4235,6 +4465,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4253,6 +4484,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4273,6 +4505,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4291,6 +4524,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4309,6 +4543,7 @@
   "type": "제품",
   "price": 800000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -4327,6 +4562,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4345,6 +4581,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4363,6 +4600,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4381,6 +4619,7 @@
   "type": "제품",
   "price": 12900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4399,6 +4638,7 @@
   "type": "제품",
   "price": 83300,
   "priceBand": "5~10만원",
+  "device": "deviceMask",
   "brand": ""
  },
  {
@@ -4418,6 +4658,7 @@
   "type": "제품",
   "price": 130000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -4436,6 +4677,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4454,6 +4696,7 @@
   "type": "제품",
   "price": 128000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -4473,6 +4716,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4492,6 +4736,7 @@
   "type": "제품",
   "price": 30800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4510,6 +4755,7 @@
   "type": "제품",
   "price": 239000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -4528,6 +4774,7 @@
   "type": "제품",
   "price": 38200,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4547,6 +4794,7 @@
   "type": "제품",
   "price": 24900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4565,6 +4813,7 @@
   "type": "제품",
   "price": 90000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4583,6 +4832,7 @@
   "type": "제품",
   "price": 109000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -4601,6 +4851,7 @@
   "type": "제품",
   "price": 54000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4619,6 +4870,7 @@
   "type": "제품",
   "price": 199000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -4637,6 +4889,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4655,6 +4908,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4673,6 +4927,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4691,6 +4946,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4709,6 +4965,7 @@
   "type": "제품",
   "price": 32800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4727,6 +4984,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4745,6 +5003,7 @@
   "type": "제품",
   "price": 79000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4763,6 +5022,7 @@
   "type": "제품",
   "price": 383000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -4781,6 +5041,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4799,6 +5060,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4817,6 +5079,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4836,6 +5099,7 @@
   "type": "제품",
   "price": 39000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4854,6 +5118,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4873,6 +5138,7 @@
   "type": "제품",
   "price": 38900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4891,6 +5157,7 @@
   "type": "제품",
   "price": 35100,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4910,6 +5177,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -4928,6 +5196,7 @@
   "type": "제품",
   "price": 35000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4946,6 +5215,7 @@
   "type": "제품",
   "price": 25000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4965,6 +5235,7 @@
   "type": "제품",
   "price": 25000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -4983,6 +5254,7 @@
   "type": "제품",
   "price": 98000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5002,6 +5274,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5020,6 +5293,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5038,6 +5312,7 @@
   "type": "제품",
   "price": 18810,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5056,6 +5331,7 @@
   "type": "제품",
   "price": 41570,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5074,6 +5350,7 @@
   "type": "제품",
   "price": 289000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -5092,6 +5369,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5111,6 +5389,7 @@
   "type": "제품",
   "price": 79500,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5129,6 +5408,7 @@
   "type": "제품",
   "price": 19800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5147,6 +5427,7 @@
   "type": "제품",
   "price": 36800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5165,6 +5446,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5184,6 +5466,7 @@
   "type": "제품",
   "price": 35000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5202,6 +5485,7 @@
   "type": "제품",
   "price": 70000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5220,6 +5504,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5238,6 +5523,7 @@
   "type": "제품",
   "price": 24900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5257,6 +5543,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5275,6 +5562,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5294,6 +5582,7 @@
   "type": "제품",
   "price": 42000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5312,6 +5601,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5331,6 +5621,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5350,6 +5641,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5369,6 +5661,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5389,6 +5682,7 @@
   "type": "제품",
   "price": 59000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5407,6 +5701,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5425,6 +5720,7 @@
   "type": "제품",
   "price": 19900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5444,6 +5740,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5462,6 +5759,7 @@
   "type": "제품",
   "price": 39000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5480,6 +5778,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5499,6 +5798,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5519,6 +5819,7 @@
   "type": "제품",
   "price": 30990,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5539,6 +5840,7 @@
   "type": "제품",
   "price": 35000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5557,6 +5859,7 @@
   "type": "제품",
   "price": 44980,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5575,6 +5878,7 @@
   "type": "제품",
   "price": 34800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5593,6 +5897,7 @@
   "type": "제품",
   "price": 35000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5612,6 +5917,7 @@
   "type": "제품",
   "price": 34800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5631,6 +5937,7 @@
   "type": "제품",
   "price": 34900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5649,6 +5956,7 @@
   "type": "제품",
   "price": 57400,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5667,6 +5975,7 @@
   "type": "제품",
   "price": 59800,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5685,6 +5994,7 @@
   "type": "제품",
   "price": 89500,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5703,6 +6013,7 @@
   "type": "제품",
   "price": 126500,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -5722,6 +6033,7 @@
   "type": "제품",
   "price": 29800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5740,6 +6052,7 @@
   "type": "제품",
   "price": 18000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5759,6 +6072,7 @@
   "type": "제품",
   "price": 79000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5778,6 +6092,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5796,6 +6111,7 @@
   "type": "제품",
   "price": 29800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5814,6 +6130,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5832,6 +6149,7 @@
   "type": "제품",
   "price": 42700,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5850,6 +6168,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5869,6 +6188,7 @@
   "type": "제품",
   "price": 30000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5887,6 +6207,7 @@
   "type": "제품",
   "price": 38900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5905,6 +6226,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5923,6 +6245,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5941,6 +6264,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5959,6 +6283,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -5977,6 +6302,7 @@
   "type": "제품",
   "price": 13000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -5995,6 +6321,7 @@
   "type": "제품",
   "price": 225000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -6013,6 +6340,7 @@
   "type": "제품",
   "price": 55000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6031,6 +6359,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6049,6 +6378,7 @@
   "type": "제품",
   "price": 59900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6068,6 +6398,7 @@
   "type": "제품",
   "price": 20000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6086,6 +6417,7 @@
   "type": "제품",
   "price": 30000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6104,6 +6436,7 @@
   "type": "제품",
   "price": 38000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6122,6 +6455,7 @@
   "type": "제품",
   "price": 49800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6140,6 +6474,7 @@
   "type": "제품",
   "price": 45900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6159,6 +6494,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6177,6 +6513,7 @@
   "type": "제품",
   "price": 480000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -6197,6 +6534,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6215,6 +6553,7 @@
   "type": "제품",
   "price": 55000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6234,6 +6573,7 @@
   "type": "제품",
   "price": 34900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6253,6 +6593,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6272,6 +6613,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6290,6 +6632,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6308,6 +6651,7 @@
   "type": "제품",
   "price": 10000,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -6326,6 +6670,7 @@
   "type": "제품",
   "price": 35000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6345,6 +6690,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6364,6 +6710,7 @@
   "type": "제품",
   "price": 51200,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6382,6 +6729,7 @@
   "type": "제품",
   "price": 30000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6400,6 +6748,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6418,6 +6767,7 @@
   "type": "제품",
   "price": 28000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6436,6 +6786,7 @@
   "type": "제품",
   "price": 170000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -6454,6 +6805,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6472,6 +6824,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6490,6 +6843,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6508,6 +6862,7 @@
   "type": "제품",
   "price": 13900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6526,6 +6881,7 @@
   "type": "제품",
   "price": 55200,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6544,6 +6900,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6563,6 +6920,7 @@
   "type": "제품",
   "price": 32900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6581,6 +6939,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6600,6 +6959,7 @@
   "type": "제품",
   "price": 31900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6619,6 +6979,7 @@
   "type": "제품",
   "price": 2500,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -6637,6 +6998,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6656,6 +7018,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6675,6 +7038,7 @@
   "type": "제품",
   "price": 32500,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6694,6 +7058,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6712,6 +7077,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6730,6 +7096,7 @@
   "type": "제품",
   "price": 24900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6749,6 +7116,7 @@
   "type": "제품",
   "price": 60000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6767,6 +7135,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6785,6 +7154,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6804,6 +7174,7 @@
   "type": "제품",
   "price": 15000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6823,6 +7194,7 @@
   "type": "제품",
   "price": 31800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6842,6 +7214,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -6861,6 +7234,7 @@
   "type": "제품",
   "price": 190000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -6879,6 +7253,7 @@
   "type": "제품",
   "price": 7300,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -6897,6 +7272,7 @@
   "type": "제품",
   "price": 145000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -6915,6 +7291,7 @@
   "type": "제품",
   "price": 3110,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -6933,6 +7310,7 @@
   "type": "제품",
   "price": 27900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6951,6 +7329,7 @@
   "type": "제품",
   "price": 169000,
   "priceBand": "10만원 이상",
+  "device": "deviceMask",
   "brand": ""
  },
  {
@@ -6969,6 +7348,7 @@
   "type": "제품",
   "price": 29000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -6987,6 +7367,7 @@
   "type": "제품",
   "price": 60000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7005,6 +7386,7 @@
   "type": "제품",
   "price": 8220,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -7023,6 +7405,7 @@
   "type": "제품",
   "price": 139000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -7041,6 +7424,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7059,6 +7443,7 @@
   "type": "제품",
   "price": 60000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7077,6 +7462,7 @@
   "type": "제품",
   "price": 31900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7095,6 +7481,7 @@
   "type": "제품",
   "price": 27900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7114,6 +7501,7 @@
   "type": "제품",
   "price": 49000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7132,6 +7520,7 @@
   "type": "제품",
   "price": 58900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7150,6 +7539,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7168,6 +7558,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7186,6 +7577,7 @@
   "type": "제품",
   "price": 3000,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -7205,6 +7597,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7223,6 +7616,7 @@
   "type": "제품",
   "price": 8000,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -7242,6 +7636,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7260,6 +7655,7 @@
   "type": "제품",
   "price": 498000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -7278,6 +7674,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7296,6 +7693,7 @@
   "type": "제품",
   "price": 1000000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -7315,6 +7713,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7334,6 +7733,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7352,6 +7752,7 @@
   "type": "제품",
   "price": 139000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -7370,6 +7771,7 @@
   "type": "제품",
   "price": 33900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7388,6 +7790,7 @@
   "type": "제품",
   "price": 125000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -7406,6 +7809,7 @@
   "type": "제품",
   "price": 34900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7424,6 +7828,7 @@
   "type": "제품",
   "price": 38000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7442,6 +7847,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7460,6 +7866,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7479,6 +7886,7 @@
   "type": "제품",
   "price": 25900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7497,6 +7905,7 @@
   "type": "제품",
   "price": 29800,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7516,6 +7925,7 @@
   "type": "제품",
   "price": 15000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7535,6 +7945,7 @@
   "type": "제품",
   "price": 51900,
   "priceBand": "5~10만원",
+  "device": "deviceFoot",
   "brand": ""
  },
  {
@@ -7554,6 +7965,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7572,6 +7984,7 @@
   "type": "제품",
   "price": 27900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7591,6 +8004,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7609,6 +8023,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7627,6 +8042,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7645,6 +8061,7 @@
   "type": "제품",
   "price": 24100,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7663,6 +8080,7 @@
   "type": "제품",
   "price": 10000,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -7682,6 +8100,7 @@
   "type": "제품",
   "price": 116000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -7701,6 +8120,7 @@
   "type": "제품",
   "price": 62000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7719,6 +8139,7 @@
   "type": "제품",
   "price": 34900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7738,6 +8159,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7756,6 +8178,7 @@
   "type": "제품",
   "price": 2000000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -7774,6 +8197,7 @@
   "type": "제품",
   "price": 34200,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7792,6 +8216,7 @@
   "type": "제품",
   "price": 51700,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7811,6 +8236,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7830,6 +8256,7 @@
   "type": "제품",
   "price": 399000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -7849,6 +8276,7 @@
   "type": "제품",
   "price": 89000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7867,6 +8295,7 @@
   "type": "제품",
   "price": 698000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -7886,6 +8315,7 @@
   "type": "제품",
   "price": 159900,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -7905,6 +8335,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7923,6 +8354,7 @@
   "type": "제품",
   "price": 37800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -7942,6 +8374,7 @@
   "type": "제품",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7960,6 +8393,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7978,6 +8412,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -7996,6 +8431,7 @@
   "type": "제품",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8014,6 +8450,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8032,6 +8469,7 @@
   "type": "제품",
   "price": 24000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8051,6 +8489,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8070,6 +8509,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8088,6 +8528,7 @@
   "type": "제품",
   "price": 34000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8106,6 +8547,7 @@
   "type": "제품",
   "price": 138000,
   "priceBand": "10만원 이상",
+  "device": "",
   "brand": ""
  },
  {
@@ -8124,6 +8566,7 @@
   "type": "제품",
   "price": 67300,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8142,6 +8585,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8161,6 +8605,7 @@
   "type": "제품",
   "price": 57000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8179,6 +8624,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8197,6 +8643,7 @@
   "type": "제품",
   "price": 25900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8215,6 +8662,7 @@
   "type": "제품",
   "price": 25000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8234,6 +8682,7 @@
   "type": "제품",
   "price": 147000,
   "priceBand": "10만원 이상",
+  "device": "deviceFoot",
   "brand": ""
  },
  {
@@ -8253,6 +8702,7 @@
   "type": "제품",
   "price": 50000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8271,6 +8721,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8289,6 +8740,7 @@
   "type": "제품",
   "price": 42900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8307,6 +8759,7 @@
   "type": "제품",
   "price": 50000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8325,6 +8778,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8343,6 +8797,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8361,6 +8816,7 @@
   "type": "제품",
   "price": 72000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8380,6 +8836,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8399,6 +8856,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8417,6 +8875,7 @@
   "type": "제품",
   "price": 40800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8436,6 +8895,7 @@
   "type": "제품",
   "price": 46900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8455,6 +8915,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8474,6 +8935,7 @@
   "type": "제품",
   "price": 31900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8493,6 +8955,7 @@
   "type": "제품",
   "price": 9800,
   "priceBand": "1만원 이하",
+  "device": "",
   "brand": ""
  },
  {
@@ -8512,6 +8975,7 @@
   "type": "제품",
   "price": 42800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8531,6 +8995,7 @@
   "type": "제품",
   "price": 59000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8549,6 +9014,7 @@
   "type": "제품",
   "price": 39000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8567,6 +9033,7 @@
   "type": "제품",
   "price": 39800,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8586,6 +9053,7 @@
   "type": "제품",
   "price": 51000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8604,6 +9072,7 @@
   "type": "제품",
   "price": 52900,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8622,6 +9091,7 @@
   "type": "제품",
   "price": 19000,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8640,6 +9110,7 @@
   "type": "제품",
   "price": 89000,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8658,6 +9129,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8676,6 +9148,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8694,6 +9167,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8713,6 +9187,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8732,6 +9207,7 @@
   "type": "제품",
   "price": 59800,
   "priceBand": "5~10만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8750,6 +9226,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8769,6 +9246,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8787,6 +9265,7 @@
   "type": "정보",
   "price": null,
   "priceBand": "",
+  "device": "",
   "brand": ""
  },
  {
@@ -8806,6 +9285,7 @@
   "type": "제품",
   "price": 21700,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8825,6 +9305,7 @@
   "type": "제품",
   "price": 41000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8845,6 +9326,7 @@
   "type": "제품",
   "price": 28900,
   "priceBand": "1~3만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8865,6 +9347,7 @@
   "type": "제품",
   "price": 36900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8883,6 +9366,7 @@
   "type": "제품",
   "price": 38000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8901,6 +9385,7 @@
   "type": "제품",
   "price": 43900,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8920,6 +9405,7 @@
   "type": "제품",
   "price": 32000,
   "priceBand": "3~5만원",
+  "device": "",
   "brand": ""
  },
  {
@@ -8938,6 +9424,7 @@
   "type": "제품",
   "price": 1404000,
   "priceBand": "10만원 이상",
+  "device": "deviceWand",
   "brand": ""
  }
 ]
