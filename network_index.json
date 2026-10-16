@@ -341,7 +341,7 @@
   "type": "제품",
   "price": 119000,
   "priceBand": "10만원 이상",
-  "device": "",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -1852,7 +1852,7 @@
   "type": "제품",
   "price": 44900,
   "priceBand": "3~5만원",
-  "device": "",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -3337,7 +3337,7 @@
   "type": "제품",
   "price": 95000,
   "priceBand": "5~10만원",
-  "device": "",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -4813,7 +4813,7 @@
   "type": "제품",
   "price": 90000,
   "priceBand": "5~10만원",
-  "device": "",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -5350,7 +5350,7 @@
   "type": "제품",
   "price": 289000,
   "priceBand": "10만원 이상",
-  "device": "",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -5389,7 +5389,7 @@
   "type": "제품",
   "price": 79500,
   "priceBand": "5~10만원",
-  "device": "",
+  "device": "deviceFoot",
   "brand": ""
  },
  {
@@ -7234,7 +7234,7 @@
   "type": "제품",
   "price": 190000,
   "priceBand": "10만원 이상",
-  "device": "",
+  "device": "deviceWand",
   "brand": ""
  },
  {
