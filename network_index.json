@@ -2,7 +2,7 @@
  {
   "id": "hz001",
   "site": "healthzzang",
-  "title": "3일 동안 14번 응급실 방문 의사도 당했다! 장염 빨리 낫는 법 완전 정복",
+  "title": "\"3일 동안 14번 응급실 방문\" 의사도 당했다! 장염 빨리 낫는 법 완전 정복",
   "url": "https://www.healthzzang.com/2024/12/enteritis.html",
   "labels": [
    "건강정보"
@@ -827,7 +827,7 @@
  {
   "id": "hz044",
   "site": "healthzzang",
-  "title": "감기인 줄 알았는데 중환자실...생후 1개월 rsv 실제 후기 분석",
+  "title": "\"감기인 줄 알았는데 중환자실\"...생후 1개월 rsv 실제 후기 분석",
   "url": "https://www.healthzzang.com/2025/10/rsv-respiratory-syncytial-virus-complete-guide-2025.html",
   "labels": [
    "건강정보"
@@ -3690,7 +3690,7 @@
  {
   "id": "ha019",
   "site": "h.assetreport",
-  "title": "라면 나트륨 줄이는 법, 이걸 '반만' 넣는 순간 바뀝니다",
+  "title": "라면 나트륨 줄이는 법, 이걸 ‘반만’ 넣는 순간 바뀝니다",
   "url": "https://h.assetreport.kr/2025/03/ramen-recipe.html",
   "labels": [
    "건강정보"
@@ -4860,7 +4860,7 @@
   "title": "마데카 프라임 종류, 후기, 가격, 그리고 효과 종합 가이드",
   "url": "https://h.assetreport.kr/2024/12/madeca-prime.html",
   "labels": [
-   "화장품"
+   "뷰티디바이스"
   ],
   "date": "2024-12-29",
   "tab": "뷰티",
@@ -4870,7 +4870,7 @@
   "type": "제품",
   "price": 199000,
   "priceBand": "10만원 이상",
-  "device": "",
+  "device": "deviceWand",
   "brand": ""
  },
  {
@@ -4895,7 +4895,7 @@
  {
   "id": "ha081",
   "site": "h.assetreport",
-  "title": "가을만 되면 간지러워! 환절기 가려움증, 이유부터 예방 및 관리법 총정리",
+  "title": "\"가을만 되면 간지러워!\" 환절기 가려움증, 이유부터 예방 및 관리법 총정리",
   "url": "https://h.assetreport.kr/2024/11/itch-skin-atutumn.html",
   "labels": [
    "건강정보"
@@ -5047,7 +5047,7 @@
  {
   "id": "ha089",
   "site": "h.assetreport",
-  "title": "\"왜 기침이 멈추지 않죠?\" 기침 가래가 안 가라앉는 이유와 '진짜' 해결법",
+  "title": "“왜 기침이 멈추지 않죠?” 기침 가래가 안 가라앉는 이유와 ‘진짜’ 해결법",
   "url": "https://h.assetreport.kr/2025/04/cough.html",
   "labels": [
    "건강정보"
@@ -8371,7 +8371,7 @@
   "parts": [
    "정신/수면"
   ],
-  "type": "제품",
+  "type": "정보",
   "price": null,
   "priceBand": "",
   "device": "",
@@ -8428,7 +8428,7 @@
   "parts": [
    "자궁/여성"
   ],
-  "type": "제품",
+  "type": "정보",
   "price": null,
   "priceBand": "",
   "device": "",
@@ -9314,8 +9314,7 @@
   "title": "헤어리듬 루트너 전성분·후기 11,545건 | 공식 상품정보고시 그대로 공개",
   "url": "https://health.assetreport.kr/2026/10/hair-rhythm-rootner-ingredients-review-2026.html",
   "labels": [
-   "화장품",
-   "뷰티정보"
+   "화장품"
   ],
   "date": "2026-10-06",
   "tab": "뷰티",
