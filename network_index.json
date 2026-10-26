@@ -9426,5 +9426,376 @@
   "priceBand": "10만원 이상",
   "device": "deviceWand",
   "brand": ""
+ },
+ {
+  "id": "hz182",
+  "site": "healthzzang",
+  "title": "프로튠알파 후기 성분 총정리 | 전립선 영양제 가격·복용법·환불규정",
+  "url": "https://www.healthzzang.com/2026/10/protune-alpha-prostate-supplement-review-ingredients-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-16",
+  "tab": "건강",
+  "parts": [
+   "생식기/전립선"
+  ],
+  "type": "제품",
+  "price": 37900,
+  "priceBand": "3~5만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz183",
+  "site": "healthzzang",
+  "title": "솔티스 간 프로텍션 프로 S2 후기 7714건｜병풀추출분말 효과·가격",
+  "url": "https://www.healthzzang.com/2026/10/soltice-liver-protection-pro-s2-review.html",
+  "labels": [
+   "건강기능식품"
+  ],
+  "date": "2026-10-16",
+  "tab": "건강",
+  "parts": [
+   "간"
+  ],
+  "type": "제품",
+  "price": 16900,
+  "priceBand": "1~3만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha145",
+  "site": "h.assetreport",
+  "title": "그리닷 김치 후기 13,637건 분석 | 성분·나트륨·가격 총정리 2026",
+  "url": "https://h.assetreport.kr/2026/10/greedot-kimchi-review-ingredients-sodium-price.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-17",
+  "tab": "건강",
+  "parts": [
+   "위장/소화",
+   "장/배변"
+  ],
+  "type": "제품",
+  "price": 20900,
+  "priceBand": "1~3만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb164",
+  "site": "health.assetreport",
+  "title": "라이락틴 후기 150건 분석 | 변비·복용시간·성분·가격 (2026.10)",
+  "url": "https://health.assetreport.kr/2026/10/lylactine-review-constipation-ingredients-price.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-10-18",
+  "tab": "건강",
+  "parts": [
+   "장/배변"
+  ],
+  "type": "제품",
+  "price": 29700,
+  "priceBand": "1~3만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz184",
+  "site": "healthzzang",
+  "title": "스마트폰 게임중독 검사, 자가진단 테스트",
+  "url": "https://www.healthzzang.com/2026/10/smartphone-game-addiction-test.html",
+  "labels": [
+   "자가검진",
+   "자가진단"
+  ],
+  "date": "2026-10-19",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz185",
+  "site": "healthzzang",
+  "title": "청소년우울증 검사, 자가진단 테스트",
+  "url": "https://www.healthzzang.com/2026/10/teen-depression-test.html",
+  "labels": [
+   "자가검진",
+   "자가진단"
+  ],
+  "date": "2026-10-19",
+  "tab": "건강",
+  "parts": [
+   "정신/수면",
+   "성장/아동"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha146",
+  "site": "h.assetreport",
+  "title": "스마트링 비교 | 오우라링5 63만원 vs 갤럭시링, 2년 총비용·수면 측정 차이 (2026)",
+  "url": "https://h.assetreport.kr/2026/10/smart-ring-oura-ring-5-vs-galaxy-ring-sleep-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-20",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz186",
+  "site": "healthzzang",
+  "title": "노인우울증 검사, 자가진단 테스트",
+  "url": "https://www.healthzzang.com/2026/10/senior-depression-test.html",
+  "labels": [
+   "자가검진",
+   "자가진단"
+  ],
+  "date": "2026-10-20",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz187",
+  "site": "healthzzang",
+  "title": "고독감 검사, 자가진단 테스트",
+  "url": "https://www.healthzzang.com/2026/10/loneliness-test.html",
+  "labels": [
+   "자가검진",
+   "자가진단"
+  ],
+  "date": "2026-10-20",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha147",
+  "site": "h.assetreport",
+  "title": "위고비 가격 2026 | 용량별 한 달 21만~41만원, 1년 총비용 450만원 계산",
+  "url": "https://h.assetreport.kr/2026/10/wegovy-price-2026-dosage-hospital.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-21",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz188",
+  "site": "healthzzang",
+  "title": "사회불안장애 검사, 자가진단 테스트",
+  "url": "https://www.healthzzang.com/2026/10/social-anxiety-test.html",
+  "labels": [
+   "자가검진",
+   "자가진단"
+  ],
+  "date": "2026-10-21",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz189",
+  "site": "healthzzang",
+  "title": "장건강 검사, 자가진단 테스트",
+  "url": "https://www.healthzzang.com/2026/10/gut-health-test.html",
+  "labels": [
+   "자가검진",
+   "자가진단"
+  ],
+  "date": "2026-10-21",
+  "tab": "건강",
+  "parts": [
+   "장/배변",
+   "위장/소화"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha148",
+  "site": "h.assetreport",
+  "title": "마운자로 가격 2026 | 용량별 27만~67만원, mg당 단가와 1년 총비용 계산",
+  "url": "https://h.assetreport.kr/2026/10/mounjaro-price-prescription-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-22",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb165",
+  "site": "health.assetreport",
+  "title": "암막커튼·수면안대 고르는 법 | 빛샘 막는 설치 치수와 안대 종류별 비교",
+  "url": "https://health.assetreport.kr/2026/10/blackout-curtain-sleep-mask-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-22",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz190",
+  "site": "healthzzang",
+  "title": "간건강 검사, 자가진단 테스트",
+  "url": "https://www.healthzzang.com/2026/10/liver-health-test.html",
+  "labels": [
+   "자가검진",
+   "자가진단"
+  ],
+  "date": "2026-10-22",
+  "tab": "건강",
+  "parts": [
+   "간"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha149",
+  "site": "h.assetreport",
+  "title": "위고비 마운자로 차이 | SURMOUNT-5 효과·부작용 비교와 1kg당 약값 계산",
+  "url": "https://h.assetreport.kr/2026/10/wegovy-vs-mounjaro-comparison-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-22",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz191",
+  "site": "healthzzang",
+  "title": "잠 잘 오는 음식 vs 방해하는 음식 | 키위·타트체리 연구와 카페인·술 마지막 시각",
+  "url": "https://www.healthzzang.com/2026/10/foods-for-better-sleep-vs-worse-sleep.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-22",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz192",
+  "site": "healthzzang",
+  "title": "잠 잘 오는 법, 수면 루틴 7단계 | 잠이 안 올 때 20분 규칙과 시간표",
+  "url": "https://www.healthzzang.com/2026/10/sleep-routine-7-steps-guide.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-22",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb166",
+  "site": "health.assetreport",
+  "title": "백색소음기 효과와 고르는 법 | 핑크·브라운 노이즈 차이, 안전 볼륨 50dB",
+  "url": "https://health.assetreport.kr/2026/10/white-noise-machine-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-22",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
  }
 ]
