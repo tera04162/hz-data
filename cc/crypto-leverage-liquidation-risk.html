@@ -16,8 +16,36 @@
 <p>국내 신고된 원화마켓 거래소는 일반적으로 선물 레버리지 거래를 제공하지 않습니다. 레버리지 상품을 쓰려고 신고되지 않은 해외 거래소를 이용하는 경우가 많은데, 이 경우 국내 이용자보호법의 보호를 기대하기 어렵고 입출금이 막힐 때 구제 수단이 거의 없습니다. 한국어 지원, 한국인 대상 이벤트가 있다고 해서 국내 신고가 되어 있다는 뜻이 아닙니다. 사용 전에 금융정보분석원의 신고 현황을 확인하세요.</p>
 <h2>그래도 사용한다면 지킬 원칙</h2>
 <ol><li>레버리지는 낮게(가능하면 사용하지 않기), 한 번의 손실이 총자산의 작은 비율로 제한되도록 포지션 크기를 정합니다.</li><li>진입 전에 손절 가격을 정하고, 청산가보다 훨씬 안쪽에 둡니다.</li><li>잃어도 생활에 지장 없는 돈만 사용합니다. 대출·신용 사용은 금물입니다.</li><li>손실을 만회하려고 배율을 올리지 않습니다(물타기와 배율 확대는 가장 흔한 파산 경로입니다).</li><li>하루 손실 한도를 정하고 도달하면 그날은 쉽니다.</li></ol>
-<h2>정리</h2>
-<p>레버리지는 수익을 키우는 도구가 아니라 <strong>변동성을 키우는 도구</strong>입니다. 배율의 역수만큼만 가격이 움직여도 증거금이 사라지는 구조와 손실 회복의 비대칭을 이해하면, 광고 속 '10배, 100배' 문구가 어떤 위험을 숨기고 있는지 보입니다.</p>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 청산가·손익 계산기</h2>
+<p>아래 계산기는 이 글의 단순 공식(청산 하락률 = 100 ÷ 배율, 유지증거금 반영)을 그대로 구현한 것입니다. 숫자는 브라우저 안에서만 계산되며 어디에도 전송되지 않습니다. 실제 청산가는 거래소마다 수수료·펀딩비·유지증거금 구간이 달라 차이가 날 수 있으므로 교육용 추정치로만 사용하세요.</p>
+<div class="cc-box" id="lv1"><h3>1) 청산가 계산기</h3>
+<label>증거금(원)</label><input id="lv-m" value="1,000,000">
+<label>레버리지 배율</label><input id="lv-l" value="10">
+<label>진입가(원)</label><input id="lv-p" value="100,000,000">
+<label>방향</label><select id="lv-d"><option value="L">롱(상승에 베팅)</option><option value="S">숏(하락에 베팅)</option></select>
+<label>유지증거금률(%)</label><input id="lv-r" value="0.5">
+<button onclick="lvCalc()">계산하기</button>
+<div class="cc-out" id="lv-o"></div>
+<div class="cc-note">공식: 롱 청산가 = 진입가 × (1 − 1/배율 + 유지증거금률), 숏 청산가 = 진입가 × (1 + 1/배율 − 유지증거금률). 수수료·펀딩비는 반영하지 않아 실제로는 더 일찍 청산될 수 있습니다.</div></div>
+<div class="cc-box" id="lv2"><h3>2) 허용 손실로 포지션 크기 정하기</h3>
+<label>총자산(원)</label><input id="ps-a" value="10,000,000">
+<label>한 번에 잃어도 되는 비율(%)</label><input id="ps-r" value="1">
+<label>손절 폭(진입가 대비 %)</label><input id="ps-s" value="5">
+<button onclick="psCalc()">계산하기</button>
+<div class="cc-out" id="ps-o"></div>
+<div class="cc-note">포지션 크기 = 허용 손실 ÷ 손절 폭. 레버리지는 이 포지션을 만들기 위해 필요한 만큼만 결과로 따라옵니다.</div></div>
+<script>
+function lvCalc(){var m=ccn(document.getElementById("lv-m").value),L=ccn(document.getElementById("lv-l").value),p=ccn(document.getElementById("lv-p").value),d=document.getElementById("lv-d").value,r=ccn(document.getElementById("lv-r").value)/100;
+if(!(m>0&&L>=1&&p>0)){document.getElementById("lv-o").innerHTML="값을 확인해 주세요.";return}
+var pos=m*L,liq=d=="L"?p*(1-1/L+r):p*(1+1/L-r),gap=Math.abs(p-liq)/p*100;
+var h="<p>포지션 크기: <b>"+ccf(pos)+"원</b> · 청산가: <span class='cc-big'>"+ccf(liq)+"원</span> · 진입가 대비 <b>"+gap.toFixed(2)+"%</b> 움직이면 청산</p><table><tr><th>가격 변동</th><th>손익(원)</th><th>증거금 대비</th></tr>";
+[-10,-5,-3,-1,1,3,5,10].forEach(function(x){var pnl=pos*x/100*(d=="L"?1:-1),pc=pnl/m*100,dead=pc<=-100;h+="<tr><td>"+(x>0?"+":"")+x+"%</td><td>"+(dead?"청산 구간":ccf(pnl))+"</td><td>"+(dead?"-100%":pc.toFixed(1)+"%")+"</td></tr>"});
+document.getElementById("lv-o").innerHTML=h+"</table>"}
+function psCalc(){var a=ccn(document.getElementById("ps-a").value),r=ccn(document.getElementById("ps-r").value)/100,s=ccn(document.getElementById("ps-s").value)/100;
+if(!(a>0&&r>0&&s>0)){document.getElementById("ps-o").innerHTML="값을 확인해 주세요.";return}
+var loss=a*r,pos=loss/s;document.getElementById("ps-o").innerHTML="<p>허용 손실: <b>"+ccf(loss)+"원</b> → 최대 포지션 크기: <span class='cc-big'>"+ccf(pos)+"원</span> (총자산의 "+(pos/a*100).toFixed(0)+"%)</p><p>이 포지션을 증거금 "+ccf(pos/3)+"원으로 잡으면 3배, "+ccf(pos/10)+"원으로 잡으면 10배 레버리지에 해당합니다. 배율이 높을수록 청산가가 손절가에 가까워지므로, 청산가가 손절가보다 충분히 멀리 있는 배율을 고르세요.</p>"}
+lvCalc();psCalc();
+</script>
 <h2>계산 연습: 청산가 구하기</h2>
 <p>가상의 상황을 계산해 봅니다. 증거금 100만원으로 5배 레버리지 롱 포지션을 열었다고 가정합니다.</p>
 <ul><li>포지션 크기: 500만원</li><li>단순 계산상 청산 하락률: 100 ÷ 5 = 20%</li><li>진입가가 1억원이라면 청산가는 약 8,000만원 근처</li></ul>
@@ -29,5 +57,7 @@
 <p>이런 상황을 막으려면 거래 전에 규칙을 문서로 만들고, 규칙을 어길 상황이 오면 거래를 멈추는 것이 좋습니다.</p>
 <h2>거래소 선택과 보호 장치</h2>
 <p>고배율 상품을 제공하는 거래소에서 자동 청산 방식, 보험기금, 자동 감소(ADL) 정책이 다르게 운영됩니다. 시장이 급변할 때 청산이 연쇄적으로 일어나면 일부 이용자가 손실 이상의 영향을 받는 사례도 있습니다. 약관의 청산·손실 분담 조항을 읽어 보는 것이 필수입니다. 국내에서 신고되지 않은 거래소는 분쟁 시 보호를 기대하기 어렵다는 점을 다시 강조합니다.</p>
+<h2>정리</h2>
+<p>레버리지는 수익을 키우는 도구가 아니라 <strong>변동성을 키우는 도구</strong>입니다. 배율의 역수만큼만 가격이 움직여도 증거금이 사라지는 구조와 손실 회복의 비대칭을 이해하면, 광고 속 '10배, 100배' 문구가 어떤 위험을 숨기고 있는지 보입니다.</p>
 <h2>참고한 자료</h2><ul><li>선물·마진 거래의 청산 구조 일반 설명(증거금·유지증거금·펀딩비)</li><li>금융정보분석원 가상자산사업자 신고 현황(국내 신고 여부 확인)</li></ul>
 <hr /><p style="font-size:.9em;color:#4b5563;">이 글은 암호화폐 투자를 권유하거나 특정 종목을 추천하지 않습니다. 가상자산은 가격 변동이 크고 원금 손실이 발생할 수 있으며, 제도와 거래소 정책은 수시로 바뀝니다. 실제로 거래하거나 신고하기 전에는 금융당국·국세청·해당 거래소의 최신 공지를 직접 확인하세요.</p>

@@ -16,8 +16,24 @@
 <ul><li>가격이 계속 하락하는 자산에서 손실을 막아주지 못합니다. 표의 하락 경로에서도 분할 매수는 손실이었습니다.</li><li>수수료가 높으면 횟수가 늘수록 비용이 쌓입니다.</li><li>과세 구조에 따라 취득가액 관리가 더 복잡해집니다. 매수 기록을 꼭 남기세요.</li></ul>
 <h2>내 계획에 적용하기</h2>
 <ul><li>투자 가능 금액을 먼저 정하고, 기간(예: 6~12개월)과 간격(주 1회, 월 1회)을 정합니다.</li><li>급락해도 계획한 금액만 정해진 날에 삽니다. 계획을 바꾸고 싶다면 가격이 아니라 <strong>내 상황(소득, 비상금)이 바뀌었는지</strong>를 기준으로 합니다.</li><li>어떤 조건이면 중단할지도 적어 둡니다. 예를 들어 해당 코인에 구조적 문제(거래지원 종료 위험 등)가 생기는 경우입니다.</li><li>매수 기록을 매매일지에 남깁니다.</li></ul>
-<h2>정리</h2>
-<p>분할 매수와 일시 매수는 어느 쪽이 더 높은 수익을 내느냐의 문제가 아니라, <strong>불확실성 앞에서 어떤 위험을 줄이고 싶으냐</strong>의 선택입니다. 위 숫자는 가상 경로로 만든 것이므로 결과를 일반화하지 말고, 계산 방법을 내 상황에 대입해 보는 용도로 쓰세요.</p>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 분할 매수 시뮬레이터</h2>
+<p>월별 가격 흐름을 직접 입력해 분할 매수와 일시 매수의 결과를 비교해 보세요. 가격은 실제 시세가 아니라 상대적인 수치(예: 첫 달 100)로 넣으면 됩니다. 과거 수익률이 미래를 보장하지 않으며, 이 도구는 개념 이해용입니다.</p>
+<div class="cc-box"><h3>분할 vs 일시 매수</h3>
+<label>매달 투입 금액(원)</label><input id="dc-m" value="1,000,000">
+<label>시나리오 선택</label><select id="dc-s" onchange="dcPreset()"><option value="100,90,80,70,75,85,95,100,105,110,115,120">하락 후 반등</option><option value="100,105,110,115,120,125,130,135,140,145,150,155">꾸준한 상승</option><option value="100,95,90,85,80,75,70,65,60,55,50,45">꾸준한 하락</option><option value="100,110,95,105,90,110,95,105,90,110,95,100">등락 반복(횡보)</option><option value="">직접 입력</option></select>
+<label>월별 가격(쉼표로 구분, 최대 24개)</label><input id="dc-p" value="100,90,80,70,75,85,95,100,105,110,115,120">
+<button onclick="dcCalc()">계산하기</button>
+<div class="cc-out" id="dc-o"></div>
+<div class="cc-note">분할 매수: 매달 같은 금액으로 그 달 가격에 매수. 일시 매수: 총액을 첫 달에 한 번에 매수. 마지막 달 가격 기준으로 평가하며 수수료는 제외했습니다.</div></div>
+<script>
+function dcPreset(){var v=document.getElementById("dc-s").value;if(v)document.getElementById("dc-p").value=v;dcCalc()}
+function dcCalc(){var m=ccn(document.getElementById("dc-m").value),ps=document.getElementById("dc-p").value.split(",").map(function(x){return ccn(x.trim())}).filter(function(x){return x>0}).slice(0,24);
+if(!(m>0&&ps.length>=2)){document.getElementById("dc-o").innerHTML="월별 가격을 2개 이상 입력해 주세요.";return}
+var qty=0;ps.forEach(function(p){qty+=m/p});var tot=m*ps.length,last=ps[ps.length-1],v1=qty*last,avg=tot/qty,v2=tot/ps[0]*last;
+function pc(v){return ((v/tot-1)*100).toFixed(1)+"%"}
+document.getElementById("dc-o").innerHTML="<table><tr><th>구분</th><th>총 투입</th><th>평균 매수가</th><th>최종 평가금액</th><th>수익률</th></tr><tr><td>분할 매수</td><td>"+ccf(tot)+"원</td><td>"+avg.toFixed(1)+"</td><td>"+ccf(v1)+"원</td><td>"+pc(v1)+"</td></tr><tr><td>일시 매수</td><td>"+ccf(tot)+"원</td><td>"+ps[0].toFixed(1)+"</td><td>"+ccf(v2)+"원</td><td>"+pc(v2)+"</td></tr></table><p>"+(v1>v2?"이 경로에서는 분할 매수가 더 유리했습니다.":v1<v2?"이 경로에서는 일시 매수가 더 유리했습니다.":"두 방식의 결과가 같습니다.")+" 어느 쪽이 유리한지는 가격 경로에 따라 달라집니다.</p>"}
+dcCalc();
+</script>
 <h2>시뮬레이션을 내 상황에 맞게 바꿔 보기</h2>
 <p>위 계산은 스프레드시트에서 쉽게 재현할 수 있습니다. 다음 순서로 따라 해 보세요.</p>
 <ol><li>첫 번째 열에 개월 수(1~12)를 적고 두 번째 열에 가정한 가격 지수를 넣습니다.</li><li>세 번째 열에 '그 달 투입금 ÷ 가격'으로 매수 수량을 계산합니다.</li><li>수량 합계에 마지막 달 가격을 곱하면 분할 매수의 평가금액입니다.</li><li>일시 매수는 '총 투입금 ÷ 첫 달 가격 × 마지막 달 가격'으로 계산합니다.</li><li>가격 열을 내가 걱정하는 시나리오로 바꿔서 결과가 어떻게 달라지는지 비교합니다.</li></ol>
@@ -30,5 +46,7 @@
 <p>가격이 떨어졌다는 이유만으로 중단하거나 반대로 금액을 늘리는 것은 계획을 감정으로 바꾸는 일입니다.</p>
 <h2>분할 매수와 평균 단가 관리</h2>
 <p>매수 기록을 쌓으면 평균 단가를 직접 계산할 수 있습니다. 총 투입 금액을 총 수량으로 나누면 됩니다. 이 숫자를 알고 있어야 '지금 가격이 내 평균보다 높은가 낮은가'를 객관적으로 확인할 수 있고, 장기적으로 과세가 시행될 때 취득가액 계산에도 도움이 됩니다.</p>
+<h2>정리</h2>
+<p>분할 매수와 일시 매수는 어느 쪽이 더 높은 수익을 내느냐의 문제가 아니라, <strong>불확실성 앞에서 어떤 위험을 줄이고 싶으냐</strong>의 선택입니다. 위 숫자는 가상 경로로 만든 것이므로 결과를 일반화하지 말고, 계산 방법을 내 상황에 대입해 보는 용도로 쓰세요.</p>
 <h2>참고한 자료</h2><ul><li>본 글의 수치는 모두 편집팀이 만든 가상 가격 경로를 이용해 직접 계산한 값입니다.</li></ul>
 <hr /><p style="font-size:.9em;color:#4b5563;">이 글은 암호화폐 투자를 권유하거나 특정 종목을 추천하지 않습니다. 가상자산은 가격 변동이 크고 원금 손실이 발생할 수 있으며, 제도와 거래소 정책은 수시로 바뀝니다. 실제로 거래하거나 신고하기 전에는 금융당국·국세청·해당 거래소의 최신 공지를 직접 확인하세요.</p>

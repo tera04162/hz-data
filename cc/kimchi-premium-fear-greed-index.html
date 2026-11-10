@@ -15,9 +15,22 @@
 <p>전체 암호화폐 시가총액 중 비트코인이 차지하는 비중입니다. 도미넌스가 높아지면 자금이 비트코인으로 쏠리는 시기, 낮아지면 알트코인으로 분산되는 시기로 해석합니다. 하지만 스테이블코인을 분모에 포함하는지에 따라 값이 달라지고, 새 코인이 대거 등장하면 비중이 바뀌기 때문에 단독 신호로 쓰기 어렵습니다.</p>
 <h2>지표를 쓰는 올바른 순서</h2>
 <ol><li><strong>지표가 무엇을 계산하는지</strong> 먼저 확인합니다.</li><li><strong>내 계획과 비교합니다.</strong> 지표가 어떻다고 계획 전체를 바꾸지는 않습니다.</li><li><strong>하나가 아니라 여러 지표</strong>를 같이 봅니다. 서로 어긋날 때는 불확실성이 크다는 뜻입니다.</li><li><strong>기록합니다.</strong> 지표를 근거로 판단했다면 매매일지에 적고, 나중에 맞았는지 복기합니다.</li></ol>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 김치프리미엄 계산기</h2>
+<p>국내 거래소 가격과 해외 거래소 달러 가격, 환율을 넣으면 프리미엄을 계산해 줍니다. 값은 거래소 앱에서 같은 시각에 확인한 숫자를 쓰세요. 환율은 은행 고시 환율보다 실제 환전·송금 비용이 더 클 수 있습니다.</p>
+<div class="cc-box"><h3>김치프리미엄 = (국내가 − 해외가×환율) ÷ (해외가×환율)</h3>
+<label>국내 거래소 가격(원)</label><input id="kp-a" value="120,000,000">
+<label>해외 거래소 가격(달러)</label><input id="kp-b" value="80,000">
+<label>원/달러 환율</label><input id="kp-c" value="1,450">
+<button onclick="kpCalc()">계산하기</button>
+<div class="cc-out" id="kp-o"></div>
+<div class="cc-note">프리미엄이 양수면 국내가 비싼 상태, 음수면 싼 상태(역프리미엄)입니다. 차익거래는 송금 수수료, 트래블룰, 이동 시간 중 가격 변동 때문에 계산처럼 쉽지 않습니다.</div></div>
+<script>
+function kpCalc(){var a=ccn(document.getElementById("kp-a").value),b=ccn(document.getElementById("kp-b").value),c=ccn(document.getElementById("kp-c").value);
+if(!(a>0&&b>0&&c>0)){document.getElementById("kp-o").innerHTML="값을 확인해 주세요.";return}
+var g=b*c,pm=(a-g)/g*100;document.getElementById("kp-o").innerHTML="<p>해외 가격을 원화로 환산하면 <b>"+ccf(g)+"원</b> → 김치프리미엄 <span class='cc-big'>"+pm.toFixed(2)+"%</span> ("+ccf(a-g)+"원 차이)</p><p>"+(pm>=3?"프리미엄이 평소보다 큰 편입니다. 급하게 국내에서 사기보다 분할 일정을 조정해 볼 수 있습니다.":pm<=-1?"역프리미엄 구간입니다. 국내가 해외보다 싸게 거래되고 있습니다.":"일반적인 범위로 보입니다.")+"</p>"}
+kpCalc();
+</script>
 <figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-kimchi-premium-fear-greed-index-3.webp" alt="시장 지표 3가지 의미와 한계 요약표" title="시장 지표 3가지 의미와 한계 요약표" width="1000" height="464" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
-<h2>정리</h2>
-<p>김치프리미엄은 국내외 가격 차이, 공포·탐욕 지수는 시장 심리, 도미넌스는 자금 쏠림을 보여줍니다. 모두 유용한 참고 자료지만 방향을 보장하지 않으며, 계산 방식과 한계를 알고 쓸 때만 도움이 됩니다.</p>
 <h2>지표를 실제 판단에 쓰는 사례</h2>
 <h3>사례 1: 김치프리미엄이 크게 벌어진 날</h3>
 <p>국내 가격이 해외보다 눈에 띄게 비싼 날 급하게 국내에서 사려고 하면 평소보다 비싸게 사는 셈입니다. 이런 날은 분할 매수 일정을 하루 이틀 미루거나 소액으로만 진행할 수 있습니다. 반대로 해외 자산을 가진 사람이 환전 후 국내로 옮겨 팔려는 경우에는 프리미엄이 유리해 보이지만, 트래블룰과 환전 비용, 이동 시간 동안의 가격 변동을 감안해야 합니다.</p>
@@ -28,5 +41,7 @@
 <ul><li>김치프리미엄은 거래소 사이트와 환율을 직접 확인해 위 공식으로 계산해 볼 수 있습니다.</li><li>공포·탐욕 지수는 제공 사이트가 어떤 요소를 어떤 비중으로 쓰는지 설명 문서를 읽어 보세요.</li><li>도미넌스는 스테이블코인 포함 여부가 다른 사이트가 많으니 하나의 사이트만 일관되게 비교합니다.</li></ul>
 <h2>지표가 같은 방향을 가리킬 때와 엇갈릴 때</h2>
 <p>여러 지표가 동시에 같은 방향을 보여도 그것이 확률을 높일 뿐 확정은 아닙니다. 서로 엇갈릴 때는 불확실성이 크다는 뜻이므로 포지션 크기를 줄이는 쪽이 낫습니다. 지표를 쓸 때는 '맞았는가'보다 '내가 지표를 근거로 한 판단이 일관되었는가'를 기록하고 복기하는 편이 장기적으로 도움이 됩니다.</p>
+<h2>정리</h2>
+<p>김치프리미엄은 국내외 가격 차이, 공포·탐욕 지수는 시장 심리, 도미넌스는 자금 쏠림을 보여줍니다. 모두 유용한 참고 자료지만 방향을 보장하지 않으며, 계산 방식과 한계를 알고 쓸 때만 도움이 됩니다.</p>
 <h2>참고한 자료</h2><ul><li>Alternative.me Crypto Fear &amp; Greed Index 산출 방식 설명</li><li>김치프리미엄은 국내 거래소와 해외 거래소 가격 및 환율을 직접 계산해 확인(위 공식)</li></ul>
 <hr /><p style="font-size:.9em;color:#4b5563;">이 글은 암호화폐 투자를 권유하거나 특정 종목을 추천하지 않습니다. 가상자산은 가격 변동이 크고 원금 손실이 발생할 수 있으며, 제도와 거래소 정책은 수시로 바뀝니다. 실제로 거래하거나 신고하기 전에는 금융당국·국세청·해당 거래소의 최신 공지를 직접 확인하세요.</p>

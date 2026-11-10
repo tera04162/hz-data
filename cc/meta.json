@@ -113,7 +113,7 @@
   "title": "코인 세금 2029년으로 또 미뤄지나: 22% 세율·250만원 공제 계산법 (2026년 11월 현황)",
   "desc": "가상자산 과세가 2027년에서 2029년으로 추가 유예되는 방안이 발표된 현황과 22% 세율, 250만원 공제, 취득가액 계산 예시, 손실 이월공제 도입 내용을 정리했습니다.",
   "labels": "코인입문, 세금",
-  "chars": 2879,
+  "chars": 4490,
   "imgs": [
    "cc-crypto-tax-korea-2029-deferral-1.webp",
    "cc-crypto-tax-korea-2029-deferral-2.webp",
@@ -185,7 +185,7 @@
   "title": "김치프리미엄 계산법과 공포탐욕지수 읽는 법: 시장 지표 3가지 한계까지",
   "desc": "김치프리미엄 계산 공식과 예시, 공포·탐욕 지수의 구성, 비트코인 도미넌스까지 시장 지표를 읽는 방법과 이 지표들이 틀릴 수 있는 이유를 정리했습니다.",
   "labels": "코인입문, 시장분석",
-  "chars": 2069,
+  "chars": 3643,
   "imgs": [
    "cc-kimchi-premium-fear-greed-index-1.webp",
    "cc-kimchi-premium-fear-greed-index-2.webp",
@@ -203,7 +203,7 @@
   "title": "코인 분할매수 vs 한 번에 매수: 12개월 가상 시나리오로 직접 계산해 보기",
   "desc": "매달 100만원씩 12번 나눠 사는 분할매수와 처음에 1,200만원을 한 번에 사는 방식을 상승·하락·V자 반등 세 가상 시나리오로 비교하고 어떤 때 어느 쪽이 유리한지 설명합니다.",
   "labels": "코인입문, 투자전략",
-  "chars": 2059,
+  "chars": 4014,
   "imgs": [
    "cc-dca-vs-lump-sum-simulation-1.webp",
    "cc-dca-vs-lump-sum-simulation-2.webp",
@@ -275,7 +275,7 @@
   "title": "코인 레버리지 청산 구조 이해하기: 10배면 10%만 역행해도 끝, 계산표로 보기",
   "desc": "레버리지 배율별 청산 하락률 계산, 손실률과 회복에 필요한 수익률 표, 선물 거래 수수료·펀딩비 위험, 국내 이용자가 알아야 할 미신고 해외 거래소 주의점을 정리했습니다.",
   "labels": "코인입문, 리스크관리",
-  "chars": 2204,
+  "chars": 4718,
   "imgs": [
    "cc-crypto-leverage-liquidation-risk-1.webp",
    "cc-crypto-leverage-liquidation-risk-2.webp",
