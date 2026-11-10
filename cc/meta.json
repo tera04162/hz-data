@@ -1,0 +1,326 @@
+[
+ {
+  "n": 1,
+  "slug": "crypto-first-week-checklist",
+  "title": "코인 거래소 계정 만든 첫 일주일, 소액 테스트부터 하는 순서 (2026 체크리스트)",
+  "desc": "거래소 가입 직후 일주일 동안 보안 설정, 입금·매수·매도·출금 소액 테스트, 투자 한도 정하기까지 순서대로 정리한 초보자용 체크리스트입니다.",
+  "labels": "코인입문, 시작하기",
+  "chars": 2431,
+  "imgs": [
+   "cc-crypto-first-week-checklist-1.webp",
+   "cc-crypto-first-week-checklist-2.webp",
+   "cc-crypto-first-week-checklist-3.webp"
+  ],
+  "alts": [
+   "코인 거래소 가입 후 첫 일주일 체크리스트 대표 이미지",
+   "거래소 가입 후 7일 동안 해야 할 일 일정표",
+   "입금 매수 매도 출금 소액 테스트 4단계 순서도"
+  ]
+ },
+ {
+  "n": 2,
+  "slug": "bitcoin-vs-ethereum-differences",
+  "title": "비트코인과 이더리움은 뭐가 다를까: 목적·합의방식·공급량 표로 정리",
+  "desc": "비트코인과 이더리움의 출시 시점, 합의 방식, 공급량, 블록 시간, 스마트컨트랙트 여부를 한 표로 비교하고 각각 어떤 용도에 맞는지 설명합니다.",
+  "labels": "코인입문, 기초지식",
+  "chars": 2267,
+  "imgs": [
+   "cc-bitcoin-vs-ethereum-differences-1.webp",
+   "cc-bitcoin-vs-ethereum-differences-2.webp",
+   "cc-bitcoin-vs-ethereum-differences-3.webp"
+  ],
+  "alts": [
+   "비트코인과 이더리움 차이 비교 대표 이미지",
+   "비트코인과 이더리움 항목별 비교표",
+   "이더리움 스마트컨트랙트 실행 과정 순서도"
+  ]
+ },
+ {
+  "n": 3,
+  "slug": "how-to-choose-crypto-exchange",
+  "title": "국내 코인 거래소 고르는 기준 5가지: 수수료보다 먼저 볼 것들",
+  "desc": "가상자산사업자 신고 여부, 원화마켓과 실명계좌, 수수료와 호가 두께, 상장 정책, 보안 체계까지 거래소를 고를 때 확인할 5가지 기준을 정리했습니다.",
+  "labels": "코인입문, 거래소",
+  "chars": 2220,
+  "imgs": [
+   "cc-how-to-choose-crypto-exchange-1.webp",
+   "cc-how-to-choose-crypto-exchange-2.webp",
+   "cc-how-to-choose-crypto-exchange-3.webp"
+  ],
+  "alts": [
+   "국내 코인 거래소 선택 기준 대표 이미지",
+   "거래소 선택 시 확인할 5가지 기준 체크표",
+   "수수료율에 따른 100만원 매수·매도 왕복 수수료 비교 막대그래프"
+  ]
+ },
+ {
+  "n": 4,
+  "slug": "crypto-wallet-seed-phrase-safety",
+  "title": "핫월렛과 콜드월렛 차이, 시드구문 보관법: 코인을 잃어버리지 않는 기본기",
+  "desc": "거래소 보관과 개인 지갑의 차이, 핫월렛·콜드월렛 비교, 12·24단어 시드구문 보관 원칙, 하드웨어 지갑 구매 시 주의점까지 쉽게 정리했습니다.",
+  "labels": "코인입문, 보안",
+  "chars": 2148,
+  "imgs": [
+   "cc-crypto-wallet-seed-phrase-safety-1.webp",
+   "cc-crypto-wallet-seed-phrase-safety-2.webp",
+   "cc-crypto-wallet-seed-phrase-safety-3.webp"
+  ],
+  "alts": [
+   "핫월렛 콜드월렛 시드구문 보관법 대표 이미지",
+   "핫월렛과 콜드월렛 특징 비교표",
+   "개인 지갑 생성 후 시드구문 백업 순서도"
+  ]
+ },
+ {
+  "n": 5,
+  "slug": "travel-rule-deposit-withdrawal-guide",
+  "title": "트래블룰 때문에 출금이 막힐 때: 100만원 기준과 입출금 체크리스트",
+  "desc": "트래블룰이 무엇인지, 100만원 기준과 소액 출금 규제 강화 흐름, 개인지갑 출금이 막히는 이유와 영문 이름 일치 같은 해결 체크리스트를 정리했습니다.",
+  "labels": "코인입문, 제도·규제",
+  "chars": 2403,
+  "imgs": [
+   "cc-travel-rule-deposit-withdrawal-guide-1.webp",
+   "cc-travel-rule-deposit-withdrawal-guide-2.webp",
+   "cc-travel-rule-deposit-withdrawal-guide-3.webp"
+  ],
+  "alts": [
+   "트래블룰 입출금 체크리스트 대표 이미지",
+   "트래블룰이 적용되는 가상자산 출금 단계 순서도",
+   "트래블룰 금액 구간별 법적 성격과 실무 차이 표"
+  ]
+ },
+ {
+  "n": 6,
+  "slug": "virtual-asset-user-protection-act",
+  "title": "가상자산이용자보호법 정리: 내 돈은 어디까지 보호받을까 (2026년 11월 기준)",
+  "desc": "2024년 7월 시행된 가상자산이용자보호법의 예치금 분리 보관, 콜드월렛 80%, 불공정거래 금지 내용과 보호받지 못하는 경우, 2단계 입법 현황까지 정리했습니다.",
+  "labels": "코인입문, 제도·규제",
+  "chars": 2439,
+  "imgs": [
+   "cc-virtual-asset-user-protection-act-1.webp",
+   "cc-virtual-asset-user-protection-act-2.webp",
+   "cc-virtual-asset-user-protection-act-3.webp"
+  ],
+  "alts": [
+   "가상자산이용자보호법 핵심 내용 대표 이미지",
+   "가상자산이용자보호법 제정부터 2단계 입법 논의까지의 흐름",
+   "가상자산이용자보호법으로 보호되는 영역과 보호받기 어려운 영역 비교표"
+  ]
+ },
+ {
+  "n": 7,
+  "slug": "crypto-tax-korea-2029-deferral",
+  "title": "코인 세금 2029년으로 또 미뤄지나: 22% 세율·250만원 공제 계산법 (2026년 11월 현황)",
+  "desc": "가상자산 과세가 2027년에서 2029년으로 추가 유예되는 방안이 발표된 현황과 22% 세율, 250만원 공제, 취득가액 계산 예시, 손실 이월공제 도입 내용을 정리했습니다.",
+  "labels": "코인입문, 세금",
+  "chars": 2879,
+  "imgs": [
+   "cc-crypto-tax-korea-2029-deferral-1.webp",
+   "cc-crypto-tax-korea-2029-deferral-2.webp",
+   "cc-crypto-tax-korea-2029-deferral-3.webp"
+  ],
+  "alts": [
+   "가상자산 과세 유예 현황과 세금 계산법 대표 이미지",
+   "가상자산 과세 시행 시기가 미뤄진 과정 순서도",
+   "가상자산 양도차익에 22% 세율을 적용한 세금 계산 예시표"
+  ]
+ },
+ {
+  "n": 8,
+  "slug": "crypto-scam-types-and-defense",
+  "title": "코인 사기 수법 6가지와 대응법: 리딩방부터 지갑 피싱까지",
+  "desc": "투자 리딩방, 지인 사칭, 가짜 거래소 앱, 지갑 서명 피싱, 에어드롭 사기, 펌프앤덤프까지 흔한 코인 사기 6가지의 신호와 대응 방법을 표로 정리했습니다.",
+  "labels": "코인입문, 보안",
+  "chars": 2324,
+  "imgs": [
+   "cc-crypto-scam-types-and-defense-1.webp",
+   "cc-crypto-scam-types-and-defense-2.webp",
+   "cc-crypto-scam-types-and-defense-3.webp"
+  ],
+  "alts": [
+   "코인 사기 유형과 대응법 대표 이미지",
+   "코인 사기 6가지 유형별 신호와 대응 방법 표",
+   "지갑 서명 요청 전 점검 4단계 순서도"
+  ]
+ },
+ {
+  "n": 9,
+  "slug": "crypto-staking-risks-explained",
+  "title": "코인 스테이킹 이자는 어떻게 생길까: 연 수익률보다 먼저 볼 위험 4가지",
+  "desc": "지분증명 코인 스테이킹이 보상을 만드는 원리, 거래소·직접·유동성 스테이킹 방식 비교, 가격 하락과 락업, 슬래싱 같은 위험을 계산 예시와 함께 설명합니다.",
+  "labels": "코인입문, 심화",
+  "chars": 2066,
+  "imgs": [
+   "cc-crypto-staking-risks-explained-1.webp",
+   "cc-crypto-staking-risks-explained-2.webp",
+   "cc-crypto-staking-risks-explained-3.webp"
+  ],
+  "alts": [
+   "코인 스테이킹 원리와 위험 대표 이미지",
+   "스테이킹 보상과 코인 가격 하락의 손익 비교 예시 막대그래프",
+   "스테이킹 방식별 편의성과 위험 비교표"
+  ]
+ },
+ {
+  "n": 10,
+  "slug": "stablecoin-types-and-depeg-cases",
+  "title": "스테이블코인이란: 종류 3가지와 디페깅 사례, 원화 스테이블코인 입법 현황",
+  "desc": "USDT·USDC 같은 법정화폐 담보형, 암호자산 담보형, 알고리즘형의 차이와 UST 붕괴·USDC 일시 이탈 사례, 2026년 11월 원화 스테이블코인 입법 논의 현황을 정리했습니다.",
+  "labels": "코인입문, 기초지식",
+  "chars": 2038,
+  "imgs": [
+   "cc-stablecoin-types-and-depeg-cases-1.webp",
+   "cc-stablecoin-types-and-depeg-cases-2.webp",
+   "cc-stablecoin-types-and-depeg-cases-3.webp"
+  ],
+  "alts": [
+   "스테이블코인 종류와 디페깅 사례 대표 이미지",
+   "스테이블코인 담보 방식별 유형과 위험 비교표",
+   "법정화폐 담보형 스테이블코인의 발행과 상환 구조 순서도"
+  ]
+ },
+ {
+  "n": 11,
+  "slug": "kimchi-premium-fear-greed-index",
+  "title": "김치프리미엄 계산법과 공포탐욕지수 읽는 법: 시장 지표 3가지 한계까지",
+  "desc": "김치프리미엄 계산 공식과 예시, 공포·탐욕 지수의 구성, 비트코인 도미넌스까지 시장 지표를 읽는 방법과 이 지표들이 틀릴 수 있는 이유를 정리했습니다.",
+  "labels": "코인입문, 시장분석",
+  "chars": 2069,
+  "imgs": [
+   "cc-kimchi-premium-fear-greed-index-1.webp",
+   "cc-kimchi-premium-fear-greed-index-2.webp",
+   "cc-kimchi-premium-fear-greed-index-3.webp"
+  ],
+  "alts": [
+   "김치프리미엄 공포탐욕지수 읽는 법 대표 이미지",
+   "김치프리미엄 계산 예시표",
+   "시장 지표 3가지 의미와 한계 요약표"
+  ]
+ },
+ {
+  "n": 12,
+  "slug": "dca-vs-lump-sum-simulation",
+  "title": "코인 분할매수 vs 한 번에 매수: 12개월 가상 시나리오로 직접 계산해 보기",
+  "desc": "매달 100만원씩 12번 나눠 사는 분할매수와 처음에 1,200만원을 한 번에 사는 방식을 상승·하락·V자 반등 세 가상 시나리오로 비교하고 어떤 때 어느 쪽이 유리한지 설명합니다.",
+  "labels": "코인입문, 투자전략",
+  "chars": 2059,
+  "imgs": [
+   "cc-dca-vs-lump-sum-simulation-1.webp",
+   "cc-dca-vs-lump-sum-simulation-2.webp",
+   "cc-dca-vs-lump-sum-simulation-3.webp"
+  ],
+  "alts": [
+   "분할매수와 일시 매수 비교 시뮬레이션 대표 이미지",
+   "분할매수 시뮬레이션에 쓴 세 가지 가상 가격 경로 선그래프",
+   "세 가지 가상 시나리오별 일시 매수와 분할 매수 12개월 후 평가금액 비교표"
+  ]
+ },
+ {
+  "n": 13,
+  "slug": "bitcoin-halving-supply-schedule",
+  "title": "비트코인 반감기 정리: 4번의 반감기와 2,100만 개 공급 구조 (다음은 2028년경)",
+  "desc": "비트코인 반감기가 무엇인지, 2012·2016·2020·2024년 보상 변화와 누적 공급량, 2,100만 개 상한 구조와 반감기가 가격을 보장하지 않는 이유를 정리했습니다.",
+  "labels": "코인입문, 기초지식",
+  "chars": 2171,
+  "imgs": [
+   "cc-bitcoin-halving-supply-schedule-1.webp",
+   "cc-bitcoin-halving-supply-schedule-2.webp",
+   "cc-bitcoin-halving-supply-schedule-3.webp"
+  ],
+  "alts": [
+   "비트코인 반감기와 공급 구조 대표 이미지",
+   "비트코인 반감기별 블록당 채굴 보상 막대그래프",
+   "비트코인 반감기 회차별 시점과 보상 변화 및 누적 공급량 표"
+  ]
+ },
+ {
+  "n": 14,
+  "slug": "proof-of-work-vs-proof-of-stake",
+  "title": "작업증명(PoW)과 지분증명(PoS) 차이: 블록체인은 어떻게 합의에 도달할까",
+  "desc": "작업증명과 지분증명의 작동 원리, 보안 모델, 에너지 사용, 51% 공격 비용 구조를 비교하고 이더리움의 전환 사례까지 초보자 눈높이로 설명합니다.",
+  "labels": "코인입문, 기초지식",
+  "chars": 2136,
+  "imgs": [
+   "cc-proof-of-work-vs-proof-of-stake-1.webp",
+   "cc-proof-of-work-vs-proof-of-stake-2.webp",
+   "cc-proof-of-work-vs-proof-of-stake-3.webp"
+  ],
+  "alts": [
+   "작업증명과 지분증명 비교 대표 이미지",
+   "작업증명과 지분증명 항목별 비교표",
+   "블록체인에서 합의가 필요한 이유를 보여주는 4단계 순서도"
+  ]
+ },
+ {
+  "n": 15,
+  "slug": "exchange-hack-bankruptcy-lessons",
+  "title": "거래소 해킹·파산 사례에서 배우는 코인 보관 원칙 (Mt.Gox부터 업비트 2025까지)",
+  "desc": "Mt.Gox, 업비트 2019, FTX, 바이비트, 업비트 2025년 해킹까지 주요 거래소 사고 사례를 연표로 정리하고 개인이 지킬 수 있는 보관 원칙 5가지를 제안합니다.",
+  "labels": "코인입문, 보안",
+  "chars": 2386,
+  "imgs": [
+   "cc-exchange-hack-bankruptcy-lessons-1.webp",
+   "cc-exchange-hack-bankruptcy-lessons-2.webp",
+   "cc-exchange-hack-bankruptcy-lessons-3.webp"
+  ],
+  "alts": [
+   "거래소 해킹과 파산 사례 대표 이미지",
+   "2014년부터 2025년까지 주요 거래소 해킹과 파산 사건 연표",
+   "거래소와 개인 지갑으로 자산을 나누어 보관하는 원칙 순서도"
+  ]
+ },
+ {
+  "n": 16,
+  "slug": "crypto-leverage-liquidation-risk",
+  "title": "코인 레버리지 청산 구조 이해하기: 10배면 10%만 역행해도 끝, 계산표로 보기",
+  "desc": "레버리지 배율별 청산 하락률 계산, 손실률과 회복에 필요한 수익률 표, 선물 거래 수수료·펀딩비 위험, 국내 이용자가 알아야 할 미신고 해외 거래소 주의점을 정리했습니다.",
+  "labels": "코인입문, 리스크관리",
+  "chars": 2204,
+  "imgs": [
+   "cc-crypto-leverage-liquidation-risk-1.webp",
+   "cc-crypto-leverage-liquidation-risk-2.webp",
+   "cc-crypto-leverage-liquidation-risk-3.webp"
+  ],
+  "alts": [
+   "레버리지 청산 구조와 위험 대표 이미지",
+   "레버리지 배율별 청산에 이르는 가격 하락률 막대그래프",
+   "손실률별 원금 회복에 필요한 수익률 표"
+  ]
+ },
+ {
+  "n": 17,
+  "slug": "crypto-trading-journal-template",
+  "title": "코인 매매일지 쓰는 법과 복기 템플릿: 승률보다 기대값을 보는 이유",
+  "desc": "투자 판단을 기록하는 매매일지 항목, 월간 복기 질문, 승률과 손익비로 기대값을 계산하는 방법을 가상 예시와 함께 정리했습니다. 세금 신고용 기록으로도 쓸 수 있습니다.",
+  "labels": "코인입문, 투자습관",
+  "chars": 1988,
+  "imgs": [
+   "cc-crypto-trading-journal-template-1.webp",
+   "cc-crypto-trading-journal-template-2.webp",
+   "cc-crypto-trading-journal-template-3.webp"
+  ],
+  "alts": [
+   "코인 매매일지 쓰는 법과 복기 템플릿 대표 이미지",
+   "코인 매매일지 작성 예시표",
+   "승률별 매매 1회당 기대값 계산 막대그래프"
+  ]
+ },
+ {
+  "n": 18,
+  "slug": "crypto-glossary-and-reading-map",
+  "title": "암호화폐 용어 40개 쉬운 풀이와 입문 시리즈 읽는 순서",
+  "desc": "블록체인, 시드구문, 트래블룰, 슬리피지, 스테이킹, 청산 같은 초보자가 자주 헷갈리는 암호화폐 용어 40개를 쉬운 말로 풀고 코인체크 입문 시리즈 추천 읽는 순서를 안내합니다.",
+  "labels": "코인입문, 용어집",
+  "chars": 2451,
+  "imgs": [
+   "cc-crypto-glossary-and-reading-map-1.webp",
+   "cc-crypto-glossary-and-reading-map-2.webp",
+   "cc-crypto-glossary-and-reading-map-3.webp"
+  ],
+  "alts": [
+   "암호화폐 용어 풀이와 입문 시리즈 안내 대표 이미지",
+   "코인체크 입문 시리즈 추천 읽는 순서 5단계 순서도",
+   "입문 시리즈에서 자주 쓰는 숫자 기준 요약표"
+  ]
+ }
+]
