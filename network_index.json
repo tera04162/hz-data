@@ -9784,5 +9784,1145 @@
   "priceBand": "",
   "device": "",
   "brand": ""
+ },
+ {
+  "id": "hz193",
+  "site": "healthzzang",
+  "title": "비만도 계산기 | BMI·허리둘레로 바로 보는 한국 비만 단계와 키별 정상체중표",
+  "url": "https://www.healthzzang.com/2026/10/bmi-calculator-obesity-self-check-2026.html",
+  "labels": [
+   "건강정보",
+   "자가진단"
+  ],
+  "date": "2026-10-28",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz194",
+  "site": "healthzzang",
+  "title": "에스테리브 마데큐놀 후기 | 성분·가격·따가움 솔직 분석 (2026)",
+  "url": "https://www.healthzzang.com/2026/10/esthelive-madecunol-acne-spot-clear-review.html",
+  "labels": [
+   "화장품"
+  ],
+  "date": "2026-10-29",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 34800,
+  "priceBand": "3~5만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz195",
+  "site": "healthzzang",
+  "title": "GLP-1이란? 배부름 호르몬 작동 원리와 위고비 차이, 식사 순서로 늘리는 법",
+  "url": "https://www.healthzzang.com/2026/10/what-is-glp1-hormone-explained-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-31",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz196",
+  "site": "healthzzang",
+  "title": "다이어트 주사 맞기 전 자가 체크리스트 10 | 금기·주의 항목과 삭센다·위고비·마운자로·에페 비교",
+  "url": "https://www.healthzzang.com/2026/11/glp1-injection-pre-check-checklist-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-01",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz197",
+  "site": "healthzzang",
+  "title": "위고비 맞으면 안 먹어도 될까? 식욕억제 원리와 하루 최소 식사 기준, 먹는 위고비까지",
+  "url": "https://www.healthzzang.com/2026/11/wegovy-appetite-suppression-truth-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-02",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz198",
+  "site": "healthzzang",
+  "title": "혈당 스파이크 자가진단 테스트 | 증상 13문항+혈당 정상수치로 바로 확인",
+  "url": "https://www.healthzzang.com/2026/11/blood-sugar-spike-self-test-2026.html",
+  "labels": [
+   "건강정보",
+   "자가진단"
+  ],
+  "date": "2026-11-04",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz199",
+  "site": "healthzzang",
+  "title": "혈당 낮추는 음식 TOP 20 | 혈당지수(GI) 표와 의외로 높은 음식, 덜 오르게 먹는 법",
+  "url": "https://www.healthzzang.com/2026/11/low-glycemic-foods-top20-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-04",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz200",
+  "site": "healthzzang",
+  "title": "혈당 낮추는 법, 식사 순서부터 | 채소·단백질·밥 순서와 10분 간격, 한식 메뉴별 적용표",
+  "url": "https://www.healthzzang.com/2026/11/reverse-eating-order-blood-sugar-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-05",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz201",
+  "site": "healthzzang",
+  "title": "공복혈당 정상수치표와 자가 체크 | 100·110·126 단계별 의미, 새벽현상과 공복혈당 낮추는 법",
+  "url": "https://www.healthzzang.com/2026/11/fasting-blood-sugar-normal-range-2026.html",
+  "labels": [
+   "건강정보",
+   "자가진단"
+  ],
+  "date": "2026-11-05",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz202",
+  "site": "healthzzang",
+  "title": "갱년기 자가진단 테스트 | MRS 11문항으로 보는 증상 3영역 점수와 폐경 단계",
+  "url": "https://www.healthzzang.com/2026/11/menopause-self-test-2026.html",
+  "labels": [
+   "건강정보",
+   "자가진단"
+  ],
+  "date": "2026-11-06",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz203",
+  "site": "healthzzang",
+  "title": "탈모 자가진단 테스트 | 유형 6가지+증상 10문항, 가을 탈모와 병원 가야 할 신호",
+  "url": "https://www.healthzzang.com/2026/11/hair-loss-self-test-basp-2026.html",
+  "labels": [
+   "건강정보",
+   "자가진단"
+  ],
+  "date": "2026-11-07",
+  "tab": "건강",
+  "parts": [
+   "모발",
+   "머리/두피"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz204",
+  "site": "healthzzang",
+  "title": "어네이즈 눈썹염색약 후기 579개 분석 | 방치시간·패치테스트·가격",
+  "url": "https://www.healthzzang.com/2026/11/anaze-eyebrow-dye-review-patch-test-price.html",
+  "labels": [
+   "화장품"
+  ],
+  "date": "2026-11-08",
+  "tab": "뷰티",
+  "parts": [
+   "모발",
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 21900,
+  "priceBand": "1~3만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz205",
+  "site": "healthzzang",
+  "title": "피부 나이 자가진단 테스트 | 15문항으로 보는 피부 노화 속도와 눈가주름·탄력 관리",
+  "url": "https://www.healthzzang.com/2026/11/skin-age-self-test-2026.html",
+  "labels": [
+   "뷰티정보",
+   "자가진단"
+  ],
+  "date": "2026-11-09",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "자가진단",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz206",
+  "site": "healthzzang",
+  "title": "두피 케어 루틴 총정리 | 두피 타입별 샴푸·두피 스케일링 주기와 가격, 겨울 두피각질 잡는 법",
+  "url": "https://www.healthzzang.com/2026/11/scalp-care-routine-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-09",
+  "tab": "건강",
+  "parts": [
+   "머리/두피",
+   "모발",
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz207",
+  "site": "healthzzang",
+  "title": "피부 노화 늦추는 생활습관 10가지 | 선크림 양·레티놀·수면까지 30일 체크리스트",
+  "url": "https://www.healthzzang.com/2026/11/skin-aging-prevention-habits-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-09",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz208",
+  "site": "healthzzang",
+  "title": "갱년기 증상 순서와 시기 총정리 | 40대 초반 생리 변화부터 폐경 후 10년까지",
+  "url": "https://www.healthzzang.com/2026/11/menopause-symptoms-timeline-order-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-10",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz209",
+  "site": "healthzzang",
+  "title": "갱년기에 좋은 음식 TOP 15 | 여성호르몬 음식보다 중요한 칼슘·단백질, 하루 식단 계산기",
+  "url": "https://www.healthzzang.com/2026/11/menopause-friendly-foods-top15-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-11",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz210",
+  "site": "healthzzang",
+  "title": "여성 호르몬 밸런스 관리법 | 호르몬 불균형 검사할 것, 코르티솔 낮추는 7가지 습관",
+  "url": "https://www.healthzzang.com/2026/11/womens-hormone-balance-lifestyle-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-11",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hz211",
+  "site": "healthzzang",
+  "title": "저속노화 식단 완전 가이드 | 저속노화 밥 비율, 하버드 30년 연구, 내 식단 점수 테스트",
+  "url": "https://www.healthzzang.com/2026/11/slow-aging-diet-complete-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-12",
+  "tab": "건강",
+  "parts": [
+   "전신/면역"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha150",
+  "site": "h.assetreport",
+  "title": "위고비 처방 병원 찾는법 | 처방 기준·첫 진료 비용과 좋은 병원 고르는 5가지 신호",
+  "url": "https://h.assetreport.kr/2026/10/wegovy-prescription-hospital-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-27",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha151",
+  "site": "h.assetreport",
+  "title": "위고비 부작용 총정리 | 메스꺼움 44%부터 췌장염·탈모까지, 바로 중단해야 할 신호 7가지",
+  "url": "https://h.assetreport.kr/2026/10/wegovy-side-effects-warning-signs-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-27",
+  "tab": "건강",
+  "parts": [
+   "위장/소화",
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha152",
+  "site": "h.assetreport",
+  "title": "오젬픽 페이스란? 위고비 볼꺼짐 원인과 예방법 5가지, 관리 비용까지",
+  "url": "https://h.assetreport.kr/2026/10/ozempic-face-prevention-cost-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-10-28",
+  "tab": "뷰티",
+  "parts": [
+   "복부/체지방",
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha153",
+  "site": "h.assetreport",
+  "title": "마운자로 실비·위고비 보험 청구 될까? 실손 표준약관과 특약, 건강보험 급여 신청까지",
+  "url": "https://h.assetreport.kr/2026/10/obesity-treatment-insurance-claim-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-29",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha154",
+  "site": "h.assetreport",
+  "title": "연속혈당측정기 가격·종류 비교 | 덱스콤 G7·리브레·케어센스 에어 한 달 비용과 건강보험",
+  "url": "https://h.assetreport.kr/2026/11/cgm-price-comparison-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-01",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha155",
+  "site": "h.assetreport",
+  "title": "당뇨 전단계 기준 | 공복혈당 100·당화혈색소 5.7%, 검사 비용과 당뇨 58% 줄이는 법",
+  "url": "https://h.assetreport.kr/2026/11/prediabetes-diagnosis-criteria-cost-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-02",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha156",
+  "site": "h.assetreport",
+  "title": "디크솔 큐라스팟 후기 4.8점의 이면|쥐젖·비립종 기대치 점검",
+  "url": "https://h.assetreport.kr/2026/11/diksol-curaspot-review-colding-powder-pdrn.html",
+  "labels": [
+   "화장품"
+  ],
+  "date": "2026-11-02",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 31700,
+  "priceBand": "3~5만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha157",
+  "site": "h.assetreport",
+  "title": "혈당 스파이크 증상과 병원 가야 할 기준 | 식후 2시간 혈당 140·200 기준표와 줄이는 법",
+  "url": "https://h.assetreport.kr/2026/11/blood-sugar-spike-symptoms-when-to-see-doctor-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-04",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha158",
+  "site": "h.assetreport",
+  "title": "당화혈색소 수치별 의미와 관리 비용 | 평균 혈당 환산표·목표치·1% 낮추는 법",
+  "url": "https://h.assetreport.kr/2026/11/hba1c-levels-meaning-cost-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-04",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha159",
+  "site": "h.assetreport",
+  "title": "당뇨약 종류별 차이 총정리 | 메트포르민·SGLT-2·DPP-4 효과·부작용 비교와 2025 지침 변화",
+  "url": "https://h.assetreport.kr/2026/11/diabetes-medication-types-comparison-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-05",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha160",
+  "site": "h.assetreport",
+  "title": "엑소좀 시술 비용·효과·지속기간 | 주사가 아닌 이유, 레이저 병행 가격표와 연말 일정",
+  "url": "https://h.assetreport.kr/2026/11/exosome-treatment-cost-effect-duration-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-05",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha161",
+  "site": "h.assetreport",
+  "title": "리쥬란 가격 부위별 정리 | 힐러·HB·아이 1cc·2cc 가격과 3회 코스 총액, 숨은 비용",
+  "url": "https://h.assetreport.kr/2026/11/rejuran-price-by-area-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-05",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha162",
+  "site": "h.assetreport",
+  "title": "스킨부스터 종류별 비교 | 리쥬란·쥬베룩·물광·연어주사·엑소좀 가격·다운타임·지속기간",
+  "url": "https://h.assetreport.kr/2026/11/skin-booster-comparison-rejuran-juvelook-exosome-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-06",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha163",
+  "site": "h.assetreport",
+  "title": "갱년기 호르몬치료 비용과 부작용 | 여성호르몬제 7종 비교, 보험 적용과 유방암 위험 숫자",
+  "url": "https://h.assetreport.kr/2026/11/menopause-hormone-therapy-cost-side-effects-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-06",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha164",
+  "site": "h.assetreport",
+  "title": "울쎄라 vs 슈링크 비용·효과 비교 | 샷당 단가·지속기간·통증, 정품 팁 확인법",
+  "url": "https://h.assetreport.kr/2026/11/ulthera-vs-shurink-comparison-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-07",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha165",
+  "site": "h.assetreport",
+  "title": "보톡스 지속기간과 부위별 가격 | 이마·미간·사각턱 단위(U)와 제오민·국산 제품별 차이",
+  "url": "https://h.assetreport.kr/2026/11/botox-duration-price-by-area-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-07",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha166",
+  "site": "h.assetreport",
+  "title": "피부과 시술 순서 가이드 | 레이저·리프팅·스킨부스터·보톡스, 뭐부터 받고 몇 주 띄울까",
+  "url": "https://h.assetreport.kr/2026/11/dermatology-procedure-order-guide-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-08",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha167",
+  "site": "h.assetreport",
+  "title": "모발이식 비용 지역별 차이 | 1모낭 1,400원~2만원, 모·모낭 단위 함정과 비용 계산기",
+  "url": "https://h.assetreport.kr/2026/11/hair-transplant-cost-regional-difference-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-09",
+  "tab": "건강",
+  "parts": [
+   "머리/두피",
+   "모발"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha168",
+  "site": "h.assetreport",
+  "title": "탈모약 종류 비교 | 프로페시아 vs 아보다트, 효과 차이 28가닥과 한 달 약값·부작용",
+  "url": "https://h.assetreport.kr/2026/11/propecia-vs-avodart-comparison-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-09",
+  "tab": "건강",
+  "parts": [
+   "머리/두피",
+   "모발"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha169",
+  "site": "h.assetreport",
+  "title": "갱년기 검사 항목과 비용 | 여성호르몬 검사 수치 읽는 법, 보험 되는 검사와 국가검진 무료 항목",
+  "url": "https://h.assetreport.kr/2026/11/menopause-test-items-cost-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-10",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "ha170",
+  "site": "h.assetreport",
+  "title": "골다공증 검사·치료 비용 | 골밀도 검사 급여 기준, 프롤리아 주사 주기와 바뀐 급여 기간",
+  "url": "https://h.assetreport.kr/2026/11/osteoporosis-test-treatment-cost-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-11",
+  "tab": "건강",
+  "parts": [
+   "근육/관절"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb167",
+  "site": "health.assetreport",
+  "title": "위고비 중 단백질 보충제 고르는 법 | WPI·카제인·식물성 7가지 비교와 하루 섭취량",
+  "url": "https://health.assetreport.kr/2026/10/glp1-wegovy-protein-supplement-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-28",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb168",
+  "site": "health.assetreport",
+  "title": "겨울이불 추천 소재 비교 | 구스이불·양모·극세사·모달, 필파워와 진드기 세탁 온도까지",
+  "url": "https://health.assetreport.kr/2026/10/bedding-material-comparison-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-10-28",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb169",
+  "site": "health.assetreport",
+  "title": "식욕억제제 vs 다이어트 보조제 | 가르시니아·녹차추출물 등 6가지 성분 비교와 간 손상 주의",
+  "url": "https://health.assetreport.kr/2026/11/garcinia-appetite-suppressant-comparison-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-11-01",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb170",
+  "site": "health.assetreport",
+  "title": "다이어트 보조제 vs 위고비 차이 | 효과·비용·대상 비교와 먹는 위고비 국내 현황",
+  "url": "https://health.assetreport.kr/2026/11/diet-supplement-vs-glp1-comparison-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-11-02",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb171",
+  "site": "health.assetreport",
+  "title": "혈당 영양제 고르는 법 | 바나바잎·여주·계피, 식약처 기능성 있는 것 vs 없는 것 10가지",
+  "url": "https://health.assetreport.kr/2026/11/blood-sugar-supplement-guide-2026.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-11-02",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb172",
+  "site": "health.assetreport",
+  "title": "식후혈당 낮추는 보충제 6가지 비교 | 애사비·유청단백질·식이섬유 먹는 시점과 효과",
+  "url": "https://health.assetreport.kr/2026/11/post-meal-blood-sugar-supplement-comparison-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-04",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사",
+   "장/배변"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb173",
+  "site": "health.assetreport",
+  "title": "당뇨 환자 단백질 파우더 고르는 법 | 당류·신장 수치 기준과 식전 단백질 효과",
+  "url": "https://health.assetreport.kr/2026/11/protein-powder-for-diabetics-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-05",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사",
+   "신장/비뇨"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb174",
+  "site": "health.assetreport",
+  "title": "민감성 피부 저자극 화장품 고르는 법 | 피부장벽크림 성분 비교와 '저자극' 표시의 진짜 의미",
+  "url": "https://health.assetreport.kr/2026/11/sensitive-skin-cosmetics-ingredient-guide-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-05",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb175",
+  "site": "health.assetreport",
+  "title": "당뇨간식 저당간식 BEST 15 | 알룰로스·에리스리톨 등 대체감미료 6가지 비교와 제로 표시 함정",
+  "url": "https://health.assetreport.kr/2026/11/low-sugar-snack-guide-sweeteners-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-06",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb176",
+  "site": "health.assetreport",
+  "title": "혈당측정기 추천 가정용 비교 | 케어센스·아큐첵 검사지 1매 가격, 1년 비용과 건강보험 지원",
+  "url": "https://health.assetreport.kr/2026/11/home-blood-glucose-meter-comparison-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-06",
+  "tab": "건강",
+  "parts": [
+   "혈당/대사"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb177",
+  "site": "health.assetreport",
+  "title": "홈케어 스킨부스터 대체 제품 비교 | PDRN 앰플·크림, 엑소좀·마이크로니들 앰플 성분표 읽는 법",
+  "url": "https://health.assetreport.kr/2026/11/home-skin-booster-pdrn-ampoule-comparison-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-07",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb178",
+  "site": "health.assetreport",
+  "title": "갱년기 영양제 추천 성분 7가지 비교 | 백수오 vs 승마, 건강기능식품과 일반의약품 차이부터",
+  "url": "https://health.assetreport.kr/2026/11/menopause-supplement-baeksuo-vs-cimicifuga-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-08",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성",
+   "전신/면역"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb179",
+  "site": "health.assetreport",
+  "title": "탈모샴푸 추천 성분 비교 | 식약처 고시 4가지 성분과 두피 타입별 고르는 법",
+  "url": "https://health.assetreport.kr/2026/11/anti-hairloss-shampoo-ingredients-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-09",
+  "tab": "뷰티",
+  "parts": [
+   "머리/두피",
+   "모발"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb180",
+  "site": "health.assetreport",
+  "title": "핏브라우닝 후기 15,184건 분석 | 성분·가격·먹는 법·부작용 총정리",
+  "url": "https://health.assetreport.kr/2026/11/fit-browning-review-ingredients-price-2026-11.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-11-09",
+  "tab": "건강",
+  "parts": [
+   "복부/체지방"
+  ],
+  "type": "제품",
+  "price": 29700,
+  "priceBand": "1~3만원",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb181",
+  "site": "health.assetreport",
+  "title": "여성 유산균 추천 비교 | 질유산균 기능성 원료(GR-1·RC-14)와 보장 균수 읽는 법",
+  "url": "https://health.assetreport.kr/2026/11/womens-probiotics-comparison-2026.html",
+  "labels": [
+   "뷰티정보"
+  ],
+  "date": "2026-11-10",
+  "tab": "뷰티",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb182",
+  "site": "health.assetreport",
+  "title": "갱년기 홍조에 좋은 영양성분 | 이소플라본·에쿠올 근거 순위와 열감을 부르는 습관",
+  "url": "https://health.assetreport.kr/2026/11/menopause-hot-flash-nutrients-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-11",
+  "tab": "건강",
+  "parts": [
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb183",
+  "site": "health.assetreport",
+  "title": "50대 여성 종합비타민 추천 | 철은 줄이고 비타민D·B12는 챙기는 멀티비타민 고르는 법",
+  "url": "https://health.assetreport.kr/2026/11/50s-women-multivitamin-guide-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-11",
+  "tab": "건강",
+  "parts": [
+   "전신/면역"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb184",
+  "site": "health.assetreport",
+  "title": "철분제 추천 비교 | 폐경 전후 필요량이 다른 이유, 헴철·킬레이트철과 하루 걸러 먹는 법",
+  "url": "https://health.assetreport.kr/2026/11/iron-supplement-postmenopausal-caution-2026.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-12",
+  "tab": "건강",
+  "parts": [
+   "전신/면역",
+   "자궁/여성"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
+ },
+ {
+  "id": "hb185",
+  "site": "health.assetreport",
+  "title": "바데콜린 앰플 후기 2,205건·가격·전성분 총정리 (2026.11)",
+  "url": "https://health.assetreport.kr/2026/11/badecolin-ampoule-review-price-ingredients-2026.html",
+  "labels": [
+   "화장품"
+  ],
+  "date": "2026-11-12",
+  "tab": "뷰티",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 43000,
+  "priceBand": "3~5만원",
+  "device": "",
+  "brand": ""
  }
 ]
