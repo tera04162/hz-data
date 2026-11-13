@@ -103,25 +103,43 @@ class Store(unittest.TestCase):
 
 
 class Parsers(unittest.TestCase):
-    def test_fred(self):
-        txt = "observation_date,DGS10\n2026-11-10,4.21\n2026-11-11,.\n2026-11-12,\n2026-11-13,4.3\n"
-        self.assertEqual(fetch.parse_fred_csv(txt), {"2026-11-10": 4.21, "2026-11-13": 4.3})
+    def test_naver_index(self):
+        txt = '[["날짜","시가","고가","저가","종가","거래량"],\n["20261112", 4000.1, 4010, 3990, 4005.5, 1],\n["20261113", 4005, 4020, 4000, 4012.25, 2]]'
+        self.assertEqual(fetch.parse_naver_index(txt), {"2026-11-12": 4005.5, "2026-11-13": 4012.25})
 
-    def test_yahoo(self):
-        txt = json.dumps({"chart": {"result": [{"meta": {"gmtoffset": 32400}, "timestamp": [1763078400, 1763164800],
-                                                  "indicators": {"quote": [{"close": [4000.5, None]}]}}]}})
-        out = fetch.parse_yahoo_chart(txt)
-        self.assertEqual(list(out.values()), [4000.5])
-        self.assertRegex(list(out)[0], r"^2025-11-1\d$")
+    def test_naver_rows(self):
+        txt = json.dumps([{"localTradedAt": "2026-11-12T16:58:23-05:00", "closePrice": "7,592.40"},
+                          {"localTradedAt": "2026-11-13", "closePrice": "1,337.50"}, {"localTradedAt": "", "closePrice": "1"}])
+        self.assertEqual(fetch.parse_naver_rows(txt), {"2026-11-12": 7592.4, "2026-11-13": 1337.5})
+
+    def test_cboe(self):
+        self.assertEqual(fetch.parse_cboe_csv("DATE,OPEN,HIGH,LOW,CLOSE\n01/02/1990,17.24,17.3,17.1,17.2\n"), {"1990-01-02": 17.2})
+        self.assertEqual(fetch.parse_cboe_csv("DATE,SPX\n11/12/2026,7592.400000\n"), {"2026-11-12": 7592.4})
+
+    def test_dbnomics(self):
+        txt = json.dumps({"series": {"docs": [{"period": ["2026-11-10", "2026-11-11", "2026-11-12"], "value": [4.98, "NA", 5.1]}]}})
+        self.assertEqual(fetch.parse_dbnomics(txt), {"2026-11-10": 4.98, "2026-11-12": 5.1})
 
     def test_treasury(self):
         txt = 'Date,"1 Mo","2 Yr","10 Yr"\n11/12/2026,4.1,3.9,4.25\n11/10/2026,4.1,N/A,4.2\n'
         self.assertEqual(fetch.parse_treasury_csv(txt, "10 Yr"), {"2026-11-12": 4.25, "2026-11-10": 4.2})
         self.assertEqual(fetch.parse_treasury_csv(txt, "2 Yr"), {"2026-11-12": 3.9})
 
-    def test_naver(self):
-        txt = '[["날짜","시가","고가","저가","종가","거래량"],\n["20261112", 4000.1, 4010, 3990, 4005.5, 1],\n["20261113", 4005, 4020, 4000, 4012.25, 2]]'
-        self.assertEqual(fetch.parse_naver_index(txt), {"2026-11-12": 4005.5, "2026-11-13": 4012.25})
+    def test_coinbase_drops_unfinished_day(self):
+        txt = json.dumps([[1794528000, 1, 2, 3, 69389.42, 5], [1794441600, 1, 2, 3, 71369.9, 5]])
+        self.assertEqual(fetch.parse_coinbase(txt, "2026-11-13"), {"2026-11-12": 71369.9})
+
+    def test_paged_stops_at_known_history(self):
+        pages = {1: {"2026-11-13": 1.0, "2026-11-12": 1.0}, 2: {"2026-10-01": 1.0}, 3: {"2026-09-01": 1.0}}
+        calls = []
+        old = fetch.http_get
+        fetch.http_get = lambda u: (calls.append(u), u)[1]
+        try:
+            out = fetch.paged(lambda p: p, lambda p: pages.get(p, {}), "2026-11-12")
+        finally:
+            fetch.http_get = old
+        self.assertEqual(calls, [1, 2])                # 이미 가진 구간에 닿으면 3쪽은 받지 않는다
+        self.assertEqual(len(out), 3)
 
 
 if __name__ == "__main__":
