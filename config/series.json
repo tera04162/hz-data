@@ -1,5 +1,5 @@
 {
-  "_comment": "시계열 정의. sources는 우선순위 순서 — 같은 날짜가 겹치면 앞쪽 소스 값을 쓴다. 전부 키 없이 받을 수 있는 공개 소스만 쓴다.",
+  "_comment": "시계열 정의. sources는 우선순위 순서 — 같은 날짜가 겹치면 앞쪽 소스 값을 쓴다. 전부 키 없이 받을 수 있는 공개 소스만 쓴다. 한 시계열의 소스들은 반드시 '같은 상품의 같은 종가'여야 한다(정의가 다른 값을 섞으면 이음매에서 가짜 급등락이 생긴다).",
   "series": [
     {"id": "kospi",  "name": "코스피",        "group": "한국주식", "unit": "pt", "digits": 2, "kind": "price",
      "sources": [{"type": "yahoo", "symbol": "^KS11"}, {"type": "naver_index", "symbol": "KOSPI"}]},
@@ -12,21 +12,21 @@
     {"id": "vix",    "name": "VIX 변동성",    "group": "심리",     "unit": "",   "digits": 2, "kind": "level",
      "sources": [{"type": "fred", "symbol": "VIXCLS"}, {"type": "yahoo", "symbol": "^VIX"}]},
     {"id": "us10y",  "name": "미국 10년 금리", "group": "금리",     "unit": "%",  "digits": 2, "kind": "yield",
-     "sources": [{"type": "fred", "symbol": "DGS10"}]},
+     "sources": [{"type": "fred", "symbol": "DGS10"}, {"type": "treasury", "symbol": "10 Yr"}]},
     {"id": "us2y",   "name": "미국 2년 금리",  "group": "금리",     "unit": "%",  "digits": 2, "kind": "yield",
-     "sources": [{"type": "fred", "symbol": "DGS2"}]},
+     "sources": [{"type": "fred", "symbol": "DGS2"}, {"type": "treasury", "symbol": "2 Yr"}]},
     {"id": "hy",     "name": "미국 하이일드 스프레드", "group": "심리", "unit": "%p", "digits": 2, "kind": "yield",
      "sources": [{"type": "fred", "symbol": "BAMLH0A0HYM2"}]},
     {"id": "usdkrw", "name": "원/달러 환율",  "group": "환율",     "unit": "원", "digits": 1, "kind": "price",
-     "sources": [{"type": "yahoo", "symbol": "KRW=X"}, {"type": "fred", "symbol": "DEXKOUS"}]},
+     "sources": [{"type": "yahoo", "symbol": "KRW=X"}]},
     {"id": "dxy",    "name": "달러 지수(광의)", "group": "환율",    "unit": "",   "digits": 2, "kind": "price",
      "sources": [{"type": "fred", "symbol": "DTWEXBGS"}]},
     {"id": "wti",    "name": "WTI 유가",      "group": "원자재",   "unit": "$",  "digits": 2, "kind": "price",
-     "sources": [{"type": "fred", "symbol": "DCOILWTICO"}, {"type": "yahoo", "symbol": "CL=F"}]},
+     "sources": [{"type": "fred", "symbol": "DCOILWTICO"}]},
     {"id": "gold",   "name": "금",            "group": "원자재",   "unit": "$",  "digits": 1, "kind": "price",
      "sources": [{"type": "yahoo", "symbol": "GC=F"}]},
     {"id": "btc",    "name": "비트코인",      "group": "암호화폐", "unit": "$",  "digits": 0, "kind": "price",
-     "sources": [{"type": "fred", "symbol": "CBBTCUSD"}, {"type": "yahoo", "symbol": "BTC-USD"}]}
+     "sources": [{"type": "yahoo", "symbol": "BTC-USD"}]}
   ],
   "composite": {
     "_comment": "시장 체온 = 위험선호 종합. sign -1은 값이 높을수록 위험회피라는 뜻(온도를 뒤집어 반영). 빠진 시계열의 가중치는 나머지에 비례 배분.",

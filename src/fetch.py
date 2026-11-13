@@ -24,17 +24,40 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 REVISE_DAYS = 10
 
 
-def http_get(url: str, timeout: int = 40, tries: int = 3) -> str:
+HOST_FAILS: dict[str, int] = {}   # 호스트별 연속 실패 횟수 — 막힌 호스트에 시간을 다 쓰지 않기 위한 차단기
+HOST_LIMIT = 2
+DEADLINE = 60                     # 응답 하나를 다 받는 데 허용하는 최대 시간(초)
+_CACHE: dict[str, str] = {}
+
+
+def http_get(url: str, timeout: int = 20, tries: int = 2) -> str:
+    if url in _CACHE:
+        return _CACHE[url]
+    host = urllib.parse.urlsplit(url).netloc
+    if HOST_FAILS.get(host, 0) >= HOST_LIMIT:
+        raise RuntimeError(f"{host} 이번 실행에서 건너뜀(연속 실패)")
     last = None
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+            t0 = time.time()
+            chunks = []
             with urllib.request.urlopen(req, timeout=timeout) as r:
-                return r.read().decode("utf-8", "replace")
+                while True:
+                    b = r.read(1 << 16)
+                    if not b:
+                        break
+                    chunks.append(b)
+                    if time.time() - t0 > DEADLINE:
+                        raise TimeoutError("응답이 너무 느림")
+            HOST_FAILS[host] = 0
+            _CACHE[url] = b"".join(chunks).decode("utf-8", "replace")
+            return _CACHE[url]
         except Exception as e:  # noqa: BLE001 — 어떤 실패든 재시도 후 상위에서 기록
             last = e
-            time.sleep(2 + 3 * i)
-    raise RuntimeError(f"GET 실패: {url} :: {last}")
+            time.sleep(2)
+    HOST_FAILS[host] = HOST_FAILS.get(host, 0) + 1
+    raise RuntimeError(f"GET 실패: {host} :: {last}")
 
 
 # ---------- 소스별 파서 (입력 텍스트 -> {날짜: 값}) ----------
@@ -86,6 +109,32 @@ def parse_naver_index(text: str) -> dict[str, float]:
     return out
 
 
+TREASURY_URL = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/"
+                "all/all?type=daily_treasury_yield_curve&field_tdr_date_value=all&page&_format=csv")
+
+
+def parse_treasury_csv(text: str, column: str) -> dict[str, float]:
+    """미 재무부 일별 국채 수익률 곡선(FRED DGS 시리즈의 원자료). column 예: '10 Yr'."""
+    rows = csv.reader(io.StringIO(text))
+    header = [h.strip() for h in next(rows, [])]
+    if column not in header or "Date" not in header:
+        raise ValueError(f"재무부 응답에 '{column}' 열 없음")
+    ci, di = header.index(column), header.index("Date")
+    out: dict[str, float] = {}
+    for row in rows:
+        if len(row) <= max(ci, di):
+            continue
+        m = re.fullmatch(r"(\d{1,2})/(\d{1,2})/(\d{4})", row[di].strip())
+        v = row[ci].strip()
+        if not m or v in ("", "N/A"):
+            continue
+        try:
+            out[f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"] = float(v)
+        except ValueError:
+            continue
+    return out
+
+
 def fetch_source(src: dict) -> dict[str, float]:
     t, sym = src["type"], src["symbol"]
     if t == "fred":
@@ -94,6 +143,8 @@ def fetch_source(src: dict) -> dict[str, float]:
         q = urllib.parse.quote(sym)
         return parse_yahoo_chart(http_get(
             f"https://query1.finance.yahoo.com/v8/finance/chart/{q}?period1=0&period2=9999999999&interval=1d&events=history"))
+    if t == "treasury":
+        return parse_treasury_csv(http_get(TREASURY_URL), sym)
     if t == "naver_index":
         today = datetime.now(timezone.utc).strftime("%Y%m%d")
         return parse_naver_index(http_get(
@@ -188,10 +239,11 @@ def main() -> int:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     report = []
     for spec in cfg["series"]:
+        t0 = time.time()
         r = update_series(spec, today)
         report.append(r)
-        print(f"[{'OK' if r['ok'] else '실패'}] {r['id']:8s} rows={r['rows']:6d} last={r['last']} +{r['changed']}"
-              + (f"  ! {'; '.join(r['errors'])}" if r["errors"] else ""))
+        print(f"({time.time() - t0:4.1f}s) [{'OK' if r['ok'] else '실패'}] {r['id']:8s} rows={r['rows']:6d} last={r['last']} +{r['changed']}"
+              + (f"  ! {'; '.join(r['errors'])}" if r["errors"] else ""), flush=True)
         time.sleep(1)
     out = ROOT / "docs" / "data"
     out.mkdir(parents=True, exist_ok=True)

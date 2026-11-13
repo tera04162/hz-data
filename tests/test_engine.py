@@ -114,6 +114,11 @@ class Parsers(unittest.TestCase):
         self.assertEqual(list(out.values()), [4000.5])
         self.assertRegex(list(out)[0], r"^2025-11-1\d$")
 
+    def test_treasury(self):
+        txt = 'Date,"1 Mo","2 Yr","10 Yr"\n11/12/2026,4.1,3.9,4.25\n11/10/2026,4.1,N/A,4.2\n'
+        self.assertEqual(fetch.parse_treasury_csv(txt, "10 Yr"), {"2026-11-12": 4.25, "2026-11-10": 4.2})
+        self.assertEqual(fetch.parse_treasury_csv(txt, "2 Yr"), {"2026-11-12": 3.9})
+
     def test_naver(self):
         txt = '[["날짜","시가","고가","저가","종가","거래량"],\n["20261112", 4000.1, 4010, 3990, 4005.5, 1],\n["20261113", 4005, 4020, 4000, 4012.25, 2]]'
         self.assertEqual(fetch.parse_naver_index(txt), {"2026-11-12": 4005.5, "2026-11-13": 4012.25})
