@@ -1,0 +1,45 @@
+{
+  "_comment": "시계열 정의. sources는 우선순위 순서 — 같은 날짜가 겹치면 앞쪽 소스 값을 쓴다. 전부 키 없이 받을 수 있는 공개 소스만 쓴다.",
+  "series": [
+    {"id": "kospi",  "name": "코스피",        "group": "한국주식", "unit": "pt", "digits": 2, "kind": "price",
+     "sources": [{"type": "yahoo", "symbol": "^KS11"}, {"type": "naver_index", "symbol": "KOSPI"}]},
+    {"id": "kosdaq", "name": "코스닥",        "group": "한국주식", "unit": "pt", "digits": 2, "kind": "price",
+     "sources": [{"type": "yahoo", "symbol": "^KQ11"}, {"type": "naver_index", "symbol": "KOSDAQ"}]},
+    {"id": "spx",    "name": "S&P 500",       "group": "미국주식", "unit": "pt", "digits": 2, "kind": "price",
+     "sources": [{"type": "yahoo", "symbol": "^GSPC"}, {"type": "fred", "symbol": "SP500"}]},
+    {"id": "nasdaq", "name": "나스닥 종합",   "group": "미국주식", "unit": "pt", "digits": 2, "kind": "price",
+     "sources": [{"type": "fred", "symbol": "NASDAQCOM"}, {"type": "yahoo", "symbol": "^IXIC"}]},
+    {"id": "vix",    "name": "VIX 변동성",    "group": "심리",     "unit": "",   "digits": 2, "kind": "level",
+     "sources": [{"type": "fred", "symbol": "VIXCLS"}, {"type": "yahoo", "symbol": "^VIX"}]},
+    {"id": "us10y",  "name": "미국 10년 금리", "group": "금리",     "unit": "%",  "digits": 2, "kind": "yield",
+     "sources": [{"type": "fred", "symbol": "DGS10"}]},
+    {"id": "us2y",   "name": "미국 2년 금리",  "group": "금리",     "unit": "%",  "digits": 2, "kind": "yield",
+     "sources": [{"type": "fred", "symbol": "DGS2"}]},
+    {"id": "hy",     "name": "미국 하이일드 스프레드", "group": "심리", "unit": "%p", "digits": 2, "kind": "yield",
+     "sources": [{"type": "fred", "symbol": "BAMLH0A0HYM2"}]},
+    {"id": "usdkrw", "name": "원/달러 환율",  "group": "환율",     "unit": "원", "digits": 1, "kind": "price",
+     "sources": [{"type": "yahoo", "symbol": "KRW=X"}, {"type": "fred", "symbol": "DEXKOUS"}]},
+    {"id": "dxy",    "name": "달러 지수(광의)", "group": "환율",    "unit": "",   "digits": 2, "kind": "price",
+     "sources": [{"type": "fred", "symbol": "DTWEXBGS"}]},
+    {"id": "wti",    "name": "WTI 유가",      "group": "원자재",   "unit": "$",  "digits": 2, "kind": "price",
+     "sources": [{"type": "fred", "symbol": "DCOILWTICO"}, {"type": "yahoo", "symbol": "CL=F"}]},
+    {"id": "gold",   "name": "금",            "group": "원자재",   "unit": "$",  "digits": 1, "kind": "price",
+     "sources": [{"type": "yahoo", "symbol": "GC=F"}]},
+    {"id": "btc",    "name": "비트코인",      "group": "암호화폐", "unit": "$",  "digits": 0, "kind": "price",
+     "sources": [{"type": "fred", "symbol": "CBBTCUSD"}, {"type": "yahoo", "symbol": "BTC-USD"}]}
+  ],
+  "composite": {
+    "_comment": "시장 체온 = 위험선호 종합. sign -1은 값이 높을수록 위험회피라는 뜻(온도를 뒤집어 반영). 빠진 시계열의 가중치는 나머지에 비례 배분.",
+    "weights": [
+      {"id": "spx",    "w": 0.15, "sign": 1},
+      {"id": "nasdaq", "w": 0.10, "sign": 1},
+      {"id": "kospi",  "w": 0.15, "sign": 1},
+      {"id": "kosdaq", "w": 0.05, "sign": 1},
+      {"id": "vix",    "w": 0.20, "sign": -1},
+      {"id": "hy",     "w": 0.10, "sign": -1},
+      {"id": "usdkrw", "w": 0.10, "sign": -1},
+      {"id": "btc",    "w": 0.10, "sign": 1},
+      {"id": "wti",    "w": 0.05, "sign": 1}
+    ]
+  }
+}
