@@ -1,0 +1,42 @@
+# 에셋리포트(assetreport.kr) 데이터 자동 갱신.
+# 코드와 데이터는 전부 'assetreport' 브랜치에 있다. 이 파일만 main에 둔다(예약 실행은 기본 브랜치에서만 돈다).
+name: assetreport-update
+
+on:
+  schedule:
+    - cron: '17 22 * * *'    # 한국 07:17 — 미국 장 마감 후
+    - cron: '47 7 * * 1-5'   # 한국 16:47 — 한국 장 마감 후
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assetreport-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assetreport
+      - name: 테스트
+        run: python3 -m unittest discover -s tests
+      - name: 수집
+        run: python3 src/fetch.py
+      - name: 계산
+        run: python3 src/build.py
+      - name: 커밋
+        run: |
+          git config user.name "assetreport-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data docs
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -q -m "데이터 갱신 $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push origin assetreport
+          fi
