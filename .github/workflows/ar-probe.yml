@@ -1,0 +1,38 @@
+# 임시: 깃허브 인기 금융 라이브러리가 실행기에서 실제로 데이터를 받는지 점검. 확인 후 삭제.
+name: ar-probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - run: pip install -q pykrx finance-datareader 2>&1 | tail -2
+      - run: |
+          python3 - <<'PY'
+          import traceback, time
+          def t(name, fn):
+              t0=time.time()
+              try:
+                  r=fn(); print(f"=== OK {name} ({time.time()-t0:.1f}s) shape={getattr(r,'shape',None)}"); print(r.head(3).to_string()[:700] if hasattr(r,'head') else str(r)[:400]); print('...'); print(r.tail(2).to_string()[:500] if hasattr(r,'tail') else '')
+              except Exception as e:
+                  print(f"=== FAIL {name} ({time.time()-t0:.1f}s): {type(e).__name__}: {str(e)[:200]}")
+          from pykrx import stock
+          t("pykrx 코스피 PER/PBR 이력", lambda: stock.get_index_fundamental("20000101","20261113","1001"))
+          t("pykrx 투자자별 순매수(코스피, 일별)", lambda: stock.get_market_trading_value_by_date("20240101","20261113","KOSPI"))
+          t("pykrx 종목 PER/PBR 이력(삼성전자)", lambda: stock.get_market_fundamental("20100101","20261113","005930"))
+          t("pykrx 시가총액 순위(2010-01-04)", lambda: stock.get_market_cap("20100104", market="KOSPI"))
+          t("pykrx 상장폐지 포함 시세(예: 000030)", lambda: stock.get_market_ohlcv("20000101","20261113","000030"))
+          t("pykrx 공매도 잔고", lambda: stock.get_shorting_balance_by_date("20240101","20261113","005930"))
+          import FinanceDataReader as fdr
+          t("FDR KRX 종목목록", lambda: fdr.StockListing("KRX"))
+          t("FDR 상장폐지 목록", lambda: fdr.StockListing("KRX-DELISTING"))
+          t("FDR 삼성전자(NAVER)", lambda: fdr.DataReader("005930","2000-01-01"))
+          t("FDR 코스피지수", lambda: fdr.DataReader("KS11","1990-01-01"))
+          t("FDR FRED 하이일드", lambda: fdr.DataReader("FRED:BAMLH0A0HYM2","2000-01-01"))
+          t("FDR 금 선물", lambda: fdr.DataReader("GC=F","2000-01-01"))
+          PY
+      - run: |
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36"
+          for u in "https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd" "https://kind.krx.co.kr/" "https://production.dataviz.cnn.io/index/fearandgreed/graphdata" "https://api.alternative.me/fng/?limit=3" "https://www.multpl.com/shiller-pe/table/by-month" "https://freesis.kofia.or.kr/"; do
+            code=$(curl -sS -L -m 20 -A "$UA" -o /tmp/o -w '%{http_code} %{size_download}' "$u" 2>/dev/null || echo ERR); echo "=== $code :: $u"; head -c 200 /tmp/o | tr '\n' ' ' | tr -cd '[:print:]'; echo
+          done
