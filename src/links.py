@@ -36,7 +36,11 @@ def published() -> dict[str, str]:
 
 
 def main() -> int:
-    index = json.loads((ROOT / "blogger" / "posts" / "index.json").read_text(encoding="utf-8"))
+    index = []
+    for name in ("index.json", "index_signals.json"):
+        p = ROOT / "blogger" / "posts" / name
+        if p.exists():
+            index += json.loads(p.read_text(encoding="utf-8"))
     try:
         pub = published()
     except Exception as e:  # noqa: BLE001

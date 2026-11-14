@@ -7,6 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 import build  # noqa: E402
 import build_stocks  # noqa: E402
+import signals  # noqa: E402
 import fetch  # noqa: E402
 
 
@@ -118,6 +119,35 @@ class Stocks(unittest.TestCase):
         self.assertEqual(build_stocks.judge({"n": 5000, "win": 60.0, "median": 3.2}, base), "평소보다 좋았음")
         self.assertEqual(build_stocks.judge({"n": 5000, "win": 48.0, "median": 0.5}, base), "평소보다 나빴음")
         self.assertEqual(build_stocks.judge({"n": 100, "win": 80.0, "median": 9.0}, base), "판정 보류")
+
+
+class Signals(unittest.TestCase):
+    def test_rsi_extremes(self):
+        up = [float(i) for i in range(1, 40)]
+        self.assertEqual(signals.rsi(up)[-1], 100)                       # 계속 오르면 100
+        self.assertLess(signals.rsi(up[::-1])[-1], 1)                    # 계속 내리면 0 근처
+
+    def test_detect_cross_and_extremes(self):
+        close = [100.0] * 260 + [100.0 + 2 * i for i in range(1, 80)]    # 횡보 뒤 상승
+        vol = [1000.0] * len(close); ratio = [None] * len(close)
+        d = signals.detect(close, vol, ratio)
+        self.assertEqual(len(d["golden"]), 1); self.assertEqual(d["dead"], [])
+        self.assertIn(260, d["high52"])                                  # 상승 첫날이 52주 신고가
+        self.assertEqual(d["frgn10"], [])
+        fall = [100.0] * 30 + [94.0]                                     # 하루 6% 급락
+        self.assertEqual(signals.detect(fall, [1.0] * 31, [None] * 31)["drop5"], [30])
+
+    def test_foreign_streak_and_cooldown(self):
+        ratio = [10 + 0.1 * i for i in range(15)]
+        d = signals.detect([100.0] * 15, [1.0] * 15, ratio)
+        self.assertEqual(d["frgn10"], [10])                              # 10일 연속 증가한 날 한 번만
+        self.assertEqual(signals.cool([5, 10, 30, 31, 60], 20), [5, 30, 60])
+
+    def test_judge(self):
+        base = {"n": 99999, "win": 49.0, "median": -0.2}
+        self.assertEqual(signals.judge({"n": 1000, "win": 53.9, "median": 0.8}, base), "뚜렷한 차이 없음")
+        self.assertEqual(signals.judge({"n": 1000, "win": 55.0, "median": 0.8}, base), "시장을 더 자주 이김")
+        self.assertEqual(signals.judge({"n": 150, "win": 70.0, "median": 5.0}, base), "판정 보류")
 
 
 class Parsers(unittest.TestCase):

@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from build import days_between, rolling_pct, stats
+import signals as sg
 
 ROOT = Path(__file__).resolve().parent.parent
 D = ROOT / "data" / "stocks"
@@ -38,12 +39,12 @@ def num(x):
 
 
 def load_price(code: str):
-    dates, close, ratio = [], [], []
+    dates, close, ratio, volume = [], [], [], []
     with (D / "price" / f"{code}.csv").open(encoding="utf-8") as f:
         for r in csv.reader(f):
             if r[0] == "date":
                 continue
-            dates.append(r[0]); close.append(float(r[1])); ratio.append(float(r[3]) if len(r) > 3 and r[3] else None)
+            dates.append(r[0]); close.append(float(r[1])); ratio.append(float(r[3]) if len(r) > 3 and r[3] else None); volume.append(float(r[2] or 0))
     # 가격제한폭(±30%)을 넘는 하루 변화는 액면분할 등 권리 조정으로 보고 이전 가격을 같은 비율로 맞춘다
     f = 1.0
     for i in range(len(close) - 1, 0, -1):
@@ -53,7 +54,7 @@ def load_price(code: str):
             f *= r
     if close:
         close[0] *= f
-    return dates, close, ratio
+    return dates, close, ratio, volume
 
 
 def regimes(close, ratio):
@@ -99,11 +100,21 @@ def build():
     pooled = {(t, f): {h: [] for h in HZ} for t in range(4) for f in range(3)}
     pooled_all = {h: [] for h in HZ}
     work = []
+    kospi = {}
+    kp = ROOT / "data" / "raw" / "kospi.csv"
+    if kp.exists():
+        with kp.open(encoding="utf-8") as fh:
+            kospi = {r[0]: float(r[1]) for r in csv.reader(fh) if r[0] != "date"}
+    sig_x = {k: {h: [] for h in sg.HZ} for k, _, _ in sg.META}      # 초과수익
+    sig_r = {k: {h: [] for h in sg.HZ} for k, _, _ in sg.META}      # 단순수익
+    base_x = {h: [] for h in sg.HZ}
+    sig_active = {k: [] for k, _, _ in sg.META}
+    sig_of = {}
     for s in uni:
         code = s["code"]
         if not (D / "price" / f"{code}.csv").exists():
             continue
-        dates, close, ratio = load_price(code)
+        dates, close, ratio, volume = load_price(code)
         if len(close) < 520:
             continue
         tech, flow, d20 = regimes(close, ratio)
@@ -120,6 +131,26 @@ def build():
                     if h == 60:
                         own[(tech[i], flow[i])].append(r)
                         own_all.append(r)
+        # 기술적 신호: 켜진 날 이후의 시장 대비 초과수익
+        kv = [kospi.get(d) for d in dates]
+        det = {k: sg.cool(v) for k, v in sg.detect(close, volume, ratio).items()}
+        for h in sg.HZ:
+            for i in range(250, len(close) - h):
+                if kv[i] and kv[i + h] and close[i] > 0:
+                    base_x[h].append((close[i + h] / close[i] - kv[i + h] / kv[i]) * 100)
+        mine = []
+        for k, idx in det.items():
+            for i in idx:
+                if i < 250:
+                    continue
+                for h in sg.HZ:
+                    if i + h < len(close) and kv[i] and kv[i + h] and close[i] > 0:
+                        sig_x[k][h].append((close[i + h] / close[i] - kv[i + h] / kv[i]) * 100)
+                        sig_r[k][h].append((close[i + h] / close[i] - 1) * 100)
+            if idx and idx[-1] >= len(close) - 3:
+                sig_active[k].append({"code": code, "name": s["name"], "date": dates[idx[-1]], "close": round(close[-1])})
+                mine.append(k)
+        sig_of[code] = mine
         work.append((s, dates, close, ratio, tech, flow, d20, own, own_all))
 
     base = {h: stats(pooled_all[h]) for h in HZ}
@@ -133,6 +164,19 @@ def build():
                           "dmed": round(st["60"]["median"] - base[60]["median"], 2) if st["60"] and base[60] else None,
                           "verdict": judge(st["60"], base[60])})
     verdict_of = {(r["tech"], r["flow"]): r for r in table}
+
+    sbase = {h: stats(base_x[h]) for h in sg.HZ}
+    sig_table = []
+    for k, name, desc in sg.META:
+        sx = {h: stats(sig_x[k][h]) for h in sg.HZ}
+        sr = {h: stats(sig_r[k][h]) for h in sg.HZ}
+        v = sg.judge(sx[20], sbase[20])
+        sig_table.append({"id": k, "name": name, "desc": desc, "n": (sx[20] or {}).get("n", 0), "verdict": v,
+                          "dwin": round(sx[20]["win"] - sbase[20]["win"], 1) if sx[20] and sbase[20] else None,
+                          "excess": {str(h): sx[h] and {"median": sx[h]["median"], "win": sx[h]["win"]} for h in sg.HZ},
+                          "raw": {str(h): sr[h] and {"median": sr[h]["median"], "win": sr[h]["win"], "min": sr[h]["min"], "max": sr[h]["max"]} for h in sg.HZ},
+                          "active": sig_active[k]})
+    sig_name = {k: n for k, n, _ in sg.META}
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     index = []
@@ -201,7 +245,7 @@ def build():
         w = close[-250:]
         head = {"code": code, "name": s["name"], "market": s["market"], "date": dates[i], "close": round(close[i]), "d1": ch(1), "d20": ch(20), "d250": ch(250),
                 "tech": t, "flow": f, "state": row["name"] if row else None, "verdict": row["verdict"] if row else "판정 보류", "dwin": row["dwin"] if row else None,
-                "good": good, "bad": bad, "per": fund["per"], "pbr": fund["pbr"]}
+                "good": good, "bad": bad, "per": fund["per"], "pbr": fund["pbr"], "signals": [sig_name[k] for k in sig_of.get(code, [])]}
         index.append(head)
         detail = {**head, "updated": now, "since": dates[0], "from_hi": round((close[i] / max(w) - 1) * 100, 1),
                   "spark": [round(x) for x in close[-250:]], "ratio": [x for x in ratio[-250:]], "ratio_now": ratio[i], "ratio_d20": d20[i],
@@ -215,6 +259,10 @@ def build():
     (OUT / "index.json").write_text(json.dumps(
         {"updated": now, "asof": asof, "tech": TECH, "flow": FLOW, "base": {str(h): base[h] and {"n": base[h]["n"], "median": base[h]["median"], "win": base[h]["win"]} for h in HZ},
          "table": table, "stocks": index}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (OUT / "signals.json").write_text(json.dumps(
+        {"updated": now, "asof": asof, "universe": len(index), "cooldown": sg.COOLDOWN,
+         "base": {str(h): sbase[h] and {"n": sbase[h]["n"], "median": sbase[h]["median"], "win": sbase[h]["win"]} for h in sg.HZ},
+         "signals": sig_table}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return {"stocks": len(index), "asof": asof, "base60": base[60] and (base[60]["median"], base[60]["win"])}
 
 

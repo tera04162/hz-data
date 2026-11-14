@@ -21,7 +21,7 @@ from fetch import http_get, num  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 D = ROOT / "data" / "stocks"
-TOP = {"KOSPI": 30, "KOSDAQ": 10}
+TOP = {"KOSPI": 70, "KOSDAQ": 30}
 API = "https://m.stock.naver.com/api"
 
 

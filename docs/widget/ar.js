@@ -6,7 +6,7 @@
   window.__AR_LOADED__ = true;
   // 데이터·코드 배포 경로: 1순위 jsDelivr(무료 CDN, 방문자가 늘어도 깃허브에 부담이 가지 않음), 2순위 깃허브 원본.
   var BASES = (window.AR_BASES || (window.AR_BASE ? [window.AR_BASE] : ['https://cdn.jsdelivr.net/gh/tera04162/hz-data@assetreport/docs', 'https://raw.githubusercontent.com/tera04162/hz-data/assetreport/docs'])).map(function (b) { return b.replace(/\/$/, ''); });
-  var HUB = window.AR_HUB || '/p/market-stats.html', THERMO = window.AR_THERMO || '/p/market-thermometer.html';
+  var HUB = window.AR_HUB || '/p/market-stats.html', THERMO = window.AR_THERMO || '/p/market-thermometer.html', STOCKS = window.AR_STOCKS || '/p/stock-check.html';
   var UP = '#d93a3a', DOWN = '#2a6fd6', COLD = '#2a78d6', HOT = '#e34948', MID = '#8a8a86';
   var HZ_NAME = { 5: '1주', 20: '1개월', 60: '3개월', 120: '6개월', 250: '1년' };
 
@@ -405,9 +405,10 @@
       });
       c.appendChild(g);
 
+      if (d.signals && d.signals.length) { var sp = el('p'); sp.style.cssText = 'margin:12px 0 0;font-size:14px'; sp.appendChild(el('b', null, '최근 3거래일 안에 켜진 신호: ')); sp.appendChild(document.createTextNode(d.signals.join(', '))); c.appendChild(sp); }
       var h1 = el('h3', 'ar-h', '지금 국면: ' + (d.state || '판정 보류')); h1.style.marginTop = '16px'; c.appendChild(h1);
       if (d.pooled) {
-        c.appendChild(el('p', 'ar-sub', '대형주 40종목의 과거 ' + fmt(d.pooled.n, 0) + '일이 같은 국면이었습니다. 그날 샀을 때의 결과를 아무 날에 샀을 때와 비교합니다.'));
+        c.appendChild(el('p', 'ar-sub', '대상 대형주들의 과거 ' + fmt(d.pooled.n, 0) + '일이 같은 국면이었습니다. 그날 샀을 때의 결과를 아무 날에 샀을 때와 비교합니다.'));
         var sc = el('div', 'ar-scroll'), t = el('table', 'ar-tbl'), hr = el('tr');
         ['이후 기간', '이 국면 중앙값', '오른 비율', '평소 중앙값', '평소 오른 비율', '가운데 절반 범위'].forEach(function (x) { hr.appendChild(el('th', null, x)); }); t.appendChild(hr);
         [['20', '1개월'], ['60', '3개월'], ['120', '6개월']].forEach(function (H) {
@@ -446,28 +447,57 @@
     }).catch(function (x) { fail(host, x); });
   }
 
-  function renderStocks(root, j) {
+  function signalCards(root, sj, only) {
+    var HN = { '5': '1주', '20': '1개월', '60': '3개월' };
+    var list = sj.signals.filter(function (x) { return !only || x.id === only; });
+    var act = el('div', 'ar-card'); act.appendChild(el('h3', 'ar-h', only ? '지금 이 신호가 켜진 종목' : '오늘 신호가 켜진 종목'));
+    act.appendChild(el('p', 'ar-sub', kdate(sj.asof) + ' 기준 · 최근 3거래일 안에 켜진 신호 · 괄호 안은 과거 같은 신호 뒤 1개월 동안 코스피를 이긴 비율(평소 ' + fmt(sj.base['20'].win, 0) + '%)'));
+    var any = false;
+    list.forEach(function (x) {
+      if (!x.active.length) return; any = true;
+      var pz = el('p'); pz.style.cssText = 'margin:0 0 8px;font-size:14px';
+      pz.appendChild(el('b', null, x.name)); pz.appendChild(el('span', 'ar-mut', ' (' + fmt(x.excess['20'].win, 0) + '%) '));
+      x.active.forEach(function (a, i) { var lk = el('a', 'ar-link', a.name); lk.href = STOCKS + '#s=' + a.code; pz.appendChild(lk); if (i < x.active.length - 1) pz.appendChild(document.createTextNode(', ')); });
+      act.appendChild(pz);
+    });
+    if (!any) act.appendChild(el('p', 'ar-sub', '지금은 켜진 종목이 없습니다.'));
+    root.appendChild(act);
+    var vc = el('div', 'ar-card'); vc.appendChild(el('h3', 'ar-h', only ? '검증 결과' : '신호 검증표: 유명한 매매 신호는 시장을 이겼나'));
+    vc.appendChild(el('p', 'ar-sub', '대형주 ' + sj.universe + '종목에서 신호가 처음 켜진 날 샀다고 가정하고, 같은 기간 코스피보다 더 올랐는지를 셌습니다. 아무 날에 샀을 때 1개월 뒤 코스피를 이긴 비율은 ' + fmt(sj.base['20'].win, 0) + '%입니다.'));
+    var sc = el('div', 'ar-scroll'), t = el('table', 'ar-tbl'), hr = el('tr');
+    (only ? ['이후 기간', '시장 이긴 비율', '평소', '초과수익 중앙값', '단순 수익 중앙값', '오른 비율'] : ['신호', '사례 수', '1개월 뒤 시장 이긴 비율', '평소 대비', '초과수익 중앙값', '판정']).forEach(function (h) { hr.appendChild(el('th', null, h)); }); t.appendChild(hr);
+    if (only) {
+      var x = list[0];
+      ['5', '20', '60'].forEach(function (H) { var e = x.excess[H], r = x.raw[H], b = sj.base[H], tr = el('tr'); if (!e) return; tr.appendChild(el('td', null, HN[H] + ' 뒤')); var w = el('td', null, fmt(e.win, 0) + '%'); w.style.fontWeight = '700'; tr.appendChild(w); tr.appendChild(el('td', 'ar-mut', fmt(b.win, 0) + '%')); tr.appendChild(el('td', cls(e.median), pp(e.median, 2))); tr.appendChild(el('td', cls(r.median), pp(r.median, 2))); tr.appendChild(el('td', null, fmt(r.win, 0) + '%')); t.appendChild(tr); });
+    } else list.forEach(function (x) { var e = x.excess['20'], tr = el('tr'); if (!e) return; var n = el('td'); n.appendChild(el('b', null, x.name)); tr.appendChild(n); tr.appendChild(el('td', null, fmt(x.n, 0))); tr.appendChild(el('td', null, fmt(e.win, 0) + '%')); tr.appendChild(el('td', cls(x.dwin), (x.dwin > 0 ? '+' : '') + fmt(x.dwin, 1) + '%p')); tr.appendChild(el('td', cls(e.median), pp(e.median, 2))); tr.appendChild(el('td', null, x.verdict)); t.appendChild(tr); });
+    sc.appendChild(t); vc.appendChild(sc);
+    if (only) vc.appendChild(el('p', 'ar-sub', '사례 ' + fmt(list[0].n, 0) + '건 · 판정: ' + list[0].verdict + ' (1개월 뒤 시장을 이긴 비율이 평소보다 ' + (list[0].dwin > 0 ? '+' : '') + fmt(list[0].dwin, 1) + '%포인트)'));
+    vc.appendChild(el('p', 'ar-note', '같은 종목에서 같은 신호가 ' + sj.cooldown + '거래일 안에 다시 켜지면 세지 않았습니다. 시장을 이긴 비율이 평소와 5%포인트 넘게 벌어져야 차이로 인정합니다. 대상이 지금의 대형주라는 한계(살아남은 종목만 본 효과)는 그대로입니다.'));
+    root.appendChild(vc);
+  }
+
+  function renderStocks(root, j, sj) {
     root.textContent = '';
     var detail = el('div'); root.appendChild(detail);
+    if (sj) signalCards(root, sj, null);
     var lc = el('div', 'ar-card'); lc.appendChild(el('h3', 'ar-h', '종목별 현재 국면'));
     lc.appendChild(el('p', 'ar-sub', kdate(j.asof) + ' 종가 기준 · 종목을 누르면 상세가 열립니다 · 제목 줄을 누르면 정렬됩니다'));
-    var sc = el('div', 'ar-scroll'), t = el('table', 'ar-tbl'), cols = [['name', '종목'], ['close', '종가'], ['d1', '전일'], ['d20', '1개월'], ['state', '국면'], ['dwin', '평소 대비'], ['good', '점검'], ['per', 'PER'], ['pbr', 'PBR']], sortK = null, sortD = 1;
+    var sc = el('div', 'ar-scroll'), t = el('table', 'ar-tbl'), cols = [['name', '종목'], ['close', '종가'], ['d1', '전일'], ['d20', '1개월'], ['sig', '켜진 신호'], ['state', '국면'], ['good', '점검'], ['per', 'PER'], ['pbr', 'PBR']], sortK = null, sortD = 1;
     function draw() {
       t.textContent = ''; var hr = el('tr');
       cols.forEach(function (cdef) { var th = el('th', null, cdef[1] + (sortK === cdef[0] ? (sortD > 0 ? ' ▲' : ' ▼') : '')); th.style.cursor = 'pointer'; th.addEventListener('click', function () { sortD = sortK === cdef[0] ? -sortD : (cdef[0] === 'name' || cdef[0] === 'state' ? 1 : -1); sortK = cdef[0]; draw(); }); hr.appendChild(th); });
       t.appendChild(hr);
-      var rows = j.stocks.slice(); if (sortK) rows.sort(function (a, b) { var x = a[sortK], y = b[sortK]; if (x == null) return 1; if (y == null) return -1; return (x > y ? 1 : x < y ? -1 : 0) * sortD; });
+      var rows = j.stocks.slice(); rows.forEach(function (x) { x.sig = (x.signals || []).length; }); if (sortK) rows.sort(function (a, b) { var x = a[sortK], y = b[sortK]; if (x == null) return 1; if (y == null) return -1; return (x > y ? 1 : x < y ? -1 : 0) * sortD; });
       rows.forEach(function (x) {
         var tr = el('tr'); tr.style.cursor = 'pointer'; tr.addEventListener('click', function () { stockDetail(detail, x.code, { hash: true, scroll: true }); });
         var n = el('td'); n.appendChild(el('b', null, x.name)); tr.appendChild(n);
         tr.appendChild(el('td', null, fmt(x.close, 0))); tr.appendChild(el('td', cls(x.d1), pp(x.d1, 2))); tr.appendChild(el('td', cls(x.d20), pp(x.d20)));
-        tr.appendChild(el('td', null, x.state || '판정 보류')); tr.appendChild(el('td', x.dwin == null ? 'ar-mut' : cls(x.dwin), x.dwin == null ? '–' : (x.dwin > 0 ? '+' : '') + fmt(x.dwin, 1) + '%p'));
+        tr.appendChild(el('td', null, (x.signals || []).join(', ') || '–')); tr.appendChild(el('td', null, x.state || '판정 보류'));
         tr.appendChild(el('td', null, '✔' + x.good + ' ✖' + x.bad)); tr.appendChild(el('td', null, x.per == null ? '–' : fmt(x.per, 1))); tr.appendChild(el('td', null, x.pbr == null ? '–' : fmt(x.pbr, 2)));
         t.appendChild(tr);
       });
     }
     draw(); sc.appendChild(t); lc.appendChild(sc);
-    lc.appendChild(el('p', 'ar-note', '‘평소 대비’는 지금과 같은 국면이었던 과거 날들의 3개월 뒤 오른 비율에서 아무 날의 오른 비율을 뺀 값입니다.'));
     root.appendChild(lc);
 
     var vc = el('div', 'ar-card'); vc.appendChild(el('h3', 'ar-h', '국면 검증표: 추세와 외국인 수급은 정말 통했나'));
@@ -492,7 +522,8 @@
       if (kind === 'thermo') getJSON('/data/market.json').then(function (m) { renderThermo(root, m); }).catch(function (e) { fail(root, e); });
       else if (kind === 'events') Promise.all([getJSON('/data/events.json'), getLinks()]).then(function (r) { renderEvents(root, r[0], r[1]); }).catch(function (e) { fail(root, e); });
       else if (kind === 'event') { var host = el('div'); root.textContent = ''; root.appendChild(host); eventDetail(host, root.getAttribute('data-id'), {}); root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부, 코인베이스, Yahoo Finance(과거 이력) · 계산: 에셋리포트 · 매일 자동 갱신 · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.')); }
-      else if (kind === 'stocks') getJSON('/data/stocks/index.json').then(function (j) { renderStocks(root, j); }).catch(function (e) { fail(root, e); });
+      else if (kind === 'stocks') Promise.all([getJSON('/data/stocks/index.json'), getJSON('/data/stocks/signals.json').catch(function () { return null; })]).then(function (r) { renderStocks(root, r[0], r[1]); }).catch(function (e) { fail(root, e); });
+      else if (kind === 'signal') getJSON('/data/stocks/signals.json').then(function (sj) { root.textContent = ''; signalCards(root, sj, root.getAttribute('data-id')); root.appendChild(el('p', 'ar-note', '자료: 네이버 증권 · 계산: 에셋리포트 · 매일 자동 갱신 · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.')); }).catch(function (e) { fail(root, e); });
       else if (kind === 'stock') { var sh = el('div'); root.textContent = ''; root.appendChild(sh); stockDetail(sh, root.getAttribute('data-code'), {}); }
       else if (kind === 'mini') Promise.all([getJSON('/data/market.json'), getLinks()]).then(function (r) { renderMini(root, r[0], r[1]); }).catch(function (e) { fail(root, e); });
     });
