@@ -29,6 +29,8 @@ jobs:
         run: python3 -u src/fetch.py
       - name: 계산
         run: python3 src/build.py
+      - name: 글 주소 연결
+        run: python3 src/links.py
       - name: 커밋
         run: |
           git config user.name "assetreport-bot"
