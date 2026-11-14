@@ -15,6 +15,7 @@
 ## 블로그 쪽 구성
 
 - **페이지 2개**: 시장체온계(`blogger/market-thermometer.html`), 투자 통계 연구소(`blogger/market-stats.html`).
+- **종목 진단기 페이지**: `blogger/stock-check.html`. 수집은 `src/fetch_stocks.py`, 계산은 `src/build_stocks.py`(국면 정의·판정 기준·한계는 그 파일 머리말에 있다).
 - **통계 글 27편**: `tools/make_posts.py` 가 이벤트별 실제 숫자로 `blogger/posts/<id>.html` 을 만든다. 숫자를 본문에 직접 적은 고정 텍스트·표와, 매일 갱신되는 위젯을 함께 넣는다. 제목·라벨·검색 설명은 `blogger/posts/index.json`.
 - **홈 위젯**: `blogger/gadget-mini.html` 을 블로거 레이아웃의 HTML/JavaScript 가젯에 붙인다.
 - **글 주소 자동 연결**: 통계 글을 발행하면 `src/links.py` 가 블로거 공개 피드에서 제목으로 주소를 찾아 `docs/data/links.json` 에 적고, 연구소와 홈 위젯이 그 글로 연결된다. 그래서 글 제목을 바꾸면 `index.json` 의 제목도 같이 바꿔야 한다.

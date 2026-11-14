@@ -373,6 +373,101 @@
     root.appendChild(card);
   }
 
+  /* ---------- 종목 진단기 ---------- */
+  function won(v) { return v == null ? '–' : fmt(v, 0) + '원'; }
+  function pp(v, d) { return v == null ? '–' : (v > 0 ? '+' : '') + fmt(v, d == null ? 1 : d) + '%'; }
+  function mark(v) { var e = el('b', null, v === true ? '✔' : v === false ? '✖' : '–'); e.style.color = v === true ? '#1a7f4b' : v === false ? UP : '#8a8a86'; e.setAttribute('aria-label', v === true ? '양호' : v === false ? '주의' : '중립'); return e; }
+  function stockDetail(host, code, opt) {
+    opt = opt || {}; host.textContent = ''; var c = el('div', 'ar-card'); c.appendChild(el('p', 'ar-sub', '불러오는 중…')); host.appendChild(c);
+    getJSON('/data/stocks/' + encodeURIComponent(code) + '.json').then(function (d) {
+      if (opt.hash) { try { history.replaceState(null, '', '#s=' + code); } catch (x) { /* 무시 */ } }
+      c.textContent = '';
+      c.appendChild(el('h3', 'ar-h', d.name + ' (' + d.code + ')'));
+      c.appendChild(el('p', 'ar-sub', kdate(d.date) + ' 종가 ' + won(d.close) + ' · 전일 ' + pp(d.d1, 2) + ' · 1개월 ' + pp(d.d20) + ' · 1년 ' + pp(d.d250) + ' · 52주 고점 대비 ' + pp(d.from_hi)));
+      var g = el('div'); g.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:10px';
+      [['주가(1년)', d.spark], ['외국인 보유율(1년, %)', (d.ratio || []).filter(function (x) { return x != null; })]].forEach(function (x) {
+        var b = el('div', 'ar-a'); b.appendChild(el('b', null, x[0])); if (x[1] && x[1].length > 2) { b.appendChild(spark(x[1], x[1][x[1].length - 1] >= x[1][0])); b.appendChild(el('div', 'r', fmt(x[1][0], x[0][0] === '외' ? 2 : 0) + ' → ' + fmt(x[1][x[1].length - 1], x[0][0] === '외' ? 2 : 0))); } g.appendChild(b);
+      });
+      c.appendChild(g);
+
+      var h1 = el('h3', 'ar-h', '지금 국면: ' + (d.state || '판정 보류')); h1.style.marginTop = '16px'; c.appendChild(h1);
+      if (d.pooled) {
+        c.appendChild(el('p', 'ar-sub', '대형주 40종목의 과거 ' + fmt(d.pooled.n, 0) + '일이 같은 국면이었습니다. 그날 샀을 때의 결과를 아무 날에 샀을 때와 비교합니다.'));
+        var sc = el('div', 'ar-scroll'), t = el('table', 'ar-tbl'), hr = el('tr');
+        ['이후 기간', '이 국면 중앙값', '오른 비율', '평소 중앙값', '평소 오른 비율', '가운데 절반 범위'].forEach(function (x) { hr.appendChild(el('th', null, x)); }); t.appendChild(hr);
+        [['20', '1개월'], ['60', '3개월'], ['120', '6개월']].forEach(function (H) {
+          var a = d.pooled.stats[H[0]], b = d.base[H[0]], tr = el('tr'); if (!a) return;
+          tr.appendChild(el('td', null, H[1] + ' 뒤')); var m = el('td', cls(a.median), pp(a.median)); m.style.fontWeight = '700'; tr.appendChild(m);
+          tr.appendChild(el('td', null, fmt(a.win, 0) + '%')); tr.appendChild(el('td', 'ar-mut', b ? pp(b.median) : '–')); tr.appendChild(el('td', 'ar-mut', b ? fmt(b.win, 0) + '%' : '–'));
+          tr.appendChild(el('td', 'ar-mut', pp(a.p25) + ' ~ ' + pp(a.p75))); t.appendChild(tr);
+        });
+        sc.appendChild(t); c.appendChild(sc);
+        var v = el('p'); v.style.cssText = 'margin:10px 0 0;font-size:14px'; v.appendChild(el('b', null, '판정: ' + d.verdict)); v.appendChild(document.createTextNode(' — 3개월 뒤 오른 비율이 평소보다 ' + (d.dwin > 0 ? '+' : '') + fmt(d.dwin, 1) + '%포인트. 5%포인트 넘게 벌어져야 차이로 인정합니다.')); c.appendChild(v);
+        if (d.own && d.own_base) c.appendChild(el('p', 'ar-note', '이 종목만 보면: 같은 국면 ' + fmt(d.own.n, 0) + '일, 3개월 뒤 중앙값 ' + pp(d.own.median) + '·오른 비율 ' + fmt(d.own.win, 0) + '% (이 종목 평소 ' + pp(d.own_base.median) + '·' + fmt(d.own_base.win, 0) + '%). 한 종목의 기록은 표본이 작아 참고만 하세요.'));
+      } else c.appendChild(el('p', 'ar-sub', '상장 이력이나 외국인 보유율 자료가 짧아 국면을 판정하지 않았습니다.'));
+
+      var h2 = el('h3', 'ar-h', '다섯 가지 점검'); h2.style.marginTop = '16px'; c.appendChild(h2);
+      c.appendChild(el('p', 'ar-sub', '추세·외국인은 위 검증표의 재료이고, 기관·이익·공시는 과거 시점 자료가 없어 검증하지 못한 참고 항목입니다.'));
+      (d.checks || []).forEach(function (x) { var r = el('div', 'ar-row'); r.style.gridTemplateColumns = '26px 64px 1fr'; r.appendChild(mark(x.v)); r.appendChild(el('b', null, x.k)); r.appendChild(el('span', null, x.note)); c.appendChild(r); });
+
+      if (d.flow20) {
+        var h3 = el('h3', 'ar-h', '최근 20거래일 수급'); h3.style.marginTop = '16px'; c.appendChild(h3);
+        var fg = el('div', 'ar-grid');
+        [['외국인', d.flow20.foreign], ['기관', d.flow20.inst], ['개인', d.flow20.indiv]].forEach(function (x) { var b = el('div', 'ar-a'); b.appendChild(el('b', null, x[0] + ' 순매수')); b.appendChild(el('div', 'v ' + cls(x[1]), (x[1] > 0 ? '+' : '') + fmt(x[1], 0) + '주')); fg.appendChild(b); });
+        c.appendChild(fg);
+      }
+      var f = d.fund || {}, h4 = el('h3', 'ar-h', '기본 지표'); h4.style.marginTop = '16px'; c.appendChild(h4);
+      var gg = el('div', 'ar-grid');
+      [['PER', f.per == null ? '–' : fmt(f.per, 1) + '배'], ['예상 PER', f.cns_per == null ? '–' : fmt(f.cns_per, 1) + '배'], ['PBR', f.pbr == null ? '–' : fmt(f.pbr, 2) + '배'], ['ROE', f.roe == null ? '–' : fmt(f.roe, 1) + '%'],
+        ['영업이익률', f.op_margin == null ? '–' : fmt(f.op_margin, 1) + '%'], ['부채비율', f.debt_ratio == null ? '–' : fmt(f.debt_ratio, 0) + '%'], ['배당수익률', f.div_yield == null ? '–' : fmt(f.div_yield, 2) + '%'],
+        ['증권사 목표가 평균', f.target == null ? '–' : won(f.target) + ' (' + pp(f.target_gap) + ')']].forEach(function (x) { var b = el('div', 'ar-a'); b.appendChild(el('b', null, x[0])); var vv = el('div', 'v', x[1]); vv.style.fontSize = '16px'; b.appendChild(vv); gg.appendChild(b); });
+      c.appendChild(gg);
+      c.appendChild(el('p', 'ar-note', '목표가와 예상 PER은 증권사 전망의 평균으로, 맞는다는 보장이 없습니다.'));
+      if (d.disc && d.disc.length) {
+        var h5 = el('h3', 'ar-h', '최근 공시'); h5.style.marginTop = '16px'; c.appendChild(h5);
+        d.disc.forEach(function (x) { var pz = el('p'); pz.style.cssText = 'margin:0 0 6px;font-size:13px'; pz.appendChild(el('span', 'ar-mut', kdate(x.date).slice(5) + ' ')); if (x.tag) { var tg = el('span', 'ar-chip' + (x.tag === '주의' ? ' ar-live' : ''), x.tag); pz.appendChild(tg); pz.appendChild(document.createTextNode(' ')); } pz.appendChild(document.createTextNode(x.title)); c.appendChild(pz); });
+      }
+      if (opt.scroll && c.scrollIntoView) c.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }).catch(function (x) { fail(host, x); });
+  }
+
+  function renderStocks(root, j) {
+    root.textContent = '';
+    var detail = el('div'); root.appendChild(detail);
+    var lc = el('div', 'ar-card'); lc.appendChild(el('h3', 'ar-h', '종목별 현재 국면'));
+    lc.appendChild(el('p', 'ar-sub', kdate(j.asof) + ' 종가 기준 · 종목을 누르면 상세가 열립니다 · 제목 줄을 누르면 정렬됩니다'));
+    var sc = el('div', 'ar-scroll'), t = el('table', 'ar-tbl'), cols = [['name', '종목'], ['close', '종가'], ['d1', '전일'], ['d20', '1개월'], ['state', '국면'], ['dwin', '평소 대비'], ['good', '점검'], ['per', 'PER'], ['pbr', 'PBR']], sortK = null, sortD = 1;
+    function draw() {
+      t.textContent = ''; var hr = el('tr');
+      cols.forEach(function (cdef) { var th = el('th', null, cdef[1] + (sortK === cdef[0] ? (sortD > 0 ? ' ▲' : ' ▼') : '')); th.style.cursor = 'pointer'; th.addEventListener('click', function () { sortD = sortK === cdef[0] ? -sortD : (cdef[0] === 'name' || cdef[0] === 'state' ? 1 : -1); sortK = cdef[0]; draw(); }); hr.appendChild(th); });
+      t.appendChild(hr);
+      var rows = j.stocks.slice(); if (sortK) rows.sort(function (a, b) { var x = a[sortK], y = b[sortK]; if (x == null) return 1; if (y == null) return -1; return (x > y ? 1 : x < y ? -1 : 0) * sortD; });
+      rows.forEach(function (x) {
+        var tr = el('tr'); tr.style.cursor = 'pointer'; tr.addEventListener('click', function () { stockDetail(detail, x.code, { hash: true, scroll: true }); });
+        var n = el('td'); n.appendChild(el('b', null, x.name)); tr.appendChild(n);
+        tr.appendChild(el('td', null, fmt(x.close, 0))); tr.appendChild(el('td', cls(x.d1), pp(x.d1, 2))); tr.appendChild(el('td', cls(x.d20), pp(x.d20)));
+        tr.appendChild(el('td', null, x.state || '판정 보류')); tr.appendChild(el('td', x.dwin == null ? 'ar-mut' : cls(x.dwin), x.dwin == null ? '–' : (x.dwin > 0 ? '+' : '') + fmt(x.dwin, 1) + '%p'));
+        tr.appendChild(el('td', null, '✔' + x.good + ' ✖' + x.bad)); tr.appendChild(el('td', null, x.per == null ? '–' : fmt(x.per, 1))); tr.appendChild(el('td', null, x.pbr == null ? '–' : fmt(x.pbr, 2)));
+        t.appendChild(tr);
+      });
+    }
+    draw(); sc.appendChild(t); lc.appendChild(sc);
+    lc.appendChild(el('p', 'ar-note', '‘평소 대비’는 지금과 같은 국면이었던 과거 날들의 3개월 뒤 오른 비율에서 아무 날의 오른 비율을 뺀 값입니다.'));
+    root.appendChild(lc);
+
+    var vc = el('div', 'ar-card'); vc.appendChild(el('h3', 'ar-h', '국면 검증표: 추세와 외국인 수급은 정말 통했나'));
+    var big = j.table.filter(function (r) { return r.verdict !== '뚜렷한 차이 없음' && r.verdict !== '판정 보류'; }).length;
+    vc.appendChild(el('p', 'ar-sub', '대형주 ' + j.stocks.length + '종목의 과거 ' + fmt(j.base['60'].n, 0) + '일을 12가지 국면으로 나눠 3개월 뒤 성적을 셌습니다. 평소(아무 날)는 중앙값 ' + pp(j.base['60'].median) + ', 오른 비율 ' + fmt(j.base['60'].win, 0) + '%입니다. 오른 비율이 평소와 5%포인트 넘게 벌어진 국면은 ' + big + '개입니다.'));
+    var s2 = el('div', 'ar-scroll'), t2 = el('table', 'ar-tbl'), h2 = el('tr');
+    ['국면', '해당 일수', '3개월 뒤 중앙값', '오른 비율', '평소 대비', '판정'].forEach(function (x) { h2.appendChild(el('th', null, x)); }); t2.appendChild(h2);
+    j.table.forEach(function (r) { var a = r.stats['60'], tr = el('tr'); if (!a) return; tr.appendChild(el('td', null, r.name)); tr.appendChild(el('td', null, fmt(r.n, 0))); tr.appendChild(el('td', cls(a.median), pp(a.median))); tr.appendChild(el('td', null, fmt(a.win, 0) + '%')); tr.appendChild(el('td', cls(r.dwin), (r.dwin > 0 ? '+' : '') + fmt(r.dwin, 1) + '%p')); tr.appendChild(el('td', null, r.verdict)); t2.appendChild(tr); });
+    s2.appendChild(t2); vc.appendChild(s2);
+    vc.appendChild(el('p', 'ar-note', '주의: 대상이 지금 시가총액 상위 종목이라 과거 수익률 전체가 실제보다 좋게 나옵니다(살아남은 종목만 본 효과). 특히 하락 추세 국면의 성적은 그 뒤 회복해 대형주가 된 종목만 세었기 때문에 부풀려져 있습니다. 하루씩 밀어 가며 센 값이라 표본도 서로 겹칩니다.'));
+    root.appendChild(vc);
+    var m = /s=(\d{6})/.exec(location.hash); if (m) stockDetail(detail, m[1], {});
+    root.appendChild(el('p', 'ar-note', '자료: 네이버 증권(시세·외국인 보유율·수급·재무·공시, 컨센서스는 에프앤가이드) · 계산: 에셋리포트 · 매일 자동 갱신 · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
+  }
+
   function boot() {
     if (!document.getElementById('ar-css')) { var st = document.createElement('style'); st.id = 'ar-css'; st.textContent = CSS; document.head.appendChild(st); }
     Array.prototype.forEach.call(document.querySelectorAll('[data-ar]'), function (root) {
@@ -382,6 +477,8 @@
       if (kind === 'thermo') getJSON('/data/market.json').then(function (m) { renderThermo(root, m); }).catch(function (e) { fail(root, e); });
       else if (kind === 'events') Promise.all([getJSON('/data/events.json'), getLinks()]).then(function (r) { renderEvents(root, r[0], r[1]); }).catch(function (e) { fail(root, e); });
       else if (kind === 'event') { var host = el('div'); root.textContent = ''; root.appendChild(host); eventDetail(host, root.getAttribute('data-id'), {}); root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부, 코인베이스, Yahoo Finance(과거 이력) · 계산: 에셋리포트 · 매일 자동 갱신 · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.')); }
+      else if (kind === 'stocks') getJSON('/data/stocks/index.json').then(function (j) { renderStocks(root, j); }).catch(function (e) { fail(root, e); });
+      else if (kind === 'stock') { var sh = el('div'); root.textContent = ''; root.appendChild(sh); stockDetail(sh, root.getAttribute('data-code'), {}); }
       else if (kind === 'mini') Promise.all([getJSON('/data/market.json'), getLinks()]).then(function (r) { renderMini(root, r[0], r[1]); }).catch(function (e) { fail(root, e); });
     });
   }

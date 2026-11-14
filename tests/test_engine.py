@@ -6,6 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 import build  # noqa: E402
+import build_stocks  # noqa: E402
 import fetch  # noqa: E402
 
 
@@ -100,6 +101,23 @@ class Store(unittest.TestCase):
     def test_empty_fetch_keeps_store(self):
         out, changed = fetch.merge_into_store({"2020-01-01": 1.0}, {}, "2026-11-13")
         self.assertEqual((out, changed), ({"2020-01-01": 1.0}, 0))
+
+
+class Stocks(unittest.TestCase):
+    def test_regimes_need_history_and_classify(self):
+        close = [100.0 + i for i in range(300)]            # 꾸준히 오르는 종목
+        tech, flow, d20 = build_stocks.regimes(close, [None] * 300)
+        self.assertIsNone(tech[198]); self.assertEqual(tech[299], 0)      # 200일 전에는 판정 없음, 이후 상승 추세
+        self.assertTrue(all(f is None for f in flow))                      # 보유율 자료가 없으면 수급 판정도 없음
+        down = [400.0 - i for i in range(300)]
+        self.assertEqual(build_stocks.regimes(down, [None] * 300)[0][299], 3)
+
+    def test_judge_thresholds(self):
+        base = {"n": 9999, "win": 54.0, "median": 2.0}
+        self.assertEqual(build_stocks.judge({"n": 5000, "win": 57.9, "median": 3.2}, base), "뚜렷한 차이 없음")
+        self.assertEqual(build_stocks.judge({"n": 5000, "win": 60.0, "median": 3.2}, base), "평소보다 좋았음")
+        self.assertEqual(build_stocks.judge({"n": 5000, "win": 48.0, "median": 0.5}, base), "평소보다 나빴음")
+        self.assertEqual(build_stocks.judge({"n": 100, "win": 80.0, "median": 9.0}, base), "판정 보류")
 
 
 class Parsers(unittest.TestCase):

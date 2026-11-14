@@ -1,0 +1,19 @@
+<p>코스피와 코스닥 시가총액 상위 40종목의 주가 추세, 외국인 보유율, 기관·외국인 순매수, 실적, 최근 공시를 한 화면에서 봅니다. 종목마다 지금이 어떤 국면인지 정하고, 과거 같은 국면에서 산 사람의 3개월 뒤 성적이 평소와 달랐는지까지 함께 보여 줍니다. 장이 끝난 뒤 매일 다시 계산됩니다.</p>
+<div data-ar="stocks"><p>종목 데이터를 불러오는 중입니다.</p></div>
+<script>(function(){if(window.__AR_BOOT__)return;window.__AR_BOOT__=1;var C='https://cdn.jsdelivr.net/gh/tera04162/hz-data@assetreport/docs',R='https://raw.githubusercontent.com/tera04162/hz-data/assetreport/docs';window.AR_BASES=[C,R];var s=document.createElement('script');s.src=C+'/widget/ar.js';s.async=true;s.onerror=function(){fetch(R+'/widget/ar.js').then(function(r){return r.text()}).then(function(t){var e=document.createElement('script');e.textContent=t;document.head.appendChild(e)}).catch(function(){})};document.head.appendChild(s)})();</script>
+<h2 style="font-size:20px;margin:28px 0 10px">국면은 이렇게 정합니다</h2>
+<p>기술적 분석에서 가장 널리 쓰는 두 가지를 씁니다. 주가가 200일 이동평균 위인지 아래인지, 그리고 최근 60거래일 수익률이 플러스인지 마이너스인지입니다. 둘을 조합하면 상승 추세, 추세 위 조정, 추세 아래 반등, 하락 추세 네 가지가 나옵니다.</p>
+<p>수급은 외국인 보유율로 봅니다. 최근 20거래일 동안 보유율이 얼마나 변했는지를 그 종목 자신의 지난 10년 기록과 견줘, 상위 30%면 유입, 하위 30%면 유출, 나머지는 중립으로 나눕니다. 삼성전자의 0.5%포인트와 중형주의 0.5%포인트는 무게가 다르기 때문에 종목마다 자기 기준을 씁니다. 기술 네 가지와 수급 세 가지를 곱해 국면은 모두 열두 가지입니다.</p>
+<h2 style="font-size:20px;margin:28px 0 10px">검증 결과를 숨기지 않습니다</h2>
+<p>추세가 좋고 외국인이 사는 종목이 오른다는 말은 흔합니다. 그래서 40종목의 과거 20만 일을 열두 국면으로 나눠 실제로 세어 봤고, 그 결과가 위 검증표입니다. 어느 국면이 평소보다 뚜렷하게 좋았는지, 차이가 없었는지를 숫자로 확인할 수 있습니다. 차이가 작게 나온 국면은 작다고 적었습니다. 근거 없는 매수·매도 신호를 만들어 내는 것보다 통하지 않는 것을 통하지 않는다고 보여 주는 쪽이 투자 판단에 쓸모가 있다고 봅니다.</p>
+<p>오른 비율이 평소와 5%포인트 넘게 벌어져야 차이로 인정합니다. 대상이 지금의 대형주라 과거 성적 전체가 실제보다 좋게 나오는 효과가 있어서, 3~4%포인트 차이는 믿기 어렵기 때문입니다.</p>
+<h2 style="font-size:20px;margin:28px 0 10px">다섯 가지 점검 읽는 법</h2>
+<p>종목을 누르면 추세, 외국인, 기관, 이익, 공시 다섯 항목의 점검표가 나옵니다. 추세와 외국인은 위 검증표의 재료입니다. 기관 순매수는 최근 20거래일 합계, 이익은 가장 최근 분기 영업이익을 1년 전 같은 분기와 비교한 것, 공시는 최근 60일 안에 유상증자·전환사채·소송·거래정지처럼 주주에게 부담이 되는 제목이 있었는지입니다. 이 세 가지는 과거 시점의 자료를 구할 수 없어 검증하지 못했으므로, 점수가 아니라 놓친 것이 없는지 살피는 확인 목록으로 쓰는 것이 맞습니다.</p>
+<h2 style="font-size:20px;margin:28px 0 10px">자주 묻는 질문</h2>
+<h3 style="font-size:17px;margin:18px 0 6px">매수·매도 추천인가요?</h3>
+<p>아닙니다. 종목의 현재 상태와, 같은 상태였던 과거의 통계를 보여 줄 뿐입니다. 사거나 팔라는 의견은 내지 않습니다.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">왜 40종목뿐인가요?</h3>
+<p>코스피 시가총액 상위 30종목과 코스닥 상위 10종목입니다. 우선주, 스팩, 리츠는 뺐습니다. 순위가 바뀌어 새로 들어온 종목은 추가되고, 한 번 들어온 종목은 빠지지 않습니다.</p>
+<h3 style="font-size:17px;margin:18px 0 6px">시장 전체 분위기는 어디서 보나요?</h3>
+<p>주식·환율·금리·유가·비트코인을 묶은 <a href="/p/market-thermometer.html">시장체온계</a>와, 급락·신고가·금리 역전 뒤의 기록을 모은 <a href="/p/market-stats.html">투자 통계 연구소</a>가 있습니다.</p>
+<p style="font-size:13px;color:#777">이 페이지의 숫자는 공개 자료로 계산한 참고 통계이며 투자 권유가 아닙니다. 과거의 통계는 미래 수익을 보장하지 않고, 투자 판단과 그 결과는 투자자 본인에게 있습니다.</p>
