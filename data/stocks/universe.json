@@ -1,0 +1,282 @@
+[
+ {
+  "code": "005930",
+  "name": "삼성전자",
+  "market": "KOSPI",
+  "rank": 1,
+  "cap": 1221872229072000
+ },
+ {
+  "code": "000660",
+  "name": "SK하이닉스",
+  "market": "KOSPI",
+  "rank": 2,
+  "cap": 900697086045000
+ },
+ {
+  "code": "402340",
+  "name": "SK스퀘어",
+  "market": "KOSPI",
+  "rank": 3,
+  "cap": 101449554462000
+ },
+ {
+  "code": "373220",
+  "name": "LG에너지솔루션",
+  "market": "KOSPI",
+  "rank": 4,
+  "cap": 75933000000000
+ },
+ {
+  "code": "207940",
+  "name": "삼성바이오로직스",
+  "market": "KOSPI",
+  "rank": 5,
+  "cap": 65316531861000
+ },
+ {
+  "code": "009150",
+  "name": "삼성전기",
+  "market": "KOSPI",
+  "rank": 6,
+  "cap": 64535353344000
+ },
+ {
+  "code": "105560",
+  "name": "KB금융",
+  "market": "KOSPI",
+  "rank": 7,
+  "cap": 56040661972000
+ },
+ {
+  "code": "005380",
+  "name": "현대차",
+  "market": "KOSPI",
+  "rank": 8,
+  "cap": 55037686086000
+ },
+ {
+  "code": "032830",
+  "name": "삼성생명",
+  "market": "KOSPI",
+  "rank": 9,
+  "cap": 50700000000000
+ },
+ {
+  "code": "068270",
+  "name": "셀트리온",
+  "market": "KOSPI",
+  "rank": 10,
+  "cap": 49547559239500
+ },
+ {
+  "code": "028260",
+  "name": "삼성물산",
+  "market": "KOSPI",
+  "rank": 11,
+  "cap": 46461011956500
+ },
+ {
+  "code": "055550",
+  "name": "신한지주",
+  "market": "KOSPI",
+  "rank": 12,
+  "cap": 42156631462200
+ },
+ {
+  "code": "006400",
+  "name": "삼성SDI",
+  "market": "KOSPI",
+  "rank": 13,
+  "cap": 38681054400000
+ },
+ {
+  "code": "000270",
+  "name": "기아",
+  "market": "KOSPI",
+  "rank": 14,
+  "cap": 36933069610800
+ },
+ {
+  "code": "034730",
+  "name": "SK",
+  "market": "KOSPI",
+  "rank": 15,
+  "cap": 36758870421000
+ },
+ {
+  "code": "086790",
+  "name": "하나금융지주",
+  "market": "KOSPI",
+  "rank": 16,
+  "cap": 33627365831000
+ },
+ {
+  "code": "012450",
+  "name": "한화에어로스페이스",
+  "market": "KOSPI",
+  "rank": 17,
+  "cap": 33052140041000
+ },
+ {
+  "code": "012330",
+  "name": "현대모비스",
+  "market": "KOSPI",
+  "rank": 18,
+  "cap": 32110859137500
+ },
+ {
+  "code": "034020",
+  "name": "두산에너빌리티",
+  "market": "KOSPI",
+  "rank": 19,
+  "cap": 30202458033900
+ },
+ {
+  "code": "329180",
+  "name": "HD현대중공업",
+  "market": "KOSPI",
+  "rank": 20,
+  "cap": 28549453200000
+ },
+ {
+  "code": "035420",
+  "name": "NAVER",
+  "market": "KOSPI",
+  "rank": 21,
+  "cap": 26409168038400
+ },
+ {
+  "code": "316140",
+  "name": "우리금융지주",
+  "market": "KOSPI",
+  "rank": 22,
+  "cap": 23871884446800
+ },
+ {
+  "code": "000810",
+  "name": "삼성화재",
+  "market": "KOSPI",
+  "rank": 23,
+  "cap": 23573865744000
+ },
+ {
+  "code": "066570",
+  "name": "LG전자",
+  "market": "KOSPI",
+  "rank": 24,
+  "cap": 22136022304200
+ },
+ {
+  "code": "005490",
+  "name": "POSCO홀딩스",
+  "market": "KOSPI",
+  "rank": 25,
+  "cap": 21791419925000
+ },
+ {
+  "code": "011200",
+  "name": "HMM",
+  "market": "KOSPI",
+  "rank": 26,
+  "cap": 20090968761000
+ },
+ {
+  "code": "010120",
+  "name": "LS ELECTRIC",
+  "market": "KOSPI",
+  "rank": 27,
+  "cap": 18735000000000
+ },
+ {
+  "code": "096770",
+  "name": "SK이노베이션",
+  "market": "KOSPI",
+  "rank": 28,
+  "cap": 18494375007200
+ },
+ {
+  "code": "033780",
+  "name": "KT&G",
+  "market": "KOSPI",
+  "rank": 29,
+  "cap": 18322545484000
+ },
+ {
+  "code": "010130",
+  "name": "고려아연",
+  "market": "KOSPI",
+  "rank": 30,
+  "cap": 18284720844000
+ },
+ {
+  "code": "196170",
+  "name": "알테오젠",
+  "market": "KOSDAQ",
+  "rank": 1,
+  "cap": 12342889567600
+ },
+ {
+  "code": "086520",
+  "name": "에코프로",
+  "market": "KOSDAQ",
+  "rank": 2,
+  "cap": 9965969556800
+ },
+ {
+  "code": "247540",
+  "name": "에코프로비엠",
+  "market": "KOSDAQ",
+  "rank": 3,
+  "cap": 9878971580800
+ },
+ {
+  "code": "036930",
+  "name": "주성엔지니어링",
+  "market": "KOSDAQ",
+  "rank": 4,
+  "cap": 8097011278200
+ },
+ {
+  "code": "277810",
+  "name": "레인보우로보틱스",
+  "market": "KOSDAQ",
+  "rank": 5,
+  "cap": 7342846253000
+ },
+ {
+  "code": "222800",
+  "name": "심텍",
+  "market": "KOSDAQ",
+  "rank": 6,
+  "cap": 4927975799700
+ },
+ {
+  "code": "039030",
+  "name": "이오테크닉스",
+  "market": "KOSDAQ",
+  "rank": 7,
+  "cap": 4410398900000
+ },
+ {
+  "code": "000250",
+  "name": "삼천당제약",
+  "market": "KOSDAQ",
+  "rank": 8,
+  "cap": 4133206566400
+ },
+ {
+  "code": "058470",
+  "name": "리노공업",
+  "market": "KOSDAQ",
+  "rank": 9,
+  "cap": 4001122125000
+ },
+ {
+  "code": "028300",
+  "name": "HLB",
+  "market": "KOSDAQ",
+  "rank": 10,
+  "cap": 3865138763000
+ }
+]
