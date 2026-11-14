@@ -1,12 +1,12 @@
 {
- "checked": "2026-11-13T11:59:24Z",
+ "checked": "2026-11-14T01:23:49Z",
  "series": [
   {
    "id": "kospi",
    "rows": 9509,
    "first": "1990-01-04",
    "last": "2026-11-13",
-   "changed": 9509,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -15,25 +15,25 @@
    "rows": 7592,
    "first": "1996-07-02",
    "last": "2026-11-13",
-   "changed": 7592,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
   {
    "id": "spx",
-   "rows": 13076,
+   "rows": 13077,
    "first": "1975-01-02",
-   "last": "2026-11-12",
-   "changed": 13076,
+   "last": "2026-11-13",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "nasdaq",
-   "rows": 753,
+   "rows": 754,
    "first": "2023-11-13",
-   "last": "2026-11-12",
-   "changed": 753,
+   "last": "2026-11-13",
+   "changed": 2,
    "ok": true,
    "errors": []
   },
@@ -42,25 +42,25 @@
    "rows": 9315,
    "first": "1990-01-02",
    "last": "2026-11-12",
-   "changed": 9315,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
   {
    "id": "us10y",
-   "rows": 16201,
+   "rows": 16202,
    "first": "1962-01-02",
-   "last": "2026-11-12",
-   "changed": 16201,
+   "last": "2026-11-13",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "us2y",
-   "rows": 12609,
+   "rows": 12610,
    "first": "1976-06-01",
-   "last": "2026-11-12",
-   "changed": 12609,
+   "last": "2026-11-13",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -69,34 +69,34 @@
    "rows": 5599,
    "first": "2004-04-12",
    "last": "2026-11-13",
-   "changed": 5599,
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "wti",
-   "rows": 754,
-   "first": "2023-11-13",
-   "last": "2026-11-12",
-   "changed": 754,
+   "rows": 10198,
+   "first": "1986-01-02",
+   "last": "2026-06-08",
+   "changed": 10198,
    "ok": true,
    "errors": []
   },
   {
    "id": "gold",
-   "rows": 754,
+   "rows": 755,
    "first": "2023-11-13",
-   "last": "2026-11-12",
-   "changed": 754,
+   "last": "2026-11-13",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "btc",
-   "rows": 4134,
+   "rows": 4135,
    "first": "2015-07-20",
-   "last": "2026-11-12",
-   "changed": 4134,
+   "last": "2026-11-13",
+   "changed": 1,
    "ok": true,
    "errors": []
   }
