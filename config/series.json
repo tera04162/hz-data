@@ -131,17 +131,22 @@
   },
   {
    "id": "wti",
-   "name": "WTI 유가(현물)",
+   "name": "WTI 유가",
    "group": "원자재",
    "unit": "$",
    "digits": 2,
    "kind": "price",
    "sources": [
     {
+     "type": "naver_mi",
+     "symbol": "energy/CLcv1"
+    },
+    {
      "type": "dbnomics",
      "symbol": "EIA/PET/RWTC.D"
     }
-   ]
+   ],
+   "note": "예외적 혼용: 최근 3년은 NYMEX 근월물 선물(네이버), 그 이전은 미 에너지정보청 현물. 두 값의 차이는 보통 1% 안쪽이라 이음매(2023-11)에서 통계 왜곡은 작다."
   },
   {
    "id": "gold",

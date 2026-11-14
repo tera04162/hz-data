@@ -202,9 +202,7 @@ def fetch_source(src: dict, known_last: str | None = None) -> dict[str, float]:
     if t == "cboe":
         return parse_cboe_csv(http_get(f"https://cdn.cboe.com/api/global/us_indices/daily_prices/{q}_History.csv"))
     if t == "nasdaq_api":
-        frm = "2000-01-01"
-        if known_last:
-            frm = (datetime.strptime(known_last, "%Y-%m-%d") - timedelta(days=REVISE_DAYS + 20)).strftime("%Y-%m-%d")
+        frm = "2000-01-01"   # 매번 전체를 받는다(한 번의 호출, 1MB 미만) — 장부가 얕게 시작했어도 스스로 메워진다
         return parse_nasdaq_api(http_get(
             f"https://api.nasdaq.com/api/quote/{q}/historical?assetclass=index&fromdate={frm}"
             f"&todate={now.strftime('%Y-%m-%d')}&limit=9999"))
