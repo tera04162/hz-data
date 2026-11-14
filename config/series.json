@@ -57,7 +57,7 @@
    "sources": [
     {
      "type": "nasdaq_api",
-     "symbol": "COMP"
+     "symbol": "index/COMP"
     },
     {
      "type": "naver_world",
@@ -78,6 +78,21 @@
      "symbol": "VIX"
     }
    ]
+  },
+  {
+   "id": "hyg",
+   "name": "하이일드 채권(HYG)",
+   "group": "심리",
+   "unit": "$",
+   "digits": 2,
+   "kind": "price",
+   "sources": [
+    {
+     "type": "nasdaq_api",
+     "symbol": "etf/HYG"
+    }
+   ],
+   "note": "미국 하이일드 회사채 ETF 종가(분배금 미반영). 신용 위험 선호의 잣대. 무료로 받을 수 있는 하이일드 스프레드(FRED ICE BofA)는 2026년 현재 최근 3년치만 제공돼 쓰지 않는다. 2016-11 이전은 seed/hyg.csv(Yahoo Finance에서 1회 수령)."
   },
   {
    "id": "us10y",
@@ -130,6 +145,20 @@
    ]
   },
   {
+   "id": "dxy",
+   "name": "달러 지수(연준 광의)",
+   "group": "환율",
+   "unit": "",
+   "digits": 2,
+   "kind": "price",
+   "sources": [
+    {
+     "type": "dbnomics",
+     "symbol": "FED/H10/JRXWTFB_N.B"
+    }
+   ]
+  },
+  {
    "id": "wti",
    "name": "WTI 유가",
    "group": "원자재",
@@ -140,13 +169,9 @@
     {
      "type": "naver_mi",
      "symbol": "energy/CLcv1"
-    },
-    {
-     "type": "dbnomics",
-     "symbol": "EIA/PET/RWTC.D"
     }
    ],
-   "note": "예외적 혼용: 최근 3년은 NYMEX 근월물 선물(네이버), 그 이전은 미 에너지정보청 현물. 두 값의 차이는 보통 1% 안쪽이라 이음매(2023-11)에서 통계 왜곡은 작다."
+   "note": "NYMEX 근월물 선물. 2023-11-13 이전은 seed/wti.csv(같은 상품, Yahoo Finance CL=F에서 1회 수령), 이후는 네이버가 매일 이어 붙인다."
   },
   {
    "id": "gold",
@@ -160,7 +185,8 @@
      "type": "naver_mi",
      "symbol": "metals/GCcv1"
     }
-   ]
+   ],
+   "note": "COMEX 근월물 선물. 2023-11-13 이전은 seed/gold.csv(같은 상품, Yahoo Finance GC=F에서 1회 수령), 이후는 네이버가 매일 이어 붙인다."
   },
   {
    "id": "btc",
@@ -202,12 +228,17 @@
    },
    {
     "id": "vix",
-    "w": 0.25,
+    "w": 0.2,
     "sign": -1
    },
    {
+    "id": "hyg",
+    "w": 0.1,
+    "sign": 1
+   },
+   {
     "id": "usdkrw",
-    "w": 0.15,
+    "w": 0.1,
     "sign": -1
    },
    {

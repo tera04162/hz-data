@@ -8,7 +8,7 @@
 
 소스 선정 근거(2026-11, 깃허브 실행기에서 직접 점검)
 - 열림: 네이버 금융, CBOE 공식 CSV, 나스닥 공식 API, DBnomics(연준 H.15·미 에너지정보청 미러), 미 재무부, 코인베이스
-- 네이버 해외지수·원자재 API는 최근 3년치만 준다. 그래서 장기 이력이 필요한 것은 공식 소스를 쓴다.
+- 네이버 해외지수·원자재 API는 최근 3년치만 준다. 금·유가·HYG의 그 이전 이력은 seed/ 폴더에 한 번 받아 둔 것을 장부에 심었다(tools/seed_from_yahoo.py). 장부는 더하기만 하므로 다시 받을 필요가 없다.
 - 막힘: Yahoo Finance(429), FRED 그래프 CSV(연결 끊김), Stooq(브라우저 검증 요구)
 """
 from __future__ import annotations
@@ -201,11 +201,11 @@ def fetch_source(src: dict, known_last: str | None = None) -> dict[str, float]:
         return paged(lambda p: f"https://api.stock.naver.com/marketindex/{sym}/prices?page={p}&pageSize=60", parse_naver_rows, known_last)
     if t == "cboe":
         return parse_cboe_csv(http_get(f"https://cdn.cboe.com/api/global/us_indices/daily_prices/{q}_History.csv"))
-    if t == "nasdaq_api":
-        frm = "2000-01-01"   # 매번 전체를 받는다(한 번의 호출, 1MB 미만) — 장부가 얕게 시작했어도 스스로 메워진다
+    if t == "nasdaq_api":   # symbol 예: index/COMP, etf/HYG — 매번 받을 수 있는 전체를 받는다(지수는 2000년~, ETF는 최근 10년)
+        cls, code = sym.split("/", 1)
         return parse_nasdaq_api(http_get(
-            f"https://api.nasdaq.com/api/quote/{q}/historical?assetclass=index&fromdate={frm}"
-            f"&todate={now.strftime('%Y-%m-%d')}&limit=9999"))
+            f"https://api.nasdaq.com/api/quote/{urllib.parse.quote(code, safe='')}/historical?assetclass={cls}"
+            f"&fromdate=2000-01-01&todate={now.strftime('%Y-%m-%d')}&limit=9999"))
     if t == "dbnomics":
         return parse_dbnomics(http_get(f"https://api.db.nomics.world/v22/series/{sym}?observations=1"))
     if t == "treasury":   # 올해분만 — 최신 구간 보강용

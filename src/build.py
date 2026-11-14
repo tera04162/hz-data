@@ -9,7 +9,7 @@
 - 자산 온도(0~100) = 0.6 x [200일 이동평균 대비 이격의 백분위] + 0.4 x [60거래일 변화의 백분위]
   백분위는 '그날 이전' 최대 20년(5040거래일) 자기 과거와 비교한다. 미래 값을 쓰지 않는다.
   장부가 10년 미만인 자산은 온도를 내지 않는다.
-- 시장 체온 = 자산 온도의 가중평균. VIX·하이일드 스프레드·원/달러는 뒤집어서(100-온도) 넣는다.
+- 시장 체온 = 자산 온도의 가중평균. VIX·원/달러는 뒤집어서(100-온도) 넣는다.
 - 이벤트 통계 = 조건이 처음 충족된 날(쿨다운으로 뭉침 제거) 이후 N거래일 수익률 분포 + 같은 기간 '아무 날' 평균과 비교.
 """
 from __future__ import annotations
@@ -231,12 +231,15 @@ EVENTS = [
     ("spx_below200", "S&P 500 200일선 하향 이탈", "S&P 500 종가가 200일 이동평균 아래로 내려간 날", "spx", lambda v: det_ma_cross(v, 200, False), 60, ["spx"]),
     ("vix_cross30", "VIX 30 돌파", "VIX가 30 아래에 있다가 30 이상으로 마감한 날", "vix", lambda v: det_cross(v, 30, True), 20, ["spx", "kospi"]),
     ("vix_cross40", "VIX 40 돌파", "VIX가 40 아래에 있다가 40 이상으로 마감한 날", "vix", lambda v: det_cross(v, 40, True), 20, ["spx", "kospi"]),
-    ("hy_cross5", "하이일드 스프레드 5%p 돌파", "미국 하이일드 스프레드가 5%p 위로 올라선 날(신용 경색 신호)", "hy", lambda v: det_cross(v, 5, True), 60, ["spx"]),
+    ("hyg_dd5", "하이일드 채권 고점 대비 -5% 진입", "하이일드 채권 ETF(HYG)가 최근 1년 고점에서 5% 넘게 밀린 첫날(신용 불안 신호)", "hyg", lambda v: det_drawdown(v, 5), 60, ["spx", "kospi"]),
     ("curve_invert", "미국 장단기 금리 역전", "미국 10년-2년 금리 차가 0 아래로 내려간 날", "curve", lambda v: det_cross(v, 0, False), 120, ["spx"]),
     ("curve_uninvert", "미국 장단기 금리 역전 해소", "미국 10년-2년 금리 차가 다시 0 위로 올라선 날", "curve", lambda v: det_cross(v, 0, True), 120, ["spx"]),
     ("usdkrw_high52", "원/달러 환율 52주 신고가", "원/달러 환율이 최근 250거래일 최고치를 새로 쓴 날(원화 약세)", "usdkrw", lambda v: det_extreme(v, 250, True), 60, ["kospi", "usdkrw"]),
     ("wti_drop5", "WTI 유가 하루 5% 이상 급락", "WTI가 하루에 5% 이상 떨어진 날", "wti", lambda v: det_daily_move(v, -5), 10, ["wti"]),
+    ("wti_rise5", "WTI 유가 하루 5% 이상 급등", "WTI가 하루에 5% 이상 오른 날", "wti", lambda v: det_daily_move(v, 5), 10, ["wti", "kospi"]),
     ("gold_high52", "금 52주 신고가", "금 가격이 최근 250거래일 최고치를 새로 쓴 날", "gold", lambda v: det_extreme(v, 250, True), 60, ["gold"]),
+    ("gold_drop3", "금 하루 3% 이상 급락", "금 선물이 하루에 3% 이상 떨어진 날", "gold", lambda v: det_daily_move(v, -3), 10, ["gold"]),
+    ("dxy_high52", "달러 지수 52주 신고가", "연준 광의 달러 지수가 최근 250거래일 최고치를 새로 쓴 날(달러 강세)", "dxy", lambda v: det_extreme(v, 250, True), 60, ["kospi", "spx"]),
     ("btc_drop10", "비트코인 하루 10% 이상 급락", "비트코인이 하루에 10% 이상 떨어진 날", "btc", lambda v: det_daily_move(v, -10), 10, ["btc"]),
 ]
 

@@ -227,7 +227,7 @@
       an.appendChild(el('p', 'ar-note', '닮은 날은 다섯 개뿐이라 통계가 아니라 참고 사례입니다. 같은 온도에서도 결과는 크게 갈렸습니다.'));
       root.appendChild(an);
     }
-    root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부·에너지정보청, 코인베이스 · 계산: 에셋리포트 · 마지막 계산 ' + m.updated.replace('T', ' ').replace('Z', ' UTC') + ' · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
+    root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부, 코인베이스, Yahoo Finance(과거 이력) · 계산: 에셋리포트 · 마지막 계산 ' + m.updated.replace('T', ' ').replace('Z', ' UTC') + ' · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
   }
 
   /* ---------- 투자 통계 연구소 ---------- */
@@ -315,7 +315,7 @@
     var m = /ev=([a-z0-9_]+)/.exec(location.hash);
     var first = m && data.events.some(function (e) { return e.id === m[1]; }) ? m[1] : (data.events.filter(function (e) { return e.active; })[0] || data.events[0] || {}).id;
     if (first) open(first, false);
-    root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부·에너지정보청, 코인베이스 · 계산: 에셋리포트 · 수익률은 종가 기준 단순 수익률(배당·환율·세금 제외) · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
+    root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부, 코인베이스, Yahoo Finance(과거 이력) · 계산: 에셋리포트 · 수익률은 종가 기준 단순 수익률(배당·환율·세금 제외) · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
   }
 
   function boot() {
