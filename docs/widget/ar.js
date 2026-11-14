@@ -100,12 +100,13 @@
     host.textContent = '';
     var xs = rows.filter(function (r) { return r[col] != null; });
     if (!xs.length) { host.appendChild(el('p', 'ar-sub', '아직 이 기간이 지난 사례가 없습니다.')); return; }
-    var W = 720, H = 120, L = 14, R = 14, mid = 52;
+    var narrow = (host.clientWidth || 720) < 520;
+    var W = narrow ? 400 : 720, H = 120, L = 14, R = 14, mid = 52;
     var lim = Math.max(5, Math.ceil(Math.max(Math.abs(st.min), Math.abs(st.max)) / 5) * 5);
     var x = function (v) { return L + (v + lim) / (2 * lim) * (W - L - R); };
     var s = svg('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': '사례별 이후 수익률 분포' });
     s.appendChild(svg('line', { x1: L, x2: W - R, y1: mid, y2: mid, stroke: '#e3e2dd', 'stroke-width': 1 }));
-    [-lim, -lim / 2, 0, lim / 2, lim].forEach(function (g) {
+    (narrow ? [-lim, 0, lim] : [-lim, -lim / 2, 0, lim / 2, lim]).forEach(function (g) {
       s.appendChild(svg('line', { x1: x(g), x2: x(g), y1: mid - 30, y2: mid + 30, stroke: g === 0 ? '#52514e' : '#e3e2dd', 'stroke-width': 1 }));
       var t = svg('text', { x: x(g), y: H - 22, 'text-anchor': 'middle', 'font-size': 11, fill: '#8a8a86' }); t.textContent = (g > 0 ? '+' : '') + g + '%'; s.appendChild(t);
     });
