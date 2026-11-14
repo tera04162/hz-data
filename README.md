@@ -7,10 +7,18 @@
 
 1. `main` 브랜치의 `.github/workflows/assetreport-update.yml` 이 하루 두 번(한국 시각 07:17, 평일 16:47) 실행됩니다.
 2. `src/fetch.py` 가 키 없이 받을 수 있는 공개 소스(네이버 금융, CBOE, 나스닥, 연준 H.15·H.10(DBnomics 경유), 미 재무부, 코인베이스)에서 시계열을 받아 `data/raw/*.csv` 장부에 **더하기만** 합니다.
-3. `src/build.py` 가 장부로 `docs/data/*.json` 을 계산합니다.
+3. `src/build.py` 가 장부로 `docs/data/*.json` 을 계산하고, `src/links.py` 가 발행된 통계 글 주소를 찾습니다.
 4. 바뀐 파일을 이 브랜치에 커밋합니다. 블로그 페이지는 `docs/widget/ar.js` 와 `docs/data/*.json` 을 불러와 그립니다.
 
 소스가 하루 이틀 죽어도 장부와 마지막 계산 결과는 남아 있으므로 사이트는 계속 보입니다. 수집 결과는 `docs/data/status.json` 에 남습니다.
+
+## 블로그 쪽 구성
+
+- **페이지 2개**: 시장체온계(`blogger/market-thermometer.html`), 투자 통계 연구소(`blogger/market-stats.html`).
+- **통계 글 27편**: `tools/make_posts.py` 가 이벤트별 실제 숫자로 `blogger/posts/<id>.html` 을 만든다. 숫자를 본문에 직접 적은 고정 텍스트·표와, 매일 갱신되는 위젯을 함께 넣는다. 제목·라벨·검색 설명은 `blogger/posts/index.json`.
+- **홈 위젯**: `blogger/gadget-mini.html` 을 블로거 레이아웃의 HTML/JavaScript 가젯에 붙인다.
+- **글 주소 자동 연결**: 통계 글을 발행하면 `src/links.py` 가 블로거 공개 피드에서 제목으로 주소를 찾아 `docs/data/links.json` 에 적고, 연구소와 홈 위젯이 그 글로 연결된다. 그래서 글 제목을 바꾸면 `index.json` 의 제목도 같이 바꿔야 한다.
+- **배포 경로**: 블로그는 jsDelivr(무료 CDN)에서 위젯과 데이터를 읽고, 실패하면 깃허브 원본에서 읽는다. 워크플로가 갱신 직후 jsDelivr 캐시를 비운다. 방문자가 늘어도 깃허브 저장소에는 부담이 가지 않는다.
 
 ## 계산 방법
 
