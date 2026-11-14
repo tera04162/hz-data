@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-14T02:29:33Z",
+ "checked": "2026-11-14T06:46:13Z",
  "series": [
   {
    "id": "kospi",
@@ -39,9 +39,18 @@
   },
   {
    "id": "vix",
-   "rows": 9315,
+   "rows": 9316,
    "first": "1990-01-02",
-   "last": "2026-11-12",
+   "last": "2026-11-13",
+   "changed": 1,
+   "ok": true,
+   "errors": []
+  },
+  {
+   "id": "hyg",
+   "rows": 4932,
+   "first": "2007-04-11",
+   "last": "2026-11-13",
    "changed": 0,
    "ok": true,
    "errors": []
@@ -74,9 +83,18 @@
    "errors": []
   },
   {
+   "id": "dxy",
+   "rows": 5227,
+   "first": "2006-01-02",
+   "last": "2026-11-06",
+   "changed": 5227,
+   "ok": true,
+   "errors": []
+  },
+  {
    "id": "wti",
-   "rows": 10313,
-   "first": "1986-01-02",
+   "rows": 6587,
+   "first": "2000-08-23",
    "last": "2026-11-13",
    "changed": 0,
    "ok": true,
@@ -84,8 +102,8 @@
   },
   {
    "id": "gold",
-   "rows": 755,
-   "first": "2023-11-13",
+   "rows": 6576,
+   "first": "2000-08-30",
    "last": "2026-11-13",
    "changed": 0,
    "ok": true,
