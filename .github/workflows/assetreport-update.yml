@@ -40,3 +40,13 @@ jobs:
             git commit -q -m "데이터 갱신 $(date -u +%Y-%m-%dT%H:%MZ)"
             git push origin assetreport
           fi
+      - name: CDN 갱신
+        # 블로그는 jsDelivr(무료 CDN)에서 데이터와 위젯을 읽는다. 브랜치 주소는 최대 12시간 캐시되므로 갱신 직후 비운다.
+        # 실패해도 작업은 성공 처리 — 그 경우 CDN이 스스로 갱신될 때까지 직전 값이 보일 뿐이다.
+        run: |
+          B="https://purge.jsdelivr.net/gh/tera04162/hz-data@assetreport/docs"
+          ok=0; bad=0
+          for f in widget/ar.js data/market.json data/events.json data/links.json $(cd docs/data && ls events/*.json | sed 's#^#data/#'); do
+            if curl -fsS -m 20 -o /dev/null "$B/$f"; then ok=$((ok+1)); else bad=$((bad+1)); fi
+          done
+          echo "CDN 갱신 요청: 성공 $ok, 실패 $bad"
