@@ -4,7 +4,9 @@
   'use strict';
   if (window.__AR_LOADED__) return;
   window.__AR_LOADED__ = true;
-  var BASE = (window.AR_BASE || 'https://raw.githubusercontent.com/tera04162/hz-data/assetreport/docs').replace(/\/$/, '');
+  // 데이터·코드 배포 경로: 1순위 jsDelivr(무료 CDN, 방문자가 늘어도 깃허브에 부담이 가지 않음), 2순위 깃허브 원본.
+  var BASES = (window.AR_BASES || (window.AR_BASE ? [window.AR_BASE] : ['https://cdn.jsdelivr.net/gh/tera04162/hz-data@assetreport/docs', 'https://raw.githubusercontent.com/tera04162/hz-data/assetreport/docs'])).map(function (b) { return b.replace(/\/$/, ''); });
+  var HUB = window.AR_HUB || '/p/market-stats.html', THERMO = window.AR_THERMO || '/p/market-thermometer.html';
   var UP = '#d93a3a', DOWN = '#2a6fd6', COLD = '#2a78d6', HOT = '#e34948', MID = '#8a8a86';
   var HZ_NAME = { 5: '1주', 20: '1개월', 60: '3개월', 120: '6개월', 250: '1년' };
 
@@ -38,10 +40,16 @@
     function mix(a, b, p) { var o = '#'; for (var i = 1; i < 7; i += 2) { var x = parseInt(a.substr(i, 2), 16), y = parseInt(b.substr(i, 2), 16); o += ('0' + Math.round(x + (y - x) * p).toString(16)).slice(-2); } return o; }
     return t < 50 ? mix(COLD, MID, t / 50) : mix(MID, HOT, (t - 50) / 50);
   }
+  var cache = {};
   function getJSON(path) {
-    var bust = Math.floor(Date.now() / 6e5);
-    return fetch(BASE + path + '?v=' + bust).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+    if (cache[path]) return cache[path];
+    function attempt(i) {
+      return fetch(BASES[i] + path).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .catch(function (e) { if (i + 1 < BASES.length) return attempt(i + 1); throw e; });
+    }
+    return (cache[path] = attempt(0));
   }
+  function getLinks() { return getJSON('/data/links.json').catch(function () { return {}; }); }
   function kdate(s) { return s ? s.replace(/-/g, '.') : '–'; }
   function fail(root, e) { root.textContent = ''; var c = el('div', 'ar-card'); c.appendChild(el('p', 'ar-sub', '데이터를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.')); root.appendChild(c); if (window.console) console.warn('[AR]', e); }
 
@@ -150,6 +158,10 @@
       var pin = el('div', 'ar-gpin'); pin.style.left = c.value + '%'; g.appendChild(pin);
       [['혹한', 10], ['쌀쌀', 30], ['평온', 50], ['따뜻', 70], ['과열', 90]].forEach(function (l) { var s = el('span', 'ar-glab', l[0]); s.style.left = l[1] + '%'; g.appendChild(s); });
       card.appendChild(g);
+      if (m.brief && m.brief.length) {
+        var bl = el('ul'); bl.style.cssText = 'margin:14px 0 0;padding:12px 0 0 18px;border-top:1px solid var(--line);font-size:14px';
+        m.brief.forEach(function (x) { bl.appendChild(el('li', null, x)); }); card.appendChild(bl);
+      }
       root.appendChild(card);
     }
 
@@ -192,6 +204,25 @@
       root.appendChild(cc);
     }
 
+    if (m.bands && m.bands.length) {
+      var bc = el('div', 'ar-card'); bc.appendChild(el('h3', 'ar-h', '체온별로 이후 코스피는 어땠나'));
+      bc.appendChild(el('p', 'ar-sub', '과거 모든 날을 그날의 체온으로 나눈 뒤, 그날 코스피를 샀다면 얻었을 수익률입니다. 굵은 줄이 지금 구간입니다.'));
+      var bs = el('div', 'ar-scroll'), bt = el('table', 'ar-tbl'), bh = el('tr');
+      ['체온 구간', '해당 일수', '3개월 뒤 중앙값', '오른 비율', '1년 뒤 중앙값', '오른 비율', '1년 뒤 최악'].forEach(function (h) { bh.appendChild(el('th', null, h)); }); bt.appendChild(bh);
+      m.bands.forEach(function (r) {
+        var k = (r.after || {}).kospi || {}, a = k['60'], y = k['250'], tr = el('tr'); if (r.now) tr.style.fontWeight = '700';
+        tr.appendChild(el('td', null, r.name + ' ' + r.lo + '~' + r.hi + '도' + (r.now ? ' ◀' : '')));
+        tr.appendChild(el('td', null, fmt(r.days, 0) + '일'));
+        function pc(v) { return v == null ? '–' : (v > 0 ? '+' : '') + fmt(v, 1) + '%'; }
+        tr.appendChild(el('td', a ? cls(a.median) : 'ar-mut', a ? pc(a.median) : '–')); tr.appendChild(el('td', null, a ? fmt(a.win, 0) + '%' : '–'));
+        tr.appendChild(el('td', y ? cls(y.median) : 'ar-mut', y ? pc(y.median) : '–')); tr.appendChild(el('td', null, y ? fmt(y.win, 0) + '%' : '–'));
+        tr.appendChild(el('td', y ? cls(y.min) : 'ar-mut', y ? pc(y.min) : '–')); bt.appendChild(tr);
+      });
+      bs.appendChild(bt); bc.appendChild(bs);
+      bc.appendChild(el('p', 'ar-note', '하루씩 밀어 가며 센 값이라 서로 겹치는 기간이 많습니다. 구간 사이의 차이를 보는 용도이고, 최악 칸이 보여 주듯 어느 구간에서든 큰 손실은 있었습니다.'));
+      root.appendChild(bc);
+    }
+
     var gc = el('div', 'ar-card'); gc.appendChild(el('h3', 'ar-h', '자산별 한눈에'));
     gc.appendChild(el('p', 'ar-sub', '종가 기준 · 등락은 전일 / 1개월 / 연초 대비'));
     var grid = el('div', 'ar-grid');
@@ -230,34 +261,12 @@
     root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부, 코인베이스, Yahoo Finance(과거 이력) · 계산: 에셋리포트 · 마지막 계산 ' + m.updated.replace('T', ' ').replace('Z', ' UTC') + ' · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
   }
 
-  /* ---------- 투자 통계 연구소 ---------- */
-  function renderEvents(root, data) {
-    root.textContent = '';
-    var listCard = el('div', 'ar-card'), detail = el('div');
-    listCard.appendChild(el('h3', 'ar-h', '이런 날 이후, 시장은 어땠나'));
-    listCard.appendChild(el('p', 'ar-sub', kdate(data.asof) + ' 기준 · 이벤트를 누르면 과거 모든 사례와 이후 수익률이 열립니다.'));
-    var groups = [['전체', null]], seen = {};
-    data.events.forEach(function (e) { if (!seen[e.source_name]) { seen[e.source_name] = 1; groups.push([e.source_name, e.source]); } });
-    var btns = el('div', 'ar-btns'), grid = el('div', 'ar-evgrid');
-    function list(src) {
-      grid.textContent = '';
-      data.events.filter(function (e) { return !src || e.source === src; }).sort(function (a, b) { return (b.active - a.active) || (a.last < b.last ? 1 : -1); }).forEach(function (e) {
-        var b = el('button', 'ar-ev' + (e.active ? ' ar-on' : '')); b.type = 'button';
-        var h = el('h4'); h.textContent = e.title + ' '; if (e.active) h.appendChild(el('span', 'ar-chip ar-live', '진행 중')); b.appendChild(h);
-        var t = e.targets[0], s = t.stats['60'];
-        b.appendChild(el('p', null, '과거 ' + e.n + '번 · 최근 ' + kdate(e.last) + (s ? ' · 3개월 뒤 ' + t.name + ' 중앙값 ' + (s.median > 0 ? '+' : '') + fmt(s.median, 1) + '%' : '')));
-        b.addEventListener('click', function () { open(e.id, true); }); grid.appendChild(b);
-      });
-      Array.prototype.forEach.call(btns.children, function (x) { x.setAttribute('aria-pressed', String((x.dataset.s || '') === (src || ''))); });
-    }
-    groups.forEach(function (g) { var b = el('button', 'ar-btn', g[0]); b.type = 'button'; b.dataset.s = g[1] || ''; b.addEventListener('click', function () { list(g[1]); }); btns.appendChild(b); });
-    listCard.appendChild(btns); listCard.appendChild(grid);
-    root.appendChild(detail); root.appendChild(listCard); list(null);
-
-    function open(id, scroll) {
+  /* ---------- 이벤트 상세(연구소와 개별 글이 같이 씀) ---------- */
+  function eventDetail(detail, id, opt) {
+      opt = opt || {}; var scroll = opt.scroll;
       detail.textContent = ''; var c = el('div', 'ar-card'); c.appendChild(el('p', 'ar-sub', '불러오는 중…')); detail.appendChild(c);
       getJSON('/data/events/' + encodeURIComponent(id) + '.json').then(function (e) {
-        try { history.replaceState(null, '', '#ev=' + id); } catch (x) { /* 무시 */ }
+        if (opt.hash) { try { history.replaceState(null, '', '#ev=' + id); } catch (x) { /* 무시 */ } }
         c.textContent = '';
         var h = el('h3', 'ar-h'); h.textContent = e.title + ' '; if (e.active) h.appendChild(el('span', 'ar-chip ar-live', '진행 중')); c.appendChild(h);
         c.appendChild(el('p', 'ar-sub', e.desc + ' · ' + kdate(e.first) + ' 이후 ' + e.n + '번 · 가장 최근 ' + kdate(e.last) + ' · 같은 신호가 ' + e.cooldown + '거래일 안에 반복되면 한 번으로 셉니다.'));
@@ -309,13 +318,59 @@
           if (rows.length > shown) { var more = el('button', 'ar-link', '나머지 ' + (rows.length - shown) + '건 모두 보기'); more.type = 'button'; more.style.marginTop = '8px'; more.addEventListener('click', function () { shown = rows.length; fill(); more.remove(); }); body.appendChild(more); }
         }
         draw();
+        if (opt.link) { var lk = el('a', 'ar-link', '이 통계를 풀어 쓴 글 읽기'); lk.href = opt.link; lk.style.cssText = 'display:inline-block;margin-top:12px'; c.appendChild(lk); }
         if (scroll && c.scrollIntoView) c.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }).catch(function (x) { fail(detail, x); });
     }
+
+  /* ---------- 투자 통계 연구소 ---------- */
+  function renderEvents(root, data, links) {
+    links = links || {};
+    function open(id, scroll) { eventDetail(detail, id, { scroll: scroll, hash: true, link: links[id] }); }
+    root.textContent = '';
+    var listCard = el('div', 'ar-card'), detail = el('div');
+    listCard.appendChild(el('h3', 'ar-h', '이런 날 이후, 시장은 어땠나'));
+    listCard.appendChild(el('p', 'ar-sub', kdate(data.asof) + ' 기준 · 이벤트를 누르면 과거 모든 사례와 이후 수익률이 열립니다.'));
+    var groups = [['전체', null]], seen = {};
+    data.events.forEach(function (e) { if (!seen[e.source_name]) { seen[e.source_name] = 1; groups.push([e.source_name, e.source]); } });
+    var btns = el('div', 'ar-btns'), grid = el('div', 'ar-evgrid');
+    function list(src) {
+      grid.textContent = '';
+      data.events.filter(function (e) { return !src || e.source === src; }).sort(function (a, b) { return (b.active - a.active) || (a.last < b.last ? 1 : -1); }).forEach(function (e) {
+        var b = el('button', 'ar-ev' + (e.active ? ' ar-on' : '')); b.type = 'button';
+        var h = el('h4'); h.textContent = e.title + ' '; if (e.active) h.appendChild(el('span', 'ar-chip ar-live', '진행 중')); b.appendChild(h);
+        var t = e.targets[0], s = t.stats['60'];
+        b.appendChild(el('p', null, '과거 ' + e.n + '번 · 최근 ' + kdate(e.last) + (s ? ' · 3개월 뒤 ' + t.name + ' 중앙값 ' + (s.median > 0 ? '+' : '') + fmt(s.median, 1) + '%' : '')));
+        b.addEventListener('click', function () { open(e.id, true); }); grid.appendChild(b);
+      });
+      Array.prototype.forEach.call(btns.children, function (x) { x.setAttribute('aria-pressed', String((x.dataset.s || '') === (src || ''))); });
+    }
+    groups.forEach(function (g) { var b = el('button', 'ar-btn', g[0]); b.type = 'button'; b.dataset.s = g[1] || ''; b.addEventListener('click', function () { list(g[1]); }); btns.appendChild(b); });
+    listCard.appendChild(btns); listCard.appendChild(grid);
+    root.appendChild(detail); root.appendChild(listCard); list(null);
+
     var m = /ev=([a-z0-9_]+)/.exec(location.hash);
     var first = m && data.events.some(function (e) { return e.id === m[1]; }) ? m[1] : (data.events.filter(function (e) { return e.active; })[0] || data.events[0] || {}).id;
     if (first) open(first, false);
     root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부, 코인베이스, Yahoo Finance(과거 이력) · 계산: 에셋리포트 · 수익률은 종가 기준 단순 수익률(배당·환율·세금 제외) · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
+  }
+
+  /* ---------- 홈·사이드바용 작은 위젯 ---------- */
+  function renderMini(root, m, links) {
+    root.textContent = ''; var c = m.composite; if (!c) return;
+    var card = el('div', 'ar-card'); card.style.marginBottom = '0';
+    var top = el('a'); top.href = THERMO; top.style.cssText = 'display:block;color:inherit;text-decoration:none';
+    top.appendChild(el('div', 'ar-sub', '오늘의 시장 체온 · ' + kdate(c.date)));
+    var hero = el('div', 'ar-hero'); var big = el('span', 'ar-big', fmt(c.value, 1)); big.style.fontSize = '40px'; hero.appendChild(big); hero.appendChild(el('span', 'ar-tag', '도 · ' + c.label)); top.appendChild(hero);
+    var g = el('div', 'ar-gauge'); g.style.height = '30px'; g.appendChild(el('div', 'ar-gbar')); var pin = el('div', 'ar-gpin'); pin.style.left = c.value + '%'; g.appendChild(pin); top.appendChild(g);
+    card.appendChild(top);
+    var ul = el('ul'); ul.style.cssText = 'margin:8px 0 0;padding-left:18px;font-size:13px';
+    (m.brief || []).slice(1, 4).forEach(function (x) { ul.appendChild(el('li', null, x)); }); if (ul.children.length) card.appendChild(ul);
+    (m.active || []).slice(0, 2).forEach(function (e) {
+      var a = el('a', 'ar-link', e.title + ' 뒤 과거 통계 보기'); a.href = links[e.id] || (HUB + '#ev=' + e.id); a.style.cssText = 'display:block;margin-top:8px;font-size:13px'; card.appendChild(a);
+    });
+    var more = el('a', 'ar-link', '자산별 온도와 20년 추이 보기'); more.href = THERMO; more.style.cssText = 'display:block;margin-top:8px;font-size:13px'; card.appendChild(more);
+    root.appendChild(card);
   }
 
   function boot() {
@@ -325,7 +380,9 @@
       var kind = root.getAttribute('data-ar');
       root.textContent = ''; var c = el('div', 'ar-card'); c.appendChild(el('p', 'ar-sub', '최신 데이터를 불러오는 중…')); root.appendChild(c);
       if (kind === 'thermo') getJSON('/data/market.json').then(function (m) { renderThermo(root, m); }).catch(function (e) { fail(root, e); });
-      else if (kind === 'events') getJSON('/data/events.json').then(function (d) { renderEvents(root, d); }).catch(function (e) { fail(root, e); });
+      else if (kind === 'events') Promise.all([getJSON('/data/events.json'), getLinks()]).then(function (r) { renderEvents(root, r[0], r[1]); }).catch(function (e) { fail(root, e); });
+      else if (kind === 'event') { var host = el('div'); root.textContent = ''; root.appendChild(host); eventDetail(host, root.getAttribute('data-id'), {}); root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부, 코인베이스, Yahoo Finance(과거 이력) · 계산: 에셋리포트 · 매일 자동 갱신 · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.')); }
+      else if (kind === 'mini') Promise.all([getJSON('/data/market.json'), getLinks()]).then(function (r) { renderMini(root, r[0], r[1]); }).catch(function (e) { fail(root, e); });
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();

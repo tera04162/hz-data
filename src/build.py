@@ -357,6 +357,31 @@ def build() -> dict:
             if len(picked) >= 5:
                 break
 
+    # 체온 구간별 이후 수익률 — 체온 숫자 자체가 쓸모 있는지 검증하는 표
+    bands = []
+    if composite is not None:
+        edges = [0] + [hi for hi, _ in LABELS]
+        tot = sum(1 for c in comp if c is not None)
+        for bi, (hi, nm) in enumerate(LABELS):
+            lo = edges[bi]
+            days = [i for i, c in enumerate(comp) if c is not None and lo <= c < hi]
+            row = {"name": nm, "lo": lo, "hi": min(hi, 100), "days": len(days),
+                   "share": round(100 * len(days) / tot, 1) if tot else None, "now": lo <= composite["value"] < hi, "after": {}}
+            for tid in ("kospi", "spx"):
+                if tid not in S:
+                    continue
+                td, tv = S[tid]
+                row["after"][tid] = {}
+                for h in (60, 120, 250):
+                    xs = []
+                    for i in days:
+                        j = bisect_right(td, master[i]) - 1
+                        if j >= 0 and j + h < len(tv) and tv[j] > 0 and days_between(td[j], master[i]) <= FFILL_DAYS:
+                            xs.append((tv[j + h] / tv[j] - 1) * 100)
+                    st = stats(xs)
+                    row["after"][tid][str(h)] = None if st is None else {"n": st["n"], "median": st["median"], "win": st["win"], "min": st["min"]}
+            bands.append(row)
+
     # 자산 카드
     assets = []
     for s in cfg["series"]:
@@ -418,8 +443,29 @@ def build() -> dict:
             active.append({"id": eid, "title": title, "date": ev_dates[-1], "n": t0["n"], "target": t0["name"],
                            "s20": t0["stats"]["20"], "s60": t0["stats"]["60"], "b60": t0["base"]["60"]})
 
+    # 오늘 달라진 것 — 매일 바뀌는 한 줄들
+    brief = []
+    if composite is not None and last_i is not None and last_i >= 1 and comp[last_i - 1] is not None:
+        d1c = round(composite["value"] - comp[last_i - 1], 1)
+        brief.append(f"시장 체온 {composite['value']}도({composite['label']}), 하루 사이 {'+' if d1c > 0 else ''}{d1c}도")
+    fresh = [a for a in assets if a["kind"] == "price" and a["d1"] is not None and days_between(a["date"], asof) <= 3]
+    if fresh:
+        up, dn = max(fresh, key=lambda a: a["d1"]), min(fresh, key=lambda a: a["d1"])
+        if up["d1"] > 0:
+            brief.append(f"가장 많이 오른 자산은 {up['name']} +{up['d1']}%")
+        if dn["d1"] < 0 and dn["id"] != up["id"]:
+            brief.append(f"가장 많이 내린 자산은 {dn['name']} {dn['d1']}%")
+    for a in assets:
+        if a["kind"] == "price" and days_between(a["date"], asof) <= 3:
+            if a["last"] >= a["hi52"]:
+                brief.append(f"{a['name']} 52주 최고가")
+            elif a["last"] <= a["lo52"]:
+                brief.append(f"{a['name']} 52주 최저가")
+    for e in active:
+        brief.append(f"신호 발생: {e['title']}({e['date'][5:].replace('-', '.')})")
+
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    market = {"updated": now, "asof": asof, "composite": composite, "assets": assets, "analogs": analogs, "active": active,
+    market = {"updated": now, "asof": asof, "composite": composite, "bands": bands, "brief": brief, "assets": assets, "analogs": analogs, "active": active,
               "labels": [{"lt": hi, "name": nm} for hi, nm in LABELS]}
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "market.json").write_text(json.dumps(market, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
