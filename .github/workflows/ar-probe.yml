@@ -1,0 +1,30 @@
+# 임시: 종목 분석기용 무료 데이터 점검. 확인 후 삭제.
+name: ar-probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - run: |
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          while IFS= read -r u; do
+            [ -z "$u" ] && continue
+            code=$(curl -sS -L -m 30 -A "$UA" -H 'Accept: application/json, text/plain, */*' -o /tmp/o -w '%{http_code} %{size_download}' "$u" 2>/tmp/e || echo "ERR $(head -c 80 /tmp/e)")
+            echo "=== $code :: $u"
+            head -c 900 /tmp/o | tr '\n' ' ' | tr -s ' ' | tr -cd '[:print:]가-힣'; echo; echo "... $(tail -c 300 /tmp/o | tr '\n' ' ' | tr -s ' ' | tr -cd '[:print:]가-힣')"
+            : > /tmp/o
+          done <<'URLS'
+          https://api.finance.naver.com/siseJson.naver?symbol=005930&requestType=1&startTime=19900101&endTime=20261114&timeframe=day
+          https://m.stock.naver.com/api/stock/005930/trend?pageSize=60&page=1
+          https://m.stock.naver.com/api/stock/005930/trend?pageSize=60&page=30
+          https://m.stock.naver.com/api/stock/005930/finance/annual
+          https://m.stock.naver.com/api/stock/005930/finance/quarter
+          https://m.stock.naver.com/api/stocks/marketValue/KOSPI?page=1&pageSize=5
+          https://m.stock.naver.com/api/stocks/marketValue/KOSDAQ?page=1&pageSize=3
+          https://m.stock.naver.com/api/stock/005930/integration
+          https://dart.fss.or.kr/api/todayRSS.xml
+          https://m.stock.naver.com/api/stock/005930/disclosure?pageSize=5&page=1
+          https://m.stock.naver.com/api/news/stock/005930?pageSize=5&page=1
+          https://m.stock.naver.com/api/stocks/industry?page=1&pageSize=5
+          URLS
