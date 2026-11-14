@@ -40,15 +40,29 @@
     function mix(a, b, p) { var o = '#'; for (var i = 1; i < 7; i += 2) { var x = parseInt(a.substr(i, 2), 16), y = parseInt(b.substr(i, 2), 16); o += ('0' + Math.round(x + (y - x) * p).toString(16)).slice(-2); } return o; }
     return t < 50 ? mix(COLD, MID, t / 50) : mix(MID, HOT, (t - 50) / 50);
   }
-  var cache = {};
+  var cache = {}, basesP = null;
+  // jsDelivr의 브랜치 주소(@assetreport)는 갱신이 몇 시간씩 늦을 수 있다. 그래서 깃허브 원본에서 아주 작은 version.json 만 읽어
+  // 최신 데이터 커밋을 알아낸 뒤, 커밋 고정 주소(@<sha>)에서 본 데이터를 받는다. 커밋 고정 주소는 내용이 바뀌지 않아 CDN·브라우저가 마음껏 보관해도 된다.
+  function resolveBases() {
+    if (basesP) return basesP;
+    var raw = BASES.filter(function (b) { return b.indexOf('raw.githubusercontent.com') >= 0; })[0];
+    var cdn = BASES.filter(function (b) { return b.indexOf('@assetreport/') >= 0; })[0];
+    if (!raw || !cdn) return (basesP = Promise.resolve(BASES));
+    basesP = fetch(raw + '/data/version.json?v=' + Math.floor(Date.now() / 3e5)).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { if (!/^[0-9a-f]{40}$/.test(j.sha || '')) throw new Error('sha'); return [cdn.replace('@assetreport/', '@' + j.sha + '/')].concat(BASES); })
+      .catch(function () { return BASES; });
+    return basesP;
+  }
   function getJSON(path) {
     if (cache[path]) return cache[path];
-    function attempt(i) {
-      // CDN이 브라우저에 7일 보관을 지시하므로, 3시간마다 바뀌는 꼬리표를 붙여 재방문자도 새 데이터를 받게 한다
-      return fetch(BASES[i] + path + '?v=' + Math.floor(Date.now() / 1.08e7)).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .catch(function (e) { if (i + 1 < BASES.length) return attempt(i + 1); throw e; });
-    }
-    return (cache[path] = attempt(0));
+    return (cache[path] = resolveBases().then(function (bs) {
+      function attempt(i) {
+        var pinned = /@[0-9a-f]{40}\//.test(bs[i]);   // 커밋 고정 주소에는 꼬리표가 필요 없다
+        return fetch(bs[i] + path + (pinned ? '' : '?v=' + Math.floor(Date.now() / 1.08e7))).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .catch(function (e) { if (i + 1 < bs.length) return attempt(i + 1); throw e; });
+      }
+      return attempt(0);
+    }));
   }
   function getLinks() { return getJSON('/data/links.json').catch(function () { return {}; }); }
   function kdate(s) { return s ? s.replace(/-/g, '.') : '–'; }
