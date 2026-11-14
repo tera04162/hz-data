@@ -278,5 +278,145 @@
   "market": "KOSDAQ",
   "rank": 10,
   "cap": 3865138763000
+ },
+ {
+  "code": "240810",
+  "name": "원익IPS",
+  "market": "KOSDAQ",
+  "rank": 11,
+  "cap": 3857994618600
+ },
+ {
+  "code": "108490",
+  "name": "로보티즈",
+  "market": "KOSDAQ",
+  "rank": 12,
+  "cap": 3638414944000
+ },
+ {
+  "code": "403870",
+  "name": "HPSP",
+  "market": "KOSDAQ",
+  "rank": 13,
+  "cap": 3378415000000
+ },
+ {
+  "code": "031980",
+  "name": "피에스케이홀딩스",
+  "market": "KOSDAQ",
+  "rank": 14,
+  "cap": 3294733956000
+ },
+ {
+  "code": "095340",
+  "name": "ISC",
+  "market": "KOSDAQ",
+  "rank": 15,
+  "cap": 3260107520400
+ },
+ {
+  "code": "319660",
+  "name": "피에스케이",
+  "market": "KOSDAQ",
+  "rank": 16,
+  "cap": 2870601357400
+ },
+ {
+  "code": "131290",
+  "name": "티에스이",
+  "market": "KOSDAQ",
+  "rank": 17,
+  "cap": 2804072251500
+ },
+ {
+  "code": "214450",
+  "name": "파마리서치",
+  "market": "KOSDAQ",
+  "rank": 18,
+  "cap": 2618191296000
+ },
+ {
+  "code": "030530",
+  "name": "원익홀딩스",
+  "market": "KOSDAQ",
+  "rank": 19,
+  "cap": 2479339190100
+ },
+ {
+  "code": "145020",
+  "name": "휴젤",
+  "market": "KOSDAQ",
+  "rank": 20,
+  "cap": 2411673837100
+ },
+ {
+  "code": "141080",
+  "name": "리가켐바이오",
+  "market": "KOSDAQ",
+  "rank": 21,
+  "cap": 2340513281600
+ },
+ {
+  "code": "357780",
+  "name": "솔브레인",
+  "market": "KOSDAQ",
+  "rank": 22,
+  "cap": 2325791234000
+ },
+ {
+  "code": "298380",
+  "name": "에이비엘바이오",
+  "market": "KOSDAQ",
+  "rank": 23,
+  "cap": 2315081595050
+ },
+ {
+  "code": "087010",
+  "name": "펩트론",
+  "market": "KOSDAQ",
+  "rank": 24,
+  "cap": 2184835695000
+ },
+ {
+  "code": "064760",
+  "name": "티씨케이",
+  "market": "KOSDAQ",
+  "rank": 25,
+  "cap": 2122971098400
+ },
+ {
+  "code": "080220",
+  "name": "제주반도체",
+  "market": "KOSDAQ",
+  "rank": 26,
+  "cap": 2111345662900
+ },
+ {
+  "code": "010170",
+  "name": "대한광통신",
+  "market": "KOSDAQ",
+  "rank": 27,
+  "cap": 2083507844000
+ },
+ {
+  "code": "140410",
+  "name": "메지온",
+  "market": "KOSDAQ",
+  "rank": 28,
+  "cap": 2050181672000
+ },
+ {
+  "code": "178320",
+  "name": "서진시스템",
+  "market": "KOSDAQ",
+  "rank": 29,
+  "cap": 2045523996900
+ },
+ {
+  "code": "310210",
+  "name": "보로노이",
+  "market": "KOSDAQ",
+  "rank": 30,
+  "cap": 2010588804000
  }
 ]
