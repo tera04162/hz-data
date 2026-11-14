@@ -56,6 +56,10 @@
    "kind": "price",
    "sources": [
     {
+     "type": "nasdaq_api",
+     "symbol": "COMP"
+    },
+    {
      "type": "naver_world",
      "symbol": ".IXIC"
     }
@@ -127,15 +131,15 @@
   },
   {
    "id": "wti",
-   "name": "WTI 유가",
+   "name": "WTI 유가(현물)",
    "group": "원자재",
    "unit": "$",
    "digits": 2,
    "kind": "price",
    "sources": [
     {
-     "type": "naver_mi",
-     "symbol": "energy/CLcv1"
+     "type": "dbnomics",
+     "symbol": "EIA/PET/RWTC.D"
     }
    ]
   },

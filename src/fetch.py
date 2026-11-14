@@ -7,7 +7,8 @@
 - 한 시계열의 소스들은 반드시 '같은 상품의 같은 종가'여야 한다(정의가 다른 값을 섞으면 이음매에서 가짜 급등락이 생긴다).
 
 소스 선정 근거(2026-11, 깃허브 실행기에서 직접 점검)
-- 열림: 네이버 금융, CBOE 공식 CSV, DBnomics(연준 H.15 미러), 미 재무부, 코인베이스
+- 열림: 네이버 금융, CBOE 공식 CSV, 나스닥 공식 API, DBnomics(연준 H.15·미 에너지정보청 미러), 미 재무부, 코인베이스
+- 네이버 해외지수·원자재 API는 최근 3년치만 준다. 그래서 장기 이력이 필요한 것은 공식 소스를 쓴다.
 - 막힘: Yahoo Finance(429), FRED 그래프 CSV(연결 끊김), Stooq(브라우저 검증 요구)
 """
 from __future__ import annotations
@@ -154,6 +155,20 @@ def parse_coinbase(text: str, today: str) -> dict[str, float]:
     return out
 
 
+def parse_nasdaq_api(text: str) -> dict[str, float]:
+    """나스닥 공식 사이트의 지수 일별 이력. 날짜 MM/DD/YYYY, 종가는 쉼표가 낀 문자열."""
+    rows = (((json.loads(text).get("data") or {}).get("tradesTable") or {}).get("rows")) or []
+    out: dict[str, float] = {}
+    for r in rows:
+        d = _mdy(str(r.get("date", "")))
+        try:
+            if d:
+                out[d] = num(r.get("close"))
+        except ValueError:
+            continue
+    return out
+
+
 def paged(url_of, parse, known_last: str | None, max_pages: int = 130) -> dict[str, float]:
     """쪽 단위 목록을 최신부터 과거로 받는다. 장부에 이미 있는 구간(정정 창 포함)에 닿으면 멈춘다."""
     out: dict[str, float] = {}
@@ -186,6 +201,13 @@ def fetch_source(src: dict, known_last: str | None = None) -> dict[str, float]:
         return paged(lambda p: f"https://api.stock.naver.com/marketindex/{sym}/prices?page={p}&pageSize=60", parse_naver_rows, known_last)
     if t == "cboe":
         return parse_cboe_csv(http_get(f"https://cdn.cboe.com/api/global/us_indices/daily_prices/{q}_History.csv"))
+    if t == "nasdaq_api":
+        frm = "2000-01-01"
+        if known_last:
+            frm = (datetime.strptime(known_last, "%Y-%m-%d") - timedelta(days=REVISE_DAYS + 20)).strftime("%Y-%m-%d")
+        return parse_nasdaq_api(http_get(
+            f"https://api.nasdaq.com/api/quote/{q}/historical?assetclass=index&fromdate={frm}"
+            f"&todate={now.strftime('%Y-%m-%d')}&limit=9999"))
     if t == "dbnomics":
         return parse_dbnomics(http_get(f"https://api.db.nomics.world/v22/series/{sym}?observations=1"))
     if t == "treasury":   # 올해분만 — 최신 구간 보강용

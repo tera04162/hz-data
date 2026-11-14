@@ -116,6 +116,10 @@ class Parsers(unittest.TestCase):
         self.assertEqual(fetch.parse_cboe_csv("DATE,OPEN,HIGH,LOW,CLOSE\n01/02/1990,17.24,17.3,17.1,17.2\n"), {"1990-01-02": 17.2})
         self.assertEqual(fetch.parse_cboe_csv("DATE,SPX\n11/12/2026,7592.400000\n"), {"2026-11-12": 7592.4})
 
+    def test_nasdaq_api(self):
+        txt = json.dumps({"data": {"tradesTable": {"rows": [{"date": "11/12/2026", "close": "25,366.09"}, {"date": "bad", "close": "1"}]}}})
+        self.assertEqual(fetch.parse_nasdaq_api(txt), {"2026-11-12": 25366.09})
+
     def test_dbnomics(self):
         txt = json.dumps({"series": {"docs": [{"period": ["2026-11-10", "2026-11-11", "2026-11-12"], "value": [4.98, "NA", 5.1]}]}})
         self.assertEqual(fetch.parse_dbnomics(txt), {"2026-11-10": 4.98, "2026-11-12": 5.1})

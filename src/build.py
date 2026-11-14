@@ -8,6 +8,7 @@
 방법론(바꾸면 README와 블로그 설명문도 같이 고칠 것)
 - 자산 온도(0~100) = 0.6 x [200일 이동평균 대비 이격의 백분위] + 0.4 x [60거래일 변화의 백분위]
   백분위는 '그날 이전' 최대 20년(5040거래일) 자기 과거와 비교한다. 미래 값을 쓰지 않는다.
+  장부가 10년 미만인 자산은 온도를 내지 않는다.
 - 시장 체온 = 자산 온도의 가중평균. VIX·하이일드 스프레드·원/달러는 뒤집어서(100-온도) 넣는다.
 - 이벤트 통계 = 조건이 처음 충족된 날(쿨다운으로 뭉침 제거) 이후 N거래일 수익률 분포 + 같은 기간 '아무 날' 평균과 비교.
 """
@@ -27,6 +28,7 @@ OUT = ROOT / "docs" / "data"
 
 WINDOW = 5040        # 백분위 비교 창: 약 20년
 MIN_OBS = 500        # 이만큼 과거가 쌓이기 전에는 온도를 내지 않는다
+MIN_HISTORY = 2520   # 장부가 10년(2520거래일)에 못 미치는 자산은 온도를 내지 않는다 — 짧은 과거와의 비교는 의미가 없다
 MA = 200
 MOM = 60
 HORIZONS = [5, 20, 60, 120, 250]
@@ -282,7 +284,8 @@ def build() -> dict:
         d10 = dict(zip(*S["us10y"]))
         S["curve"] = (cd, [round(d10[d] - d2[d], 4) for d in cd])
 
-    temps = {sid: temperature(S[sid][1], spec[sid]["kind"]) for sid in S if sid in spec}
+    temps = {sid: (temperature(S[sid][1], spec[sid]["kind"]) if len(S[sid][1]) >= MIN_HISTORY else [None] * len(S[sid][1]))
+             for sid in S if sid in spec}
 
     # 기준 달력: 한국·미국 주식 중 하나라도 열린 날
     master = sorted(set(S.get("kospi", ([], []))[0]) | set(S.get("spx", ([], []))[0])) or sorted(set().union(*[set(v[0]) for v in S.values()]))
