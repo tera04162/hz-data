@@ -44,6 +44,13 @@ jobs:
             echo "변경 없음"
           else
             git commit -q -m "데이터 갱신 $(date -u +%Y-%m-%dT%H:%MZ)"
+          fi
+          # 위젯이 읽는 최신 커밋 표시. 커밋은 자기 번호를 담을 수 없으므로 한 번 더 커밋한다.
+          SHA=$(git rev-parse HEAD)
+          if ! grep -q "$SHA" docs/data/version.json 2>/dev/null; then
+            printf '{"sha":"%s","updated":"%s"}\n' "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > docs/data/version.json
+            git add docs/data/version.json
+            git commit -q -m "최신 데이터 커밋 표시"
             git push origin assetreport
           fi
       - name: CDN 갱신
