@@ -57,7 +57,8 @@
   function lineChart(host, pts, opt) {
     // pts: [[날짜, 값]], y축 고정 0~100
     host.textContent = '';
-    var W = 720, H = 260, L = 34, R = 10, T = 10, B = 24, n = pts.length;
+    var narrow = (host.clientWidth || 720) < 520;
+    var W = narrow ? 400 : 720, H = narrow ? 230 : 260, L = 30, R = 10, T = 10, B = 24, n = pts.length;
     var s = svg('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': opt.label });
     var x = function (i) { return L + i / Math.max(1, n - 1) * (W - L - R); }, y = function (v) { return T + (100 - v) / 100 * (H - T - B); };
     s.appendChild(svg('rect', { x: L, y: y(100), width: W - L - R, height: y(80) - y(100), fill: HOT, opacity: .07 }));
@@ -67,7 +68,7 @@
       var t = svg('text', { x: L - 6, y: y(g) + 4, 'text-anchor': 'end', 'font-size': 11, fill: '#8a8a86' }); t.textContent = g; s.appendChild(t);
     });
     var lastYear = '';
-    var step = Math.ceil(n / 7);
+    var step = Math.ceil(n / (narrow ? 4 : 7));
     pts.forEach(function (p, i) {
       if (i % step === 0 || i === n - 1) {
         var lab = n > 400 ? p[0].slice(0, 4) : p[0].slice(2, 7).replace('-', '.');
@@ -181,7 +182,7 @@
       root.appendChild(hc); draw(250);
 
       var cc = el('div', 'ar-card'); cc.appendChild(el('h3', 'ar-h', '체온을 만든 재료'));
-      cc.appendChild(el('p', 'ar-sub', '각 자산이 자기 과거 20년과 견줘 얼마나 뜨거운지입니다. VIX·하이일드 스프레드·환율은 높을수록 불안 신호라 뒤집어 반영합니다.'));
+      cc.appendChild(el('p', 'ar-sub', '각 자산이 자기 과거 20년과 견줘 얼마나 뜨거운지입니다. VIX와 원/달러 환율은 높을수록 불안 신호라 뒤집어(역) 반영합니다.'));
       c.components.forEach(function (k) {
         var r = el('div', 'ar-row'); r.appendChild(el('span', null, k.name + (k.sign < 0 ? ' (역)' : '')));
         var tr = el('div', 'ar-track'), d = el('div', 'ar-dot'); d.style.left = k.adj + '%'; d.style.background = tempColor(k.adj); tr.appendChild(d); r.appendChild(tr);
@@ -202,7 +203,8 @@
       b.appendChild(r);
       if (a.spark && a.spark.length > 2) b.appendChild(spark(a.spark, a.spark[a.spark.length - 1] >= a.spark[0]));
       var foot = el('div', 'r'); foot.style.marginTop = '6px';
-      if (a.temp != null) { var ch = el('span', 'ar-chip', '온도 ' + fmt(a.temp, 0) + ' · ' + a.label); foot.appendChild(ch); }
+      if (a.temp != null) { var ch = el('span', 'ar-chip', pct ? '온도 ' + fmt(a.temp, 0) + ' · ' + a.label : '과거 대비 높이 ' + fmt(a.temp, 0)); foot.appendChild(ch); }
+      else foot.appendChild(el('span', 'ar-chip', '이력 10년 미만'));
       foot.appendChild(el('span', 'ar-mut', kdate(a.date).slice(5) + (a.stale ? ' (갱신 지연)' : '')));
       b.appendChild(foot); grid.appendChild(b);
     });
@@ -224,7 +226,7 @@
       an.appendChild(el('p', 'ar-note', '닮은 날은 다섯 개뿐이라 통계가 아니라 참고 사례입니다. 같은 온도에서도 결과는 크게 갈렸습니다.'));
       root.appendChild(an);
     }
-    root.appendChild(el('p', 'ar-note', '자료: FRED(세인트루이스 연준), Yahoo Finance, 네이버 금융 · 계산: 에셋리포트 · 마지막 계산 ' + m.updated.replace('T', ' ').replace('Z', ' UTC') + ' · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
+    root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부·에너지정보청, 코인베이스 · 계산: 에셋리포트 · 마지막 계산 ' + m.updated.replace('T', ' ').replace('Z', ' UTC') + ' · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
   }
 
   /* ---------- 투자 통계 연구소 ---------- */
@@ -312,7 +314,7 @@
     var m = /ev=([a-z0-9_]+)/.exec(location.hash);
     var first = m && data.events.some(function (e) { return e.id === m[1]; }) ? m[1] : (data.events.filter(function (e) { return e.active; })[0] || data.events[0] || {}).id;
     if (first) open(first, false);
-    root.appendChild(el('p', 'ar-note', '자료: FRED(세인트루이스 연준), Yahoo Finance, 네이버 금융 · 계산: 에셋리포트 · 수익률은 종가 기준 단순 수익률(배당·환율·세금 제외) · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
+    root.appendChild(el('p', 'ar-note', '자료: 네이버 금융, CBOE, 나스닥, 미 연준·재무부·에너지정보청, 코인베이스 · 계산: 에셋리포트 · 수익률은 종가 기준 단순 수익률(배당·환율·세금 제외) · 투자 권유가 아니며 과거 통계는 미래를 보장하지 않습니다.'));
   }
 
   function boot() {

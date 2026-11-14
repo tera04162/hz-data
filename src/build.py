@@ -329,10 +329,11 @@ def build() -> dict:
                      "chg5": back(5), "chg20": back(20), "components": comps, "hist": hist}
 
         # 유사 국면: 오늘과 구성 온도가 가장 비슷했던 과거 날짜
-        ids = [c["id"] for c in comps]
+        # 이력이 15년 넘는 재료만 쓴다(비트코인처럼 짧은 자산이 끼면 비교 대상이 최근 몇 년으로 쪼그라든다)
+        ids = [c["id"] for c in comps if days_between(S[c["id"]][0][0], master[last_i]) >= 15 * 365]
         today_vec = [aligned[i][last_i] for i in ids]
         cands = []
-        for i in range(0, last_i - 250):
+        for i in range(0, last_i - 250 if ids else 0):
             vec = [aligned[k][i] for k in ids]
             if any(v is None for v in vec) or comp[i] is None:
                 continue
