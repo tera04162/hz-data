@@ -18,7 +18,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,6 +27,8 @@ jobs:
         run: python3 -m unittest discover -s tests
       - name: 수집
         run: python3 -u src/fetch.py
+      - name: 종목 수집
+        run: python3 -u src/fetch_stocks.py
       - name: 계산
         run: python3 src/build.py
       - name: 글 주소 연결
