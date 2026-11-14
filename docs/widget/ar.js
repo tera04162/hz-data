@@ -44,7 +44,8 @@
   function getJSON(path) {
     if (cache[path]) return cache[path];
     function attempt(i) {
-      return fetch(BASES[i] + path).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      // CDN이 브라우저에 7일 보관을 지시하므로, 3시간마다 바뀌는 꼬리표를 붙여 재방문자도 새 데이터를 받게 한다
+      return fetch(BASES[i] + path + '?v=' + Math.floor(Date.now() / 1.08e7)).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .catch(function (e) { if (i + 1 < BASES.length) return attempt(i + 1); throw e; });
     }
     return (cache[path] = attempt(0));

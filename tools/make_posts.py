@@ -18,7 +18,7 @@ HZ = {"5": "1주", "20": "1개월", "60": "3개월", "120": "6개월", "250": "1
 HUB, THERMO = "/p/market-stats.html", "/p/market-thermometer.html"
 LOADER = ("<script>(function(){if(window.__AR_BOOT__)return;window.__AR_BOOT__=1;"
           "var C='https://cdn.jsdelivr.net/gh/tera04162/hz-data@assetreport/docs',R='https://raw.githubusercontent.com/tera04162/hz-data/assetreport/docs';"
-          "window.AR_BASES=[C,R];var s=document.createElement('script');s.src=C+'/widget/ar.js';s.async=true;"
+          "window.AR_BASES=[C,R];var s=document.createElement('script');s.src=C+'/widget/ar.js?v='+Math.floor(Date.now()/864e5);s.async=true;"
           "s.onerror=function(){fetch(R+'/widget/ar.js').then(function(r){return r.text()}).then(function(t){var e=document.createElement('script');e.textContent=t;document.head.appendChild(e)}).catch(function(){})};"
           "document.head.appendChild(s)})();</script>")
 
