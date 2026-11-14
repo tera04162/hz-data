@@ -29,13 +29,20 @@ def universe() -> list[dict]:
     p = D / "universe.json"
     cur = {s["code"]: s for s in (json.loads(p.read_text(encoding="utf-8")) if p.exists() else [])}
     for market, top in TOP.items():
+        rows = []
         try:
-            j = json.loads(http_get(f"{API}/stocks/marketValue/{market}?page=1&pageSize={top * 2}"))
+            for page in range(1, 6):          # 한 번에 60개까지만 받아 준다. 우선주 등을 걸러 내야 하므로 넉넉히 받는다.
+                got = json.loads(http_get(f"{API}/stocks/marketValue/{market}?page={page}&pageSize=60")).get("stocks", [])
+                rows += got
+                if len(got) < 60 or len(rows) >= top * 2:
+                    break
+                time.sleep(0.2)
         except Exception as e:  # noqa: BLE001
             print("시총 순위 실패", market, e, flush=True)
-            continue
+            if not rows:
+                continue
         n = 0
-        for s in j.get("stocks", []):
+        for s in rows:
             name, code = s.get("stockName", ""), s.get("itemCode", "")
             if s.get("stockEndType") != "stock" or not re.fullmatch(r"\d{6}", code):
                 continue
