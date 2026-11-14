@@ -31,6 +31,8 @@ jobs:
         run: python3 -u src/fetch_stocks.py
       - name: 계산
         run: python3 src/build.py
+      - name: 종목 계산
+        run: python3 src/build_stocks.py
       - name: 글 주소 연결
         run: python3 src/links.py
       - name: 커밋
@@ -50,7 +52,7 @@ jobs:
         run: |
           B="https://purge.jsdelivr.net/gh/tera04162/hz-data@assetreport/docs"
           ok=0; bad=0
-          for f in widget/ar.js data/market.json data/events.json data/links.json $(cd docs/data && ls events/*.json | sed 's#^#data/#'); do
+          for f in widget/ar.js data/market.json data/events.json data/links.json $(cd docs/data && ls events/*.json stocks/*.json | sed 's#^#data/#'); do
             if curl -fsS -m 20 -o /dev/null "$B/$f"; then ok=$((ok+1)); else bad=$((bad+1)); fi
           done
           echo "CDN 갱신 요청: 성공 $ok, 실패 $bad"
