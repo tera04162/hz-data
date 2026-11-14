@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-14T06:46:13Z",
+ "checked": "2026-11-14T07:07:48Z",
  "series": [
   {
    "id": "kospi",
@@ -42,7 +42,7 @@
    "rows": 9316,
    "first": "1990-01-02",
    "last": "2026-11-13",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -87,7 +87,7 @@
    "rows": 5227,
    "first": "2006-01-02",
    "last": "2026-11-06",
-   "changed": 5227,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
