@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-14T17:39:01Z",
+ "checked": "2026-11-15T01:59:06Z",
  "series": [
   {
    "id": "kospi",
@@ -111,10 +111,10 @@
   },
   {
    "id": "btc",
-   "rows": 4135,
+   "rows": 4136,
    "first": "2015-07-20",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-14",
+   "changed": 1,
    "ok": true,
    "errors": []
   }
