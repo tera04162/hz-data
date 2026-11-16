@@ -17,7 +17,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from fetch import http_get, num  # noqa: E402
+from fetch import http_get, num, provisional_day  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 D = ROOT / "data" / "stocks"
@@ -84,9 +84,12 @@ def update_price(code: str, today: str) -> int:
     text = http_get(f"https://api.finance.naver.com/siseJson.naver?symbol={code}&requestType=1&startTime={start}"
                     f"&endTime={today.replace('-', '')}&timeframe=day")
     added = 0
+    skip = provisional_day("stock")          # 장중에는 오늘 줄(현재가)을 받지 않고, 이미 들어온 것도 지운다
+    if skip and rows.pop(skip, None) is not None:
+        added += 1
     for m in re.finditer(r'\[\s*"(\d{8})"\s*,\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]*)\s*\]', text):
         d = f"{m.group(1)[:4]}-{m.group(1)[4:6]}-{m.group(1)[6:]}"
-        if d > today or float(m.group(2)) <= 0:
+        if d > today or d == skip or float(m.group(2)) <= 0:
             continue
         new = [m.group(2), m.group(3), m.group(4)]
         if rows.get(d) != new:
@@ -100,9 +103,12 @@ def update_price(code: str, today: str) -> int:
 def update_flow(code: str) -> int:
     p = D / "flow" / f"{code}.csv"
     rows = read_rows(p)
+    skip = (provisional_day("stock") or "").replace("-", "")
+    if skip:
+        rows.pop(f"{skip[:4]}-{skip[4:6]}-{skip[6:]}", None)
     for it in json.loads(http_get(f"{API}/stock/{code}/trend?pageSize=60&page=1")):
         b = str(it.get("bizdate", ""))
-        if not re.fullmatch(r"\d{8}", b):
+        if not re.fullmatch(r"\d{8}", b) or b == skip:
             continue
         try:
             rows[f"{b[:4]}-{b[4:6]}-{b[6:]}"] = [int(num(it["foreignerPureBuyQuant"])), int(num(it["organPureBuyQuant"])), int(num(it["individualPureBuyQuant"]))]

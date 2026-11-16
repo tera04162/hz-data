@@ -23,6 +23,7 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
@@ -236,6 +237,22 @@ def fetch_source(src: dict, known_last: str | None = None) -> dict[str, float]:
     raise ValueError(f"모르는 소스 종류: {t}")
 
 
+def provisional_day(src_type: str, symbol: str = "", now: datetime | None = None) -> str | None:
+    """아직 장이 끝나지 않아 '종가'가 아닌 날짜를 돌려준다(없으면 None).
+
+    네이버는 장중에 오늘 줄을 현재가로 채워 준다. 예약 실행이 늦어져 장중에 돌면 그 값이 종가처럼 장부에 들어가므로,
+    한국 자료는 한국 시각 15:45 전의 오늘, 미국 자료는 뉴욕 시각 17:15 전의 오늘을 받지 않는다(이미 들어온 줄도 지운다).
+    """
+    now = now or datetime.now(timezone.utc)
+    if src_type in ("naver_index", "stock") or (src_type == "naver_mi" and symbol.startswith("exchange/")):
+        t = now.astimezone(ZoneInfo("Asia/Seoul"))
+        return t.strftime("%Y-%m-%d") if (t.hour, t.minute) < (15, 45) else None
+    if src_type in ("naver_mi", "naver_world"):
+        t = now.astimezone(ZoneInfo("America/New_York"))
+        return t.strftime("%Y-%m-%d") if (t.hour, t.minute) < (17, 15) else None
+    return None
+
+
 # ---------- 장부 읽기/쓰기/병합 ----------
 
 def read_store(sid: str) -> dict[str, float]:
@@ -299,9 +316,15 @@ def update_series(spec: dict, today: str) -> dict:
     sid = spec["id"]
     store = read_store(sid)
     results, errors = [], []
+    dropped = False
     for src in spec["sources"]:
         try:
             got = fetch_source(src, max(store) if store else None)
+            skip = provisional_day(src["type"], src["symbol"])
+            if skip:
+                got.pop(skip, None)
+                if store.pop(skip, None) is not None:
+                    dropped = True
             if len(got) < 3:
                 raise ValueError(f"데이터가 너무 적음({len(got)}건)")
             results.append(got)
@@ -310,7 +333,7 @@ def update_series(spec: dict, today: str) -> dict:
             results.append({})
     fresh = combine_sources(results)
     merged, changed = merge_into_store(store, fresh, today, spec.get("kind", "price"))
-    if changed:
+    if changed or dropped:
         write_store(sid, merged)
     return {"id": sid, "rows": len(merged), "first": min(merged) if merged else None,
             "last": max(merged) if merged else None, "changed": changed, "ok": bool(fresh), "errors": errors}

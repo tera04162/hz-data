@@ -150,6 +150,19 @@ class Signals(unittest.TestCase):
         self.assertEqual(signals.judge({"n": 150, "win": 70.0, "median": 5.0}, base), "판정 보류")
 
 
+class Provisional(unittest.TestCase):
+    def test_korean_intraday_row_is_not_a_close(self):
+        from datetime import datetime, timezone
+        am = datetime(2026, 11, 16, 2, 21, tzinfo=timezone.utc)      # 한국 11:21 — 장중
+        pm = datetime(2026, 11, 16, 7, 47, tzinfo=timezone.utc)      # 한국 16:47 — 장 마감 뒤
+        self.assertEqual(fetch.provisional_day("naver_index", "KOSPI", am), "2026-11-16")
+        self.assertEqual(fetch.provisional_day("stock", "", am), "2026-11-16")
+        self.assertEqual(fetch.provisional_day("naver_mi", "exchange/FX_USDKRW", am), "2026-11-16")
+        self.assertIsNone(fetch.provisional_day("naver_index", "KOSPI", pm))
+        self.assertEqual(fetch.provisional_day("naver_mi", "energy/CLcv1", am), "2026-11-15")   # 뉴욕은 아직 일요일 밤
+        self.assertIsNone(fetch.provisional_day("cboe", "VIX", am))
+
+
 class Parsers(unittest.TestCase):
     def test_naver_index(self):
         txt = '[["날짜","시가","고가","저가","종가","거래량"],\n["20261112", 4000.1, 4010, 3990, 4005.5, 1],\n["20261113", 4005, 4020, 4000, 4012.25, 2]]'
