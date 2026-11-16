@@ -159,7 +159,10 @@ class Provisional(unittest.TestCase):
         self.assertEqual(fetch.provisional_day("stock", "", am), "2026-11-16")
         self.assertEqual(fetch.provisional_day("naver_mi", "exchange/FX_USDKRW", am), "2026-11-16")
         self.assertIsNone(fetch.provisional_day("naver_index", "KOSPI", pm))
-        self.assertEqual(fetch.provisional_day("naver_mi", "energy/CLcv1", am), "2026-11-15")   # 뉴욕은 아직 일요일 밤
+        self.assertIsNone(fetch.provisional_day("naver_mi", "energy/CLcv1", am))                 # 뉴욕은 일요일 밤 — 진행 중인 장 없음
+        ny_noon = datetime(2026, 11, 16, 17, 0, tzinfo=timezone.utc)                              # 뉴욕 12:00 — 장중
+        self.assertEqual(fetch.provisional_day("naver_mi", "energy/CLcv1", ny_noon), "2026-11-16")
+        self.assertEqual(fetch.provisional_day("naver_world", ".IXIC", ny_noon), "2026-11-16")
         self.assertIsNone(fetch.provisional_day("cboe", "VIX", am))
 
 
