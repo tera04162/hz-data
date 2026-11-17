@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-16T17:29:49Z",
+ "checked": "2026-11-17T04:35:20Z",
  "series": [
   {
    "id": "kospi",
@@ -21,55 +21,55 @@
   },
   {
    "id": "spx",
-   "rows": 13077,
+   "rows": 13078,
    "first": "1975-01-02",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "nasdaq",
-   "rows": 6907,
+   "rows": 6908,
    "first": "2000-01-03",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "vix",
-   "rows": 9316,
+   "rows": 9317,
    "first": "1990-01-02",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "hyg",
-   "rows": 4932,
+   "rows": 4933,
    "first": "2007-04-11",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "us10y",
-   "rows": 16202,
+   "rows": 16203,
    "first": "1962-01-02",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "us2y",
-   "rows": 12610,
+   "rows": 12611,
    "first": "1976-06-01",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -93,28 +93,28 @@
   },
   {
    "id": "wti",
-   "rows": 6587,
+   "rows": 6588,
    "first": "2000-08-23",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "gold",
-   "rows": 6576,
+   "rows": 6577,
    "first": "2000-08-30",
-   "last": "2026-11-13",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "btc",
-   "rows": 4137,
+   "rows": 4138,
    "first": "2015-07-20",
-   "last": "2026-11-15",
-   "changed": 0,
+   "last": "2026-11-16",
+   "changed": 1,
    "ok": true,
    "errors": []
   }
