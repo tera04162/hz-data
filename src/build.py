@@ -97,6 +97,24 @@ def temperature(vals: list[float], kind: str) -> list[float | None]:
     return [None if a is None or b is None else round(100 * (0.6 * a + 0.4 * b), 2) for a, b in zip(p1, p2)]
 
 
+LONG = 750           # 장기 온도: 3년(750거래일) 변화를 자기 과거 20년과 비교
+
+
+def long_temperature(vals: list[float], kind: str) -> list[float | None]:
+    """장기 온도(0~100) = 3년 변화율의 백분위. 단기 체온이 '요즘 얼마나 달아올랐나'라면 이것은 '몇 년에 걸쳐 얼마나 올라와 있나'."""
+    chg3 = [None if i < LONG or (kind == "price" and vals[i - LONG] <= 0) else
+            ((vals[i] / vals[i - LONG] - 1) if kind == "price" else (vals[i] - vals[i - LONG])) for i in range(len(vals))]
+    return [None if p is None else round(100 * p, 1) for p in rolling_pct(chg3)]
+
+
+def sample(dates: list[str], vals: list[float], recent: int = 520, step: int = 5) -> tuple[list[str], list[float]]:
+    """차트용 표본: 최근 recent개는 매일, 그 이전은 step개마다 하나."""
+    n = len(dates)
+    cut = max(0, n - recent)
+    idx = list(range(cut % step, cut, step)) + list(range(cut, n))
+    return [dates[i] for i in idx], [round(vals[i], 4) for i in idx]
+
+
 def days_between(a: str, b: str) -> int:
     return (datetime.strptime(b, "%Y-%m-%d") - datetime.strptime(a, "%Y-%m-%d")).days
 
@@ -289,6 +307,16 @@ def build() -> dict:
 
     temps = {sid: (temperature(S[sid][1], spec[sid]["kind"]) if len(S[sid][1]) >= MIN_HISTORY else [None] * len(S[sid][1]))
              for sid in S if sid in spec}
+    longs = {sid: (long_temperature(S[sid][1], spec[sid]["kind"]) if len(S[sid][1]) >= MIN_HISTORY + LONG else [None] * len(S[sid][1]))
+             for sid in S if sid in spec}
+    # 차트용 시계열
+    (OUT / "series").mkdir(parents=True, exist_ok=True)
+    for sid, (sd, sv) in S.items():
+        d2, v2 = sample(sd, sv)
+        sp = spec.get(sid, {"unit": "%p", "digits": 2, "kind": "level"})
+        (OUT / "series" / f"{sid}.json").write_text(json.dumps(
+            {"id": sid, "name": names[sid], "unit": sp["unit"], "digits": sp["digits"], "kind": sp["kind"], "d": d2, "v": v2},
+            ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     # 기준 달력: 한국·미국 주식 중 하나라도 열린 날
     master = sorted(set(S.get("kospi", ([], []))[0]) | set(S.get("spx", ([], []))[0])) or sorted(set().union(*[set(v[0]) for v in S.values()]))
@@ -328,7 +356,17 @@ def build() -> dict:
                               "adj": round(t if w["sign"] > 0 else 100 - t, 1), "w": w["w"]})
         start = max(0, last_i - WINDOW)
         hist = [[master[i], comp[i]] for i in range(start, last_i + 1) if comp[i] is not None and (i % 5 == 0 or i > last_i - 250)]
-        composite = {"value": cval, "label": label_of(cval), "pct": pct, "date": master[last_i],
+        ln = ld = 0.0
+        for w in comp_w:
+            lv = longs[w["id"]][-1] if longs.get(w["id"]) else None
+            if lv is not None:
+                ln += w["w"] * (lv if w["sign"] > 0 else 100 - lv); ld += w["w"]
+        clong = round(ln / ld, 1) if ld >= 0.5 else None
+        for c_ in comps:
+            lv = longs[c_["id"]][-1]
+            c_["long"] = None if lv is None else round(lv if c_["sign"] > 0 else 100 - lv, 1)
+        composite = {"value": cval, "label": label_of(cval), "pct": pct, "date": master[last_i], "long": clong,
+                     "long_label": None if clong is None else label_of(clong),
                      "chg5": back(5), "chg20": back(20), "components": comps, "hist": hist}
 
         # 유사 국면: 오늘과 구성 온도가 가장 비슷했던 과거 날짜
@@ -397,13 +435,19 @@ def build() -> dict:
             ytd = round((v[-1] / base - 1) * 100, 2) if k == "price" else round(v[-1] - base, 3)
         w = v[-250:]
         t = temps[sid][-1]
+        ma = sum(v[-MA:]) / MA if len(v) >= MA else None
+        tprev = temps[sid][-21] if len(temps[sid]) > 21 else None
         assets.append({
             "id": sid, "name": s["name"], "group": s["group"], "unit": s["unit"], "digits": s["digits"], "kind": k,
             "date": d[-1], "last": round(v[-1], 4), "stale": days_between(d[-1], asof) > 7,
             "d1": chg(v, 1, k), "d5": chg(v, 5, k), "d20": chg(v, 20, k), "d250": chg(v, 250, k), "ytd": ytd,
             "hi52": round(max(w), 4), "lo52": round(min(w), 4),
             "from_hi": round((v[-1] / max(w) - 1) * 100, 2) if k == "price" else round(v[-1] - max(w), 3),
-            "temp": t, "label": label_of(t) if t is not None else None,
+            "temp": t, "label": label_of(t) if t is not None else None, "long": longs[sid][-1],
+            "temp_chg20": round(t - tprev, 1) if t is not None and tprev is not None else None,
+            "d60": chg(v, 60, k), "d750": chg(v, 750, k), "d1250": chg(v, 1250, k),
+            "ma200_gap": round((v[-1] / ma - 1) * 100, 1) if ma and k == "price" else None,
+            "pos52": round((v[-1] - min(w)) / (max(w) - min(w)) * 100) if max(w) > min(w) else None,
             "spark": [round(x, 4) for x in v[-120:]], "since": d[0],
         })
 
@@ -464,8 +508,25 @@ def build() -> dict:
     for e in active:
         brief.append(f"신호 발생: {e['title']}({e['date'][5:].replace('-', '.')})")
 
+    headline = []
+    if composite is not None:
+        cs = sorted((c_ for c_ in composite["components"] if c_["sign"] > 0), key=lambda c_: c_["adj"])
+        headline.append(f"지금 시장 체온은 {composite['value']}도, {composite['label']} 구간입니다.")
+        if len(cs) >= 2:
+            headline.append(f"가장 식어 있는 곳은 {cs[0]['name']}({cs[0]['adj']:.0f}도), 가장 달아오른 곳은 {cs[-1]['name']}({cs[-1]['adj']:.0f}도)입니다.")
+        if composite.get("long") is not None:
+            L = composite["long"]
+            V = composite["value"]
+            tail = "몇 년에 걸쳐 올라와 있는 자리에서 최근에만 식은 상태입니다." if L >= 60 and V < 40 else \
+                   "길게는 낮은 자리인데 최근에만 달아오른 상태입니다." if L < 40 and V >= 60 else \
+                   "길게 봐도 낮은 자리입니다." if L < 40 else "길게 봐도 높은 자리입니다." if L >= 60 else "길게 보면 중간 자리입니다."
+            headline.append(f"3년 흐름으로 본 장기 온도는 {L:.0f}도({label_of(L)})로, {tail}")
+        gap = [c_["name"] for c_ in composite["components"] if c_["sign"] > 0 and c_.get("long") is not None and c_["long"] >= 80 and c_["adj"] < 40]
+        if gap:
+            headline.append(f"{'·'.join(gap[:4])}{'은' if (ord(gap[:4][-1][-1]) - 0xAC00) % 28 else '는'} 3년 기준으로는 과열권인데 최근 조정으로 단기 체온만 내려와 있습니다. 단기 체온이 낮다고 싸다는 뜻은 아닙니다.")
+
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    market = {"updated": now, "asof": asof, "composite": composite, "bands": bands, "brief": brief, "assets": assets, "analogs": analogs, "active": active,
+    market = {"updated": now, "asof": asof, "composite": composite, "headline": headline, "bands": bands, "brief": brief, "assets": assets, "analogs": analogs, "active": active,
               "labels": [{"lt": hi, "name": nm} for hi, nm in LABELS]}
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "market.json").write_text(json.dumps(market, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

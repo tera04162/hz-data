@@ -18,7 +18,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from build import days_between, rolling_pct, stats
+from build import days_between, rolling_pct, sample, stats
 import signals as sg
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -209,6 +209,16 @@ def build():
         actual_a = [p["key"] for p in (a.get("periods") or []) if p.get("isConsensus") == "N"]
         cons_a = [p["key"] for p in (a.get("periods") or []) if p.get("isConsensus") == "Y"]
         target = num(cons.get("priceTargetMean"))
+        def fin_table(src, want):
+            per = [p for p in (src.get("periods") or [])][-8:]
+            rows = {}
+            for r in src.get("rows") or []:
+                if r.get("title") in want:
+                    rows[r["title"]] = [num((r.get("v") or {}).get(p["key"])) for p in per]
+            return {"periods": [{"key": p["key"], "est": p.get("isConsensus") == "Y"} for p in per], "rows": rows} if per and rows else None
+        fin = {"annual": fin_table(a, ["매출액", "영업이익", "당기순이익", "영업이익률", "ROE", "부채비율", "EPS", "BPS", "주당배당금"]),
+               "quarter": fin_table(q, ["매출액", "영업이익", "당기순이익", "영업이익률"])}
+        op_yoy = round((op_now / op_prev - 1) * 100, 1) if op_now is not None and op_prev and op_prev > 0 else None
         fund = {
             "per": num(info.get("per")), "pbr": num(info.get("pbr")), "cns_per": num(info.get("cnsPer")), "div_yield": num(info.get("dividendYieldRatio")),
             "roe": fin_value(a.get("rows"), "ROE", actual_a[-1]) if actual_a else None,
@@ -243,12 +253,18 @@ def build():
             return round((close[i] / close[i - k] - 1) * 100, 2) if i >= k and close[i - k] > 0 else None
 
         w = close[-250:]
+        pd_, pc_ = sample(dates[-2500:], close[-2500:], recent=750)
+        rmap = dict(zip(dates, ratio))
         head = {"code": code, "name": s["name"], "market": s["market"], "date": dates[i], "close": round(close[i]), "d1": ch(1), "d20": ch(20), "d250": ch(250),
                 "tech": t, "flow": f, "state": row["name"] if row else None, "verdict": row["verdict"] if row else "판정 보류", "dwin": row["dwin"] if row else None,
-                "good": good, "bad": bad, "per": fund["per"], "pbr": fund["pbr"], "signals": [sig_name[k] for k in sig_of.get(code, [])]}
+                "good": good, "bad": bad, "per": fund["per"], "pbr": fund["pbr"], "signals": [sig_name[k] for k in sig_of.get(code, [])],
+                "sig_ids": sig_of.get(code, []), "d5": ch(5), "d60": ch(60), "from_hi": round((close[i] / max(w) - 1) * 100, 1),
+                "pos52": round((close[i] - min(w)) / (max(w) - min(w)) * 100) if max(w) > min(w) else None,
+                "ratio": ratio[i], "ratio_d20": d20[i], "f20": f20 and f20["foreign"], "i20": f20 and f20["inst"],
+                "op_yoy": op_yoy, "target_gap": fund["target_gap"], "div": fund["div_yield"], "roe": fund["roe"], "cap": s.get("cap")}
         index.append(head)
-        detail = {**head, "updated": now, "since": dates[0], "from_hi": round((close[i] / max(w) - 1) * 100, 1),
-                  "spark": [round(x) for x in close[-250:]], "ratio": [x for x in ratio[-250:]], "ratio_now": ratio[i], "ratio_d20": d20[i],
+        detail = {**head, "updated": now, "since": dates[0], "hi52": round(max(w)), "lo52": round(min(w)),
+                  "px": {"d": pd_, "c": [round(x) for x in pc_], "r": [rmap.get(d) for d in pd_]}, "fin": fin, "ratio_now": ratio[i],
                   "pooled": row and {"n": row["n"], "stats": row["stats"], "dmed": row["dmed"]}, "base": {str(h): base[h] and {"median": base[h]["median"], "win": base[h]["win"]} for h in HZ},
                   "own": own_st and {"n": own_st["n"], "median": own_st["median"], "win": own_st["win"]},
                   "own_base": own_base and {"n": own_base["n"], "median": own_base["median"], "win": own_base["win"]},

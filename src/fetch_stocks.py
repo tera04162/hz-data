@@ -118,6 +118,22 @@ def update_flow(code: str) -> int:
     return len(rows)
 
 
+def merge_fin(old: dict | None, new: dict | None) -> dict | None:
+    """기간(key)별로 합친다. 같은 기간은 새 값이 이긴다(예상치가 확정치로 바뀌는 경우 포함)."""
+    if not new or not new.get("periods"):
+        return old
+    if not old or not old.get("periods"):
+        return new
+    per = {x["key"]: x for x in old["periods"] if x.get("key")}
+    per.update({x["key"]: x for x in new["periods"] if x.get("key")})
+    rows = {r["title"]: dict(r.get("v") or {}) for r in old.get("rows") or []}
+    order = [r["title"] for r in new.get("rows") or []]
+    for r in new.get("rows") or []:
+        rows.setdefault(r["title"], {}).update(r.get("v") or {})
+    order += [k for k in rows if k not in order]
+    return {"periods": [per[k] for k in sorted(per)], "rows": [{"title": k, "v": rows[k]} for k in order]}
+
+
 def update_extra(code: str) -> None:
     out = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d")}
     for key, path in (("annual", f"/stock/{code}/finance/annual"), ("quarter", f"/stock/{code}/finance/quarter"),
@@ -139,6 +155,13 @@ def update_extra(code: str) -> None:
         time.sleep(0.15)
     p = D / "extra" / f"{code}.json"
     p.parent.mkdir(parents=True, exist_ok=True)
+    # 재무 이력은 쌓는다: 원자료는 최근 서너 해만 주므로, 지난번에 받아 둔 옛 기간을 버리지 않고 합친다.
+    try:
+        prev = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    except Exception:  # noqa: BLE001
+        prev = {}
+    for key in ("annual", "quarter"):
+        out[key] = merge_fin(prev.get(key), out.get(key))
     p.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 

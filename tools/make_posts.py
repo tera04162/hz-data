@@ -202,6 +202,9 @@ def build_post(e: dict, asof: str) -> dict:
                "이 신호를 이유로 서둘러 사거나 팔 근거는 기록에서 찾기 어렵습니다. 그 사실 자체가 쓸모 있는 결론입니다.")
     out.append(f"<h2 {H2}>기록이 말해 주는 것</h2><p>{use}</p>")
 
+    # 여기까지가 숫자가 들어간 본문: 매일 다시 만든 문장으로 바꿔 끼울 수 있게 감싼다
+    out = [f'<div data-ar="text" data-id="post_{e["id"]}">\n' + "\n".join(out) + "\n</div><!--/ar-text-->"]
+
     # 살아 있는 위젯
     out.append(f"<h2 {H2}>최신 수치와 전체 사례</h2><p>아래 표와 그림은 매일 장이 끝난 뒤 다시 계산됩니다. 기간 버튼을 누르면 사례별 분포가 바뀌고, 맨 아래에서 발생일 전체를 펼쳐 볼 수 있습니다.</p>")
     out.append(f'<div data-ar="event" data-id="{e["id"]}"><p>최신 통계를 불러오는 중입니다.</p></div>')
