@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-17T04:35:20Z",
+ "checked": "2026-11-17T06:09:00Z",
  "series": [
   {
    "id": "kospi",
@@ -24,7 +24,7 @@
    "rows": 13078,
    "first": "1975-01-02",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -33,7 +33,7 @@
    "rows": 6908,
    "first": "2000-01-03",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -42,7 +42,7 @@
    "rows": 9317,
    "first": "1990-01-02",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -51,7 +51,7 @@
    "rows": 4933,
    "first": "2007-04-11",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -60,7 +60,7 @@
    "rows": 16203,
    "first": "1962-01-02",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -69,7 +69,7 @@
    "rows": 12611,
    "first": "1976-06-01",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -78,7 +78,7 @@
    "rows": 5600,
    "first": "2004-04-12",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -96,7 +96,7 @@
    "rows": 6588,
    "first": "2000-08-23",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -105,7 +105,7 @@
    "rows": 6577,
    "first": "2000-08-30",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -114,7 +114,7 @@
    "rows": 4138,
    "first": "2015-07-20",
    "last": "2026-11-16",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   }
