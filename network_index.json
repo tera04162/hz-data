@@ -11219,5 +11219,24 @@
   "priceBand": "",
   "device": "",
   "brand": ""
+ },
+ {
+  "id": "ha176",
+  "site": "h.assetreport",
+  "title": "젖산마그네슘 효능·흡수율·부작용 | 산화마그네슘과 뭐가 다를까",
+  "url": "https://h.assetreport.kr/2026/11/lactate-magnesium-absorption-side-effects.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-11-17",
+  "tab": "건강",
+  "parts": [
+   "정신/수면"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
  }
 ]
