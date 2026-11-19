@@ -1,21 +1,21 @@
 {
- "checked": "2026-11-19T03:39:27Z",
+ "checked": "2026-11-19T16:51:11Z",
  "series": [
   {
    "id": "kospi",
-   "rows": 9512,
+   "rows": 9513,
    "first": "1990-01-04",
-   "last": "2026-11-18",
-   "changed": 0,
+   "last": "2026-11-19",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "kosdaq",
-   "rows": 7595,
+   "rows": 7596,
    "first": "1996-07-02",
-   "last": "2026-11-18",
-   "changed": 0,
+   "last": "2026-11-19",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -24,7 +24,7 @@
    "rows": 13080,
    "first": "1975-01-02",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -42,7 +42,7 @@
    "rows": 9319,
    "first": "1990-01-02",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -51,7 +51,7 @@
    "rows": 4935,
    "first": "2007-04-11",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -60,7 +60,7 @@
    "rows": 16205,
    "first": "1962-01-02",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -69,15 +69,15 @@
    "rows": 12613,
    "first": "1976-06-01",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
   {
    "id": "usdkrw",
-   "rows": 5602,
+   "rows": 5603,
    "first": "2004-04-12",
-   "last": "2026-11-18",
+   "last": "2026-11-19",
    "changed": 1,
    "ok": true,
    "errors": []
@@ -96,7 +96,7 @@
    "rows": 6590,
    "first": "2000-08-23",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -105,7 +105,7 @@
    "rows": 6579,
    "first": "2000-08-30",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -114,7 +114,7 @@
    "rows": 4140,
    "first": "2015-07-20",
    "last": "2026-11-18",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   }
