@@ -11238,5 +11238,24 @@
   "priceBand": "",
   "device": "",
   "brand": ""
+ },
+ {
+  "id": "hb191",
+  "site": "health.assetreport",
+  "title": "캡슐레이션효소란? 효능·복용법·가격과 고르는 기준 총정리",
+  "url": "https://health.assetreport.kr/2026/11/capsulation-enzyme-guide-efficacy-price.html",
+  "labels": [
+   "건강정보"
+  ],
+  "date": "2026-11-21",
+  "tab": "건강",
+  "parts": [
+   "위장/소화"
+  ],
+  "type": "정보",
+  "price": null,
+  "priceBand": "",
+  "device": "",
+  "brand": ""
  }
 ]
