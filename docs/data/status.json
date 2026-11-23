@@ -1,21 +1,21 @@
 {
- "checked": "2026-11-23T02:54:04Z",
+ "checked": "2026-11-23T19:30:47Z",
  "series": [
   {
    "id": "kospi",
-   "rows": 9514,
+   "rows": 9515,
    "first": "1990-01-04",
-   "last": "2026-11-20",
-   "changed": 0,
+   "last": "2026-11-23",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "kosdaq",
-   "rows": 7597,
+   "rows": 7598,
    "first": "1996-07-02",
-   "last": "2026-11-20",
-   "changed": 0,
+   "last": "2026-11-23",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -75,9 +75,9 @@
   },
   {
    "id": "usdkrw",
-   "rows": 5604,
+   "rows": 5605,
    "first": "2004-04-12",
-   "last": "2026-11-20",
+   "last": "2026-11-23",
    "changed": 1,
    "ok": true,
    "errors": []
@@ -114,7 +114,7 @@
    "rows": 4144,
    "first": "2015-07-20",
    "last": "2026-11-22",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   }
