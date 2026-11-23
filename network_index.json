@@ -11257,5 +11257,25 @@
   "priceBand": "",
   "device": "",
   "brand": ""
+ },
+ {
+  "id": "hz217",
+  "site": "healthzzang",
+  "title": "파로덱스 앰플치약 후기 92건 분석, 별점 4.9와 달랐던 이유",
+  "url": "https://www.healthzzang.com/2026/11/parodex-ampoule-toothpaste-review-price-usage.html",
+  "labels": [
+   "의약외품"
+  ],
+  "date": "2026-11-22",
+  "tab": "건강",
+  "parts": [
+   "입/구강",
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 32900,
+  "priceBand": "3~5만원",
+  "device": "",
+  "brand": ""
  }
 ]
