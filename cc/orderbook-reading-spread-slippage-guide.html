@@ -1,0 +1,68 @@
+<p style="font-size:.9em;color:#6b7280;">코인체크 편집팀 · 2026년 11월 24일 기준 · <a href="/search/label/%EC%BD%94%EC%9D%B8%EC%8B%AC%ED%99%94">코인 심화 시리즈</a> 3/12</p>
+<p>코인 거래 앱을 처음 열면 가격이 위아래로 깜박이는 호가창이 눈에 들어옵니다. 빨간색과 파란색 숫자가 가득해서 어디를 봐야 할지 막막하지만, 읽는 법은 의외로 단순합니다. 호가창은 "지금 이 가격에 사겠다는 사람과 팔겠다는 사람이 각각 얼마나 줄 서 있는가"를 보여 주는 대기 줄입니다. 이 줄을 읽을 수 있으면 시장가 주문이 얼마나 불리하게 체결될지 미리 계산할 수 있습니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-orderbook-reading-spread-slippage-guide-1.webp" alt="코인 호가창 읽는 법 스프레드 슬리피지 대표 이미지" title="코인 호가창 읽는 법 스프레드 슬리피지 대표 이미지" width="1000" height="560" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
+<h2>호가창의 기본 구조</h2>
+<ul><li><strong>매도 호가(위쪽 또는 한쪽 색상):</strong> 팔겠다는 사람들이 부른 가격과 수량입니다. 가장 낮은 매도 가격이 <strong>최우선 매도 호가</strong>입니다.</li><li><strong>매수 호가(반대쪽 색상):</strong> 사겠다는 사람들이 부른 가격과 수량입니다. 가장 높은 매수 가격이 <strong>최우선 매수 호가</strong>입니다.</li><li><strong>스프레드:</strong> 최우선 매도 호가와 최우선 매수 호가의 차이입니다. 이 간격이 좁을수록 거래하기 좋은 시장입니다.</li><li><strong>잔량:</strong> 각 가격에 쌓여 있는 수량입니다. 잔량이 두꺼운 가격은 가격이 쉽게 뚫리지 않는 것처럼 보이지만, 주문이 갑자기 취소될 수도 있어 절대적인 벽은 아닙니다.</li></ul>
+<p>체결은 가격 우선, 시간 우선 원칙으로 이루어집니다. 더 좋은 가격의 주문이 먼저 체결되고, 같은 가격이면 먼저 낸 주문이 먼저 체결됩니다.</p>
+<h2>시장가 주문이 하는 일</h2>
+<p>시장가 매수는 "지금 나와 있는 가장 싼 매도 호가부터 순서대로 사 달라"는 주문입니다. 최우선 호가의 수량이 내 주문보다 적으면 다음 호가, 그다음 호가를 차례로 먹으면서 체결됩니다. 아래는 이해를 돕기 위해 만든 가상의 매도 호가창입니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-orderbook-reading-spread-slippage-guide-2.webp" alt="가상의 비트코인 매도 호가 가격 수량 금액 표" title="가상의 비트코인 매도 호가 가격 수량 금액 표" width="1000" height="512" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
+<p>최우선 매도 호가는 1억 원이고 수량은 0.3 BTC입니다. 1,000만원어치를 시장가로 사면 이 호가 하나(0.3 BTC, 3,000만원어치)에서 모두 체결되어 평균 체결가가 1억 원입니다. 그런데 2억 원어치를 사면 첫 호가 0.3 BTC, 둘째 호가 0.5 BTC, 셋째 호가 0.8 BTC를 지나 넷째 호가에서 일부가 체결됩니다. 평균 체결가가 그만큼 올라갑니다.</p>
+<h2>주문 금액에 따른 슬리피지</h2>
+<p>같은 호가창에서 주문 금액을 키워 가며 평균 체결가가 최우선 매도 호가보다 얼마나 비싸지는지 계산한 값입니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-orderbook-reading-spread-slippage-guide-3.webp" alt="주문 금액별 시장가 매수 평균 체결가 상승률 막대그래프" title="주문 금액별 시장가 매수 평균 체결가 상승률 막대그래프" width="1000" height="560" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;" /><figcaption style="font-size:.85em;color:#6b7280;margin-top:6px;">가상 호가창 기준 계산. 주문이 클수록 불리해집니다.</figcaption></figure>
+<p>주문 금액이 커질수록 불리해지는 폭이 가파르게 커집니다. 이 차이가 슬리피지입니다. 호가창이 두꺼운 대형 코인에서는 슬리피지가 거의 보이지 않지만, 호가가 얇은 코인에서는 이 샘플보다 훨씬 심각할 수 있습니다.</p>
+<h2>호가창을 볼 때 흔한 착각</h2>
+<ol><li><strong>큰 잔량이 있으면 안전하다는 착각.</strong> 큰 매수 잔량이 보인다고 해서 가격이 그 아래로 안 내려간다는 보장은 없습니다. 주문은 언제든 취소될 수 있습니다.</li><li><strong>호가가 한꺼번에 사라지는 순간.</strong> 급변동 구간에서는 호가가 빠르게 비거나 간격이 벌어져 시장가 주문이 예상보다 훨씬 나쁜 가격에 체결되기도 합니다.</li><li><strong>체결 내역과 호가를 혼동하는 것.</strong> 체결 내역은 이미 일어난 거래이고, 호가는 앞으로 체결될 수 있는 대기 주문입니다.</li><li><strong>가짜 호가(허위 주문)의 가능성.</strong> 체결할 의도 없이 큰 주문을 냈다 취소하는 행위는 시세조종으로 금지되어 있지만, 호가창만으로 진짜 의도를 알 수는 없습니다.</li></ol>
+<h2>주문 전에 해 볼 계산</h2>
+<ol><li>내가 사려는 금액을 최우선 매도 호가부터 차례로 채워 보며 평균 체결가를 구합니다.</li><li>평균 체결가가 최우선 호가보다 얼마나 비싼지 비율로 계산합니다.</li><li>그 비율이 내가 기대하는 수익에 비해 너무 크면 주문을 나누거나 지정가로 바꿉니다.</li></ol>
+<p>계산이 번거로우면 아래 계산기에 호가를 붙여 넣어 보세요.</p>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 시장가 매수 슬리피지 계산기</h2>
+<p>아래 칸에 매도 호가를 한 줄에 하나씩 '가격,수량' 형식으로 넣고 주문 금액을 입력하면, 시장가로 샀을 때 평균 체결가와 슬리피지를 계산합니다. 기본값은 이 글의 가상 호가입니다. 실제 앱의 호가창을 보고 값을 바꿔 가며 연습해 보세요.</p>
+<div class="cc-box"><h3>시장가 매수 평균 체결가</h3>
+<label>매도 호가(가격,수량 — 낮은 가격부터)</label><textarea id="ob-b" rows="6" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em">100000000,0.30
+100050000,0.50
+100150000,0.80
+100400000,1.50
+101000000,3.00</textarea>
+<label>주문 금액(원)</label><input id="ob-a" value="200,000,000">
+<button onclick="obCalc()">계산하기</button>
+<div class="cc-out" id="ob-o"></div>
+<div class="cc-note">호가를 모두 소진해도 주문이 남으면 체결되지 않은 금액으로 표시합니다. 수수료는 포함하지 않았습니다.</div></div>
+<script>
+function obCalc(){var lines=document.getElementById("ob-b").value.split("\n"),amt=ccn(document.getElementById("ob-a").value),book=[];
+lines.forEach(function(l){var p=l.split(",");if(p.length==2){var a=ccn(p[0]),b=Number(p[1]);if(a>0&&b>0)book.push([a,b])}});
+if(!(amt>0&&book.length)){document.getElementById("ob-o").innerHTML="호가와 주문 금액을 확인해 주세요.";return}
+book.sort(function(x,y){return x[0]-y[0]});var rem=amt,qty=0,cost=0,rows="";
+for(var i=0;i<book.length&&rem>1;i++){var p=book[i][0],q=book[i][1],t=Math.min(q,rem/p);qty+=t;cost+=t*p;rem-=t*p;rows+="<tr><td>"+ccf(p)+"</td><td>"+t.toFixed(4)+"</td><td>"+ccf(t*p)+"</td></tr>"}
+var avg=cost/qty,sl=(avg/book[0][0]-1)*100;
+document.getElementById("ob-o").innerHTML="<table><tr><th>체결 호가(원)</th><th>체결 수량</th><th>체결 금액(원)</th></tr>"+rows+"</table><p>평균 체결가 <b>"+ccf(avg)+"원</b> · 최우선 호가 대비 <span class='cc-big'>+"+sl.toFixed(3)+"%</span>"+(rem>1?" · 호가 부족으로 "+ccf(rem)+"원은 체결되지 않음":"")+"</p>"}
+obCalc();
+</script>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 시장가 매수 슬리피지 계산기</h2>
+<p>아래 칸에 매도 호가를 한 줄에 하나씩 '가격,수량' 형식으로 넣고 주문 금액을 입력하면, 시장가로 샀을 때 평균 체결가와 슬리피지를 계산합니다. 기본값은 이 글의 가상 호가입니다. 실제 앱의 호가창을 보고 값을 바꿔 가며 연습해 보세요.</p>
+<div class="cc-box"><h3>시장가 매수 평균 체결가</h3>
+<label>매도 호가(가격,수량 — 낮은 가격부터)</label><textarea id="ob-b" rows="6" style="width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em">100000000,0.30
+100050000,0.50
+100150000,0.80
+100400000,1.50
+101000000,3.00</textarea>
+<label>주문 금액(원)</label><input id="ob-a" value="200,000,000">
+<button onclick="obCalc()">계산하기</button>
+<div class="cc-out" id="ob-o"></div>
+<div class="cc-note">호가를 모두 소진해도 주문이 남으면 체결되지 않은 금액으로 표시합니다. 수수료는 포함하지 않았습니다.</div></div>
+<script>
+function obCalc(){var lines=document.getElementById("ob-b").value.split("\n"),amt=ccn(document.getElementById("ob-a").value),book=[];
+lines.forEach(function(l){var p=l.split(",");if(p.length==2){var a=ccn(p[0]),b=Number(p[1]);if(a>0&&b>0)book.push([a,b])}});
+if(!(amt>0&&book.length)){document.getElementById("ob-o").innerHTML="호가와 주문 금액을 확인해 주세요.";return}
+book.sort(function(x,y){return x[0]-y[0]});var rem=amt,qty=0,cost=0,rows="";
+for(var i=0;i<book.length&&rem>1;i++){var p=book[i][0],q=book[i][1],t=Math.min(q,rem/p);qty+=t;cost+=t*p;rem-=t*p;rows+="<tr><td>"+ccf(p)+"</td><td>"+t.toFixed(4)+"</td><td>"+ccf(t*p)+"</td></tr>"}
+var avg=cost/qty,sl=(avg/book[0][0]-1)*100;
+document.getElementById("ob-o").innerHTML="<table><tr><th>체결 호가(원)</th><th>체결 수량</th><th>체결 금액(원)</th></tr>"+rows+"</table><p>평균 체결가 <b>"+ccf(avg)+"원</b> · 최우선 호가 대비 <span class='cc-big'>+"+sl.toFixed(3)+"%</span>"+(rem>1?" · 호가 부족으로 "+ccf(rem)+"원은 체결되지 않음":"")+"</p>"}
+obCalc();
+</script>
+<h2>정리</h2>
+<p>호가창은 현재 시장의 대기 줄입니다. 스프레드와 호가별 잔량을 읽으면 시장가 주문이 얼마나 불리하게 체결될지 미리 알 수 있습니다. 주문 금액이 커질수록 슬리피지는 가파르게 커지고, 호가가 얇은 코인일수록 더 심합니다. 시장가를 누르기 전에 호가창을 한 번 훑어보는 습관이 가장 저렴한 위험 관리입니다.</p>
+<p>함께 읽으면 좋은 글: &lt;a href="/search?q=거래 비용"&gt;코인 거래 비용 총정리&lt;/a&gt;, &lt;a href="/search?q=첫 일주일"&gt;거래소 첫 일주일 체크리스트&lt;/a&gt;, &lt;a href="/search?q=사기 수법"&gt;코인 사기 수법&lt;/a&gt;</p>
+<h2>참고한 자료</h2><ul><li>한국거래소 및 가상자산 거래소의 호가·체결 원칙(가격 우선, 시간 우선) 일반 설명</li><li>샘플 호가창은 이해를 돕기 위한 가상 데이터</li></ul>
+<hr /><p style="font-size:.9em;color:#4b5563;">이 글은 암호화폐 투자를 권유하거나 특정 종목을 추천하지 않습니다. 가상자산은 가격 변동이 크고 원금 손실이 발생할 수 있으며, 제도와 거래소 정책은 수시로 바뀝니다. 실제로 거래하거나 신고하기 전에는 금융당국·국세청·해당 거래소의 최신 공지를 직접 확인하세요.</p>

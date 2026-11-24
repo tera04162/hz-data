@@ -1,0 +1,218 @@
+[
+ {
+  "n": 19,
+  "slug": "crypto-trading-cost-fee-spread-slippage",
+  "title": "코인 거래 비용 총정리: 수수료·스프레드·슬리피지를 합치면 왕복 얼마일까 (계산기 포함)",
+  "desc": "코인을 사고팔 때 드는 비용은 수수료만이 아닙니다. 스프레드와 슬리피지까지 합친 왕복 비용과 손익분기 상승률을 예시와 계산기로 정리했습니다.",
+  "labels": "코인심화, 투자도구",
+  "chars": 5297,
+  "imgs": [
+   "cc-crypto-trading-cost-fee-spread-slippage-1.webp",
+   "cc-crypto-trading-cost-fee-spread-slippage-2.webp",
+   "cc-crypto-trading-cost-fee-spread-slippage-3.webp"
+  ],
+  "alts": [
+   "코인 거래 비용 수수료 스프레드 슬리피지 대표 이미지",
+   "100만원 왕복 거래 시 수수료 스프레드 슬리피지 비용 구성 막대그래프",
+   "월 왕복 거래 횟수별 연간 거래 비용 표"
+  ]
+ },
+ {
+  "n": 20,
+  "slug": "btc-transaction-fee-confirmation-mempool",
+  "title": "비트코인 송금 수수료는 왜 금액과 상관없을까: 멤풀·컨펌·수수료율(sat/vB) 이해하기",
+  "desc": "비트코인 송금 수수료가 보내는 금액이 아니라 거래 크기와 수수료율로 정해지는 이유, 멤풀과 컨펌, 수수료 계산 예시와 계산기를 정리했습니다.",
+  "labels": "코인심화, 투자도구",
+  "chars": 5281,
+  "imgs": [
+   "cc-btc-transaction-fee-confirmation-mempool-1.webp",
+   "cc-btc-transaction-fee-confirmation-mempool-2.webp",
+   "cc-btc-transaction-fee-confirmation-mempool-3.webp"
+  ],
+  "alts": [
+   "비트코인 송금 수수료 멤풀 컨펌 대표 이미지",
+   "비트코인 거래 생성 멤풀 대기 블록 포함 컨펌 누적 순서도",
+   "비트코인 거래 입력 출력 구성별 크기와 수수료율별 수수료 표"
+  ]
+ },
+ {
+  "n": 21,
+  "slug": "orderbook-reading-spread-slippage-guide",
+  "title": "코인 호가창 읽는 법: 매수·매도 잔량과 스프레드로 슬리피지 미리 계산하기",
+  "desc": "호가창의 매수·매도 잔량, 스프레드, 체결 순서를 읽는 법과 시장가 주문이 호가를 훑으며 평균 체결가가 밀리는 과정을 계산 예시와 계산기로 정리했습니다.",
+  "labels": "코인심화, 투자도구",
+  "chars": 5630,
+  "imgs": [
+   "cc-orderbook-reading-spread-slippage-guide-1.webp",
+   "cc-orderbook-reading-spread-slippage-guide-2.webp",
+   "cc-orderbook-reading-spread-slippage-guide-3.webp"
+  ],
+  "alts": [
+   "코인 호가창 읽는 법 스프레드 슬리피지 대표 이미지",
+   "가상의 비트코인 매도 호가 가격 수량 금액 표",
+   "주문 금액별 시장가 매수 평균 체결가 상승률 막대그래프"
+  ]
+ },
+ {
+  "n": 22,
+  "slug": "crypto-portfolio-allocation-rebalancing",
+  "title": "코인 포트폴리오 비중 정하는 법과 리밸런싱: 가격이 움직일 때 비중도 움직인다 (계산기 포함)",
+  "desc": "코인 투자에서 비중을 정하는 틀과 리밸런싱 방식(기간·밴드·신규 자금), 매도·매수 금액 계산 예시를 정리했습니다. 특정 비중을 추천하지 않는 설명용 글입니다.",
+  "labels": "코인심화, 투자도구",
+  "chars": 4990,
+  "imgs": [
+   "cc-crypto-portfolio-allocation-rebalancing-1.webp",
+   "cc-crypto-portfolio-allocation-rebalancing-2.webp",
+   "cc-crypto-portfolio-allocation-rebalancing-3.webp"
+  ],
+  "alts": [
+   "코인 포트폴리오 비중 리밸런싱 대표 이미지",
+   "가격 변동 후 코인 포트폴리오 비중 변화 막대그래프",
+   "리밸런싱 기간 밴드 신규 자금 방식 비교 표"
+  ]
+ },
+ {
+  "n": 23,
+  "slug": "ethereum-gas-fee-layer2-rollup-explained",
+  "title": "이더리움 가스비는 어떻게 계산될까: gwei 단위부터 레이어2 롤업까지 한 번에 이해하기",
+  "desc": "이더리움 가스비가 가스량과 gwei 가격의 곱으로 정해지는 구조, 기본 수수료와 팁, 레이어2 롤업이 비용을 줄이는 원리와 주의점을 계산 예시와 함께 정리했습니다.",
+  "labels": "코인심화, 기초지식",
+  "chars": 5211,
+  "imgs": [
+   "cc-ethereum-gas-fee-layer2-rollup-explained-1.webp",
+   "cc-ethereum-gas-fee-layer2-rollup-explained-2.webp",
+   "cc-ethereum-gas-fee-layer2-rollup-explained-3.webp"
+  ],
+  "alts": [
+   "이더리움 가스비 gwei 레이어2 롤업 대표 이미지",
+   "이더리움 단순 송금 가스 가격별 수수료 표",
+   "레이어2 롤업 거래 처리 압축 이더리움 기록 보안 순서도"
+  ]
+ },
+ {
+  "n": 24,
+  "slug": "defi-amm-liquidity-impermanent-loss",
+  "title": "디파이 유동성 공급은 왜 손해가 날 수 있을까: AMM 원리와 비영구적 손실 계산",
+  "desc": "탈중앙화 거래소(AMM)가 가격을 정하는 원리와 유동성 공급자가 겪는 비영구적 손실을 가격 변동별 표와 계산기로 정리했습니다. 수익 권유가 아닌 구조 설명입니다.",
+  "labels": "코인심화, 투자도구",
+  "chars": 5265,
+  "imgs": [
+   "cc-defi-amm-liquidity-impermanent-loss-1.webp",
+   "cc-defi-amm-liquidity-impermanent-loss-2.webp",
+   "cc-defi-amm-liquidity-impermanent-loss-3.webp"
+  ],
+  "alts": [
+   "디파이 AMM 유동성 공급 비영구적 손실 대표 이미지",
+   "가격 변동 배수별 비영구적 손실 비율 막대그래프",
+   "유동성 공급자 예치 수수료 수령 비율 조정 출금 순서도"
+  ]
+ },
+ {
+  "n": 25,
+  "slug": "nft-ownership-token-standard-risks",
+  "title": "NFT를 샀다는 것은 무엇을 가졌다는 뜻일까: 토큰 표준·저작권·메타데이터 위험 정리",
+  "desc": "NFT 소유가 실제로 무엇을 의미하는지, 토큰과 이미지 파일의 관계, 저작권이 따라오지 않는 이유, 가짜 컬렉션과 승인 피싱 같은 위험을 구조부터 정리했습니다.",
+  "labels": "코인심화, 기초지식",
+  "chars": 2049,
+  "imgs": [
+   "cc-nft-ownership-token-standard-risks-1.webp",
+   "cc-nft-ownership-token-standard-risks-2.webp",
+   "cc-nft-ownership-token-standard-risks-3.webp"
+  ],
+  "alts": [
+   "NFT 소유권 토큰 메타데이터 저작권 대표 이미지",
+   "NFT 토큰 메타데이터 저장소 이미지 파일 연결 구조 순서도",
+   "NFT 소유로 얻는 것과 얻지 않는 것 비교 표"
+  ]
+ },
+ {
+  "n": 26,
+  "slug": "exchange-account-security-checklist",
+  "title": "코인 거래소 계정 보안 체크리스트 12가지: OTP·출금 제한·피싱 방지까지 설정 순서대로",
+  "desc": "거래소 계정이 털리는 대표 경로와 인증 방식 비교, 이메일·기기·출금 설정까지 12가지 보안 체크리스트를 순서대로 정리했습니다. 소액 이용자도 따라 할 수 있습니다.",
+  "labels": "코인심화, 보안",
+  "chars": 2072,
+  "imgs": [
+   "cc-exchange-account-security-checklist-1.webp",
+   "cc-exchange-account-security-checklist-2.webp",
+   "cc-exchange-account-security-checklist-3.webp"
+  ],
+  "alts": [
+   "코인 거래소 계정 보안 체크리스트 대표 이미지",
+   "코인 거래소 2단계 인증 방식 비교 표",
+   "이메일 비밀번호 2단계 인증 출금 제한 보안 설정 순서도"
+  ]
+ },
+ {
+  "n": 27,
+  "slug": "crypto-address-formats-network-mistakes",
+  "title": "코인 지갑 주소 형식 읽는 법: bc1·0x·T로 시작하는 주소와 네트워크 선택 실수 막기",
+  "desc": "비트코인 bc1, 이더리움 0x, 트론 T 등 지갑 주소 형식의 특징과 같은 주소 형식을 여러 네트워크가 공유하는 이유, 네트워크를 잘못 고르는 실수를 막는 확인 순서를 정리했습니다.",
+  "labels": "코인심화, 보안",
+  "chars": 1920,
+  "imgs": [
+   "cc-crypto-address-formats-network-mistakes-1.webp",
+   "cc-crypto-address-formats-network-mistakes-2.webp",
+   "cc-crypto-address-formats-network-mistakes-3.webp"
+  ],
+  "alts": [
+   "코인 지갑 주소 형식 네트워크 선택 대표 이미지",
+   "비트코인 이더리움 트론 리플 지갑 주소 형식별 시작 문자와 특징 표",
+   "코인 이름 지원 네트워크 선택 소액 전송 확인 순서도"
+  ]
+ },
+ {
+  "n": 28,
+  "slug": "crypto-investor-psychology-biases",
+  "title": "코인 투자에서 흔한 심리 편향 6가지: FOMO·손실회피·매몰비용을 알아보는 법",
+  "desc": "코인 시장에서 자주 나타나는 FOMO, 손실회피, 앵커링, 확증편향, 과신, 매몰비용 편향의 모습과 매매 전에 던질 점검 질문을 사례와 함께 정리했습니다.",
+  "labels": "코인심화, 투자심리",
+  "chars": 1993,
+  "imgs": [
+   "cc-crypto-investor-psychology-biases-1.webp",
+   "cc-crypto-investor-psychology-biases-2.webp",
+   "cc-crypto-investor-psychology-biases-3.webp"
+  ],
+  "alts": [
+   "코인 투자 심리 편향 FOMO 손실회피 대표 이미지",
+   "코인 투자 심리 편향별 증상과 대응 규칙 표",
+   "왜 지금인가 계획 최대 손실 반대 의견 24시간 점검 질문 순서도"
+  ]
+ },
+ {
+  "n": 29,
+  "slug": "market-cap-fdv-token-unlock-guide",
+  "title": "시가총액과 FDV 읽는 법: 코인 가격이 싸 보여도 위험할 수 있는 이유 (토큰 언락 계산기)",
+  "desc": "코인의 시가총액, 완전희석가치(FDV), 유통량 비율과 토큰 언락 일정이 왜 중요한지 계산 예시와 계산기로 정리했습니다. 단가가 낮다고 싼 코인이 아닌 이유를 설명합니다.",
+  "labels": "코인심화, 투자도구",
+  "chars": 5316,
+  "imgs": [
+   "cc-market-cap-fdv-token-unlock-guide-1.webp",
+   "cc-market-cap-fdv-token-unlock-guide-2.webp",
+   "cc-market-cap-fdv-token-unlock-guide-3.webp"
+  ],
+  "alts": [
+   "코인 시가총액 FDV 토큰 언락 대표 이미지",
+   "유통 비율별 FDV 대 시가총액 배수 막대그래프",
+   "가상의 코인 A와 B의 가격 유통량 시가총액 FDV 비교 표"
+  ]
+ },
+ {
+  "n": 30,
+  "slug": "how-to-verify-crypto-information",
+  "title": "코인 정보 검증하는 법: 뉴스·유튜브·커뮤니티 글을 믿기 전에 확인할 5단계",
+  "desc": "코인 관련 뉴스와 유튜브, 커뮤니티 글을 접했을 때 출처 확인, 공식 공지 대조, 온체인 확인, 이해관계 점검 등 5단계로 사실 여부를 가려내는 방법을 정리했습니다.",
+  "labels": "코인심화, 보안",
+  "chars": 2089,
+  "imgs": [
+   "cc-how-to-verify-crypto-information-1.webp",
+   "cc-how-to-verify-crypto-information-2.webp",
+   "cc-how-to-verify-crypto-information-3.webp"
+  ],
+  "alts": [
+   "코인 정보 검증 방법 대표 이미지",
+   "출처 공식 공지 데이터 이해관계 시간 두기 정보 검증 5단계 순서도",
+   "정보 종류별 코인 정보 확인처와 주의사항 표"
+  ]
+ }
+]

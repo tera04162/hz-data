@@ -1,0 +1,58 @@
+<p style="font-size:.9em;color:#6b7280;">코인체크 편집팀 · 2026년 11월 24일 기준 · <a href="/search/label/%EC%BD%94%EC%9D%B8%EC%8B%AC%ED%99%94">코인 심화 시리즈</a> 6/12</p>
+<p>디파이(DeFi, 탈중앙화 금융)를 처음 접하면 "예치만 하면 연 수십 퍼센트 수익"이라는 광고를 자주 만납니다. 이런 숫자 뒤에는 거래 수수료 수익과 함께 눈에 잘 띄지 않는 위험이 있습니다. 대표적인 것이 <strong>비영구적 손실(impermanent loss)</strong> 입니다. 이 글은 탈중앙화 거래소가 가격을 정하는 방식부터 시작해서, 왜 유동성을 공급하면 단순히 들고 있을 때보다 적을 수 있는지 숫자로 확인합니다. 투자를 권하는 글이 아니라 구조를 이해하기 위한 설명입니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-defi-amm-liquidity-impermanent-loss-1.webp" alt="디파이 AMM 유동성 공급 비영구적 손실 대표 이미지" title="디파이 AMM 유동성 공급 비영구적 손실 대표 이미지" width="1000" height="560" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
+<h2>AMM은 호가창 없이 가격을 정한다</h2>
+<p>중앙화 거래소는 사려는 사람과 팔려는 사람의 호가를 맞춰 거래를 체결합니다. 반면 유니스왑 같은 탈중앙화 거래소는 <strong>AMM(자동화 시장조성자)</strong> 이라는 방식을 씁니다. 풀(pool)이라는 저장소에 두 종류의 코인이 쌓여 있고, 거래할 때마다 두 코인 수량의 곱이 일정하게 유지되도록 가격이 자동으로 정해집니다. 가장 단순한 형태는 이렇게 표현합니다.</p>
+<blockquote style="margin:1.4em 0;padding:14px 18px;background:#f3f6fb;border-left:5px solid #2563eb;border-radius:6px;">x × y = k (x, y는 풀 안의 두 코인 수량, k는 일정한 값)</blockquote>
+<p>누군가 x를 사 가면 풀 안의 x가 줄어드는 만큼 y가 늘어나고, 그만큼 x의 가격이 오릅니다. 사람이 아닌 공식이 가격을 만드는 것입니다. 이렇게 풀에 코인을 넣어 두는 사람을 <strong>유동성 공급자(LP)</strong> 라고 하고, 이들은 거래가 일어날 때마다 수수료의 일부를 나눠 받습니다.</p>
+<h2>가격이 움직이면 내 보유 비율이 바뀐다</h2>
+<p>풀은 두 코인의 가치 비율을 항상 맞추려 합니다. 한 코인의 외부 시장 가격이 오르면, 차익거래자가 풀에서 오른 코인을 사 가고 반대 코인을 넣어 균형을 맞춥니다. 그 결과 LP의 풀 지분에는 오른 코인이 점점 줄고 오르지 않은 코인이 늘어납니다. 가격이 오른 쪽을 덜 가진 채로 풀에서 나오게 되는 셈입니다.</p>
+<p>단순 예를 들어 보겠습니다. 가격이 같은 두 코인 A와 B를 각각 100만원어치씩 풀에 넣었고, 이후 A의 가격이 B 대비 4배가 되었다고 가정합니다. 풀 공식에 따라 계산하면 풀 안의 자산 가치는 단순히 둘을 들고 있었을 때보다 20% 적습니다. 이 차이가 비영구적 손실입니다.</p>
+<h2>손실 크기를 보여 주는 공식</h2>
+<p>가격 비율 변화를 r(예: 2배면 r=2)이라고 할 때 손실률은 다음 공식으로 계산됩니다.</p>
+<blockquote style="margin:1.4em 0;padding:14px 18px;background:#f3f6fb;border-left:5px solid #2563eb;border-radius:6px;">비영구적 손실 = 2×√r ÷ (1 + r) − 1</blockquote>
+<p>계산하면 가격이 1.25배 변하면 약 0.6%, 1.5배면 약 2.0%, 2배면 약 5.7%, 3배면 약 13.4%, 4배면 20%, 5배면 약 25.5%의 손실이 납니다. 가격이 반대 방향으로 변해도(비율이 1/r) 같은 손실이 납니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-defi-amm-liquidity-impermanent-loss-2.webp" alt="가격 변동 배수별 비영구적 손실 비율 막대그래프" title="가격 변동 배수별 비영구적 손실 비율 막대그래프" width="1000" height="560" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;" /><figcaption style="font-size:.85em;color:#6b7280;margin-top:6px;">공식: 2×√r÷(1+r) − 1 (r은 가격 비율)</figcaption></figure>
+<p>이 값은 수수료 수익을 빼고 단순 보유와 비교한 것입니다. 수수료가 손실을 넘어서면 풀에 넣는 것이 이익일 수 있지만, 변동성이 크고 한쪽으로 크게 움직이는 코인 쌍일수록 손실이 수수료를 앞지르기 쉽습니다. '비영구적'이라는 이름은 가격이 원래 비율로 돌아오면 손실이 사라진다는 뜻이지만, 돌아오지 않은 채 출금하면 손실이 확정됩니다.</p>
+<h2>과정을 순서로 정리하면</h2>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-defi-amm-liquidity-impermanent-loss-3.webp" alt="유동성 공급자 예치 수수료 수령 비율 조정 출금 순서도" title="유동성 공급자 예치 수수료 수령 비율 조정 출금 순서도" width="1000" height="336" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
+<p>광고에 나오는 연 수익률은 대개 수수료와 보상 토큰 가치를 합친 값이고, 비영구적 손실은 반영되지 않은 경우가 많습니다. 보상으로 받는 토큰의 가격이 떨어지면 표시된 수익률은 쉽게 의미를 잃습니다.</p>
+<h2>그 밖의 위험</h2>
+<ol><li><strong>스마트컨트랙트 위험.</strong> 코드에 오류가 있으면 풀 안의 자산이 한꺼번에 사라질 수 있습니다. 감사(audit)를 받았다고 해서 안전이 보장되지는 않습니다.</li><li><strong>러그풀과 가짜 토큰.</strong> 누구나 풀을 만들 수 있어서, 개발자가 유동성을 빼 가는 사기가 있습니다. 이름만 같은 가짜 토큰도 많습니다.</li><li><strong>가격 오라클·브릿지 위험.</strong> 외부 가격 정보나 자산 이동 다리가 조작·해킹되면 연쇄 피해가 날 수 있습니다.</li><li><strong>세금과 제도.</strong> 디파이 거래의 과세와 법적 지위는 국가별로 다르고 국내에서도 정리 중입니다.</li></ol>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 비영구적 손실 계산기</h2>
+<p>두 코인을 같은 가치로 넣었다고 가정하고, 한 코인의 가격이 상대 코인 대비 몇 배가 되었는지 입력하면 단순 보유 대비 손실률을 계산합니다. 거래 수수료 수익과 보상 토큰은 포함하지 않았습니다.</p>
+<div class="cc-box"><h3>비영구적 손실 = 2×√r ÷ (1+r) − 1</h3>
+<label>예치 금액(원)</label><input id="il-a" value="2,000,000">
+<label>가격 비율 r (예: 2배 상승이면 2, 절반으로 하락이면 0.5)</label><input id="il-r" value="2">
+<label>기간 중 받은 수수료 수익(원)</label><input id="il-f" value="50,000">
+<button onclick="ilCalc()">계산하기</button>
+<div class="cc-out" id="il-o"></div>
+<div class="cc-note">단순 보유 가치는 한 코인이 r배가 되고 다른 코인은 그대로일 때의 평가액으로 계산했습니다(풀에 넣은 자산 절반씩 기준).</div></div>
+<script>
+function ilCalc(){var a=ccn(document.getElementById("il-a").value),r=ccn(document.getElementById("il-r").value),f=ccn(document.getElementById("il-f").value);
+if(!(a>0&&r>0)){document.getElementById("il-o").innerHTML="값을 확인해 주세요.";return}
+var il=2*Math.sqrt(r)/(1+r)-1,hold=a/2*(1+r),pool=hold*(1+il);
+document.getElementById("il-o").innerHTML="<table><tr><th>구분</th><th>금액</th></tr><tr><td>단순 보유 평가액</td><td>"+ccf(hold)+"원</td></tr><tr><td>풀에 넣었을 때 평가액</td><td>"+ccf(pool)+"원</td></tr><tr><td>비영구적 손실</td><td><span class='cc-big'>"+(il*100).toFixed(2)+"%</span> ("+ccf(pool-hold)+"원)</td></tr><tr><td>수수료 수익 반영 후 단순 보유 대비</td><td>"+ccf(pool+f-hold)+"원</td></tr></table><p>"+(pool+f>=hold?"이 조건에서는 수수료 수익이 손실을 넘어섰습니다.":"이 조건에서는 수수료 수익이 손실을 메우지 못했습니다.")+"</p>"}
+ilCalc();
+</script>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 비영구적 손실 계산기</h2>
+<p>두 코인을 같은 가치로 넣었다고 가정하고, 한 코인의 가격이 상대 코인 대비 몇 배가 되었는지 입력하면 단순 보유 대비 손실률을 계산합니다. 거래 수수료 수익과 보상 토큰은 포함하지 않았습니다.</p>
+<div class="cc-box"><h3>비영구적 손실 = 2×√r ÷ (1+r) − 1</h3>
+<label>예치 금액(원)</label><input id="il-a" value="2,000,000">
+<label>가격 비율 r (예: 2배 상승이면 2, 절반으로 하락이면 0.5)</label><input id="il-r" value="2">
+<label>기간 중 받은 수수료 수익(원)</label><input id="il-f" value="50,000">
+<button onclick="ilCalc()">계산하기</button>
+<div class="cc-out" id="il-o"></div>
+<div class="cc-note">단순 보유 가치는 한 코인이 r배가 되고 다른 코인은 그대로일 때의 평가액으로 계산했습니다(풀에 넣은 자산 절반씩 기준).</div></div>
+<script>
+function ilCalc(){var a=ccn(document.getElementById("il-a").value),r=ccn(document.getElementById("il-r").value),f=ccn(document.getElementById("il-f").value);
+if(!(a>0&&r>0)){document.getElementById("il-o").innerHTML="값을 확인해 주세요.";return}
+var il=2*Math.sqrt(r)/(1+r)-1,hold=a/2*(1+r),pool=hold*(1+il);
+document.getElementById("il-o").innerHTML="<table><tr><th>구분</th><th>금액</th></tr><tr><td>단순 보유 평가액</td><td>"+ccf(hold)+"원</td></tr><tr><td>풀에 넣었을 때 평가액</td><td>"+ccf(pool)+"원</td></tr><tr><td>비영구적 손실</td><td><span class='cc-big'>"+(il*100).toFixed(2)+"%</span> ("+ccf(pool-hold)+"원)</td></tr><tr><td>수수료 수익 반영 후 단순 보유 대비</td><td>"+ccf(pool+f-hold)+"원</td></tr></table><p>"+(pool+f>=hold?"이 조건에서는 수수료 수익이 손실을 넘어섰습니다.":"이 조건에서는 수수료 수익이 손실을 메우지 못했습니다.")+"</p>"}
+ilCalc();
+</script>
+<h2>정리</h2>
+<p>AMM은 공식으로 가격을 정하고, 유동성 공급자는 그 대가로 수수료를 받지만 가격 변동에 따라 보유 비율이 바뀌면서 단순 보유보다 적어질 수 있습니다. 가격이 2배 변하면 약 5.7%, 4배면 20% 손실이라는 숫자를 알고 나면 "연 수익률 몇 %"라는 문구를 훨씬 차분하게 읽을 수 있습니다. 구조가 이해되지 않는 상품에는 넣지 않는 것이 기본 원칙입니다.</p>
+<p>함께 읽으면 좋은 글: &lt;a href="/search?q=스테이킹"&gt;스테이킹의 위험&lt;/a&gt;, &lt;a href="/search?q=스마트컨트랙트"&gt;스마트컨트랙트&lt;/a&gt;, &lt;a href="/search?q=사기 수법"&gt;코인 사기 수법&lt;/a&gt;</p>
+<h2>참고한 자료</h2><ul><li>Uniswap 공식 문서(v2 whitepaper): constant product 공식과 유동성 공급</li><li>비영구적 손실 공식 2√r/(1+r)−1은 AMM 분석에 널리 쓰이는 표준 식</li></ul>
+<hr /><p style="font-size:.9em;color:#4b5563;">이 글은 암호화폐 투자를 권유하거나 특정 종목을 추천하지 않습니다. 가상자산은 가격 변동이 크고 원금 손실이 발생할 수 있으며, 제도와 거래소 정책은 수시로 바뀝니다. 실제로 거래하거나 신고하기 전에는 금융당국·국세청·해당 거래소의 최신 공지를 직접 확인하세요.</p>

@@ -1,0 +1,57 @@
+<p style="font-size:.9em;color:#6b7280;">코인체크 편집팀 · 2026년 11월 24일 기준 · <a href="/search/label/%EC%BD%94%EC%9D%B8%EC%8B%AC%ED%99%94">코인 심화 시리즈</a> 5/12</p>
+<p>이더리움으로 송금하거나 앱을 쓰다 보면 "가스비(gas fee)"라는 말을 자주 봅니다. 같은 송금인데도 어떤 날은 몇백 원이고 어떤 날은 몇만 원이 되기도 해서 이해하기 어렵다는 사람이 많습니다. 가스비는 불규칙한 것이 아니라 정해진 공식으로 계산됩니다. 공식을 알면 지금 수수료가 왜 이 수준인지, 언제 보내면 싼지, 레이어2가 왜 저렴한지 설명할 수 있습니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-ethereum-gas-fee-layer2-rollup-explained-1.webp" alt="이더리움 가스비 gwei 레이어2 롤업 대표 이미지" title="이더리움 가스비 gwei 레이어2 롤업 대표 이미지" width="1000" height="560" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
+<h2>가스란 무엇인가</h2>
+<p>이더리움에서는 모든 작업에 계산 비용이 들고, 그 계산량을 <strong>가스(gas)</strong> 라는 단위로 잽니다. 단순히 ETH를 한 주소에서 다른 주소로 보내는 거래는 21,000 가스를 씁니다. 토큰을 교환하거나 대출 서비스를 쓰는 것처럼 스마트컨트랙트를 호출하는 거래는 훨씬 많은 가스를 쓰고, 컨트랙트 구조에 따라 천차만별입니다.</p>
+<p>가스량은 작업의 복잡도로 정해지고, 내가 지불하는 값은 <strong>가스 한 단위의 가격</strong>으로 정해집니다. 가격 단위는 <strong>gwei</strong>로, 1 gwei는 10억분의 1 ETH입니다.</p>
+<blockquote style="margin:1.4em 0;padding:14px 18px;background:#f3f6fb;border-left:5px solid #2563eb;border-radius:6px;">수수료(ETH) = 사용한 가스량 × 가스 가격(gwei) × 0.000000001</blockquote>
+<h2>기본 수수료와 팁</h2>
+<p>이더리움은 2021년 도입된 EIP-1559 이후 가스 가격을 기본 수수료(base fee)와 우선 수수료(priority fee, 팁)로 나눕니다. 기본 수수료는 네트워크 혼잡도에 따라 자동으로 오르내리며 블록마다 정해지고, 이 금액은 소각됩니다. 팁은 검증자에게 가는 몫으로, 빨리 처리받고 싶을 때 더 얹을 수 있습니다. 지갑 앱은 보통 현재 시세에 맞춰 두 값을 자동으로 추천해 줍니다.</p>
+<h2>숫자로 계산해 보기</h2>
+<p>단순 송금은 21,000 가스를 씁니다. 가스 가격이 20 gwei라면 수수료는 21,000 × 20 = 420,000 gwei, 즉 0.00042 ETH입니다. ETH 1개가 400만원이라고 가정하면 약 1,680원입니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-ethereum-gas-fee-layer2-rollup-explained-2.webp" alt="이더리움 단순 송금 가스 가격별 수수료 표" title="이더리움 단순 송금 가스 가격별 수수료 표" width="1000" height="450" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
+<p>같은 송금이라도 가스 가격이 100 gwei로 오르면 수수료는 다섯 배로 늘어납니다. 스마트컨트랙트를 호출하는 거래는 가스량이 수 배에서 수십 배 더 많으므로, 혼잡할 때 수수료가 크게 느껴집니다. 거래를 보내기 전에 지갑이 보여 주는 예상 수수료를 반드시 확인하세요.</p>
+<h2>왜 수수료가 올랐다 내렸다 할까</h2>
+<p>블록 하나에 담을 수 있는 가스량에는 한도가 있습니다. 거래가 몰려 한도를 넘기면 기본 수수료가 오르고, 한가해지면 내려갑니다. 인기 있는 NFT 발행이나 큰 시장 변동이 있을 때 수수료가 치솟는 이유입니다. 급하지 않다면 사람이 적은 시간대를 골라 가스 가격이 낮을 때 보내는 방법이 있습니다.</p>
+<h2>레이어2: 비용을 낮추는 구조</h2>
+<p>이더리움 본체(레이어1)는 안전을 우선하는 설계라서 처리량에 한계가 있습니다. 이 한계를 보완하려고 등장한 것이 <strong>레이어2</strong> 네트워크이고, 그중 대표적인 방식이 <strong>롤업(rollup)</strong> 입니다.</p>
+<figure style="margin:1.6em 0;text-align:center;"><img src="https://cdn.jsdelivr.net/gh/tera04162/hz-data@main/img/cc-ethereum-gas-fee-layer2-rollup-explained-3.webp" alt="레이어2 롤업 거래 처리 압축 이더리움 기록 보안 순서도" title="레이어2 롤업 거래 처리 압축 이더리움 기록 보안 순서도" width="1000" height="330" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;" /></figure>
+<p>롤업은 거래를 별도의 네트워크에서 빠르게 처리한 뒤, 수백에서 수천 건을 하나로 압축해 요약 데이터와 증거를 이더리움에 기록합니다. 가스 비용을 여러 사람이 나눠 내는 셈이라 한 건당 수수료가 크게 낮아집니다. 보안은 이더리움에 기대는 구조입니다.</p>
+<p>롤업은 증명 방식에 따라 크게 두 가지로 나뉩니다. 낙관적 롤업은 일단 정상이라고 가정하고 문제가 제기되면 검증하는 방식이고, 영지식 롤업은 수학적 증명으로 정확성을 입증하는 방식입니다. 이 차이 때문에 이더리움 본체로 자산을 되돌려 받는 출금 시간이 다를 수 있습니다. 낙관적 롤업의 기본 경로는 출금 대기 기간이 길게 설정되어 있는 경우가 있어 사용 전에 안내를 확인해야 합니다.</p>
+<h2>레이어2 사용 시 주의할 점</h2>
+<ol><li><strong>네트워크 선택이 핵심입니다.</strong> 이더리움 주소 형식은 여러 네트워크에서 같아서, 주소는 맞게 입력해도 네트워크를 잘못 고르면 자산을 찾기 어려울 수 있습니다.</li><li><strong>브릿지(자산 이동 다리)는 위험이 있습니다.</strong> 브릿지 컨트랙트가 해킹당한 사례가 여러 번 있었으므로, 공식 안내에서 확인한 경로만 사용해야 합니다.</li><li><strong>거래소 지원 여부를 확인합니다.</strong> 거래소에서 레이어2로 바로 출금할 수 있는지, 입금을 받는지는 거래소마다 다릅니다.</li><li><strong>같은 코인이라도 네트워크가 다르면 다른 자산으로 취급될 수 있습니다.</strong> 이름이 같다고 같은 형태가 아닙니다.</li></ol>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 이더리움 가스비 계산기</h2>
+<p>가스량과 가스 가격(gwei), ETH 가격을 넣으면 수수료가 원화로 얼마인지 계산합니다. 현재 가스 가격은 지갑 앱이나 가스 추적 사이트에서 확인하세요. 단순 송금은 21,000 가스입니다.</p>
+<div class="cc-box"><h3>수수료 = 가스량 × 가스 가격</h3>
+<label>사용 가스량</label><input id="gs-g" value="21,000">
+<label>가스 가격(gwei)</label><input id="gs-p" value="20">
+<label>ETH 가격(원)</label><input id="gs-e" value="4,000,000">
+<button onclick="gsCalc()">계산하기</button>
+<div class="cc-out" id="gs-o"></div>
+<div class="cc-note">1 gwei = 0.000000001 ETH. 컨트랙트 호출 거래의 가스량은 서비스와 작업에 따라 달라 지갑이 보여 주는 예상값을 확인해야 합니다. ETH 가격은 예시입니다.</div></div>
+<script>
+function gsCalc(){var g=ccn(document.getElementById("gs-g").value),p=ccn(document.getElementById("gs-p").value),e=ccn(document.getElementById("gs-e").value);
+if(!(g>0&&p>=0&&e>0)){document.getElementById("gs-o").innerHTML="값을 확인해 주세요.";return}
+var eth=g*p*1e-9;document.getElementById("gs-o").innerHTML="<p>수수료: <b>"+eth.toFixed(6)+" ETH</b> ≈ <span class='cc-big'>"+ccf(eth*e)+"원</span></p><table><tr><th>가스 가격</th><th>수수료(ETH)</th><th>원화</th></tr>"+[5,20,50,100].map(function(x){var y=g*x*1e-9;return "<tr><td>"+x+" gwei</td><td>"+y.toFixed(6)+"</td><td>"+ccf(y*e)+"원</td></tr>"}).join("")+"</table>"}
+gsCalc();
+</script>
+<style>.cc-box{border:1px solid #d1d5db;border-radius:10px;padding:16px;margin:1.4em 0;background:#f9fafb}.cc-box h3{margin:0 0 4px}.cc-box label{display:block;font-size:.9em;margin:10px 0 3px;color:#374151}.cc-box input,.cc-box select{width:100%;box-sizing:border-box;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:1em}.cc-box button{margin-top:12px;padding:10px 18px;border:0;border-radius:6px;background:#1e3a8a;color:#fff;font-size:1em;cursor:pointer}.cc-out{margin-top:14px;overflow-x:auto}.cc-out table{border-collapse:collapse;width:100%;font-size:.95em}.cc-out th,.cc-out td{border:1px solid #d1d5db;padding:6px 8px;text-align:right}.cc-out th{background:#eef2ff;text-align:center}.cc-note{font-size:.85em;color:#6b7280;margin-top:8px}.cc-big{font-size:1.15em;font-weight:bold;color:#1e3a8a}</style><script>function ccn(v){return Number(String(v).replace(/,/g,""))}function ccf(v){return Math.round(v).toLocaleString("ko-KR")}</script><h2>직접 계산해 보기: 이더리움 가스비 계산기</h2>
+<p>가스량과 가스 가격(gwei), ETH 가격을 넣으면 수수료가 원화로 얼마인지 계산합니다. 현재 가스 가격은 지갑 앱이나 가스 추적 사이트에서 확인하세요. 단순 송금은 21,000 가스입니다.</p>
+<div class="cc-box"><h3>수수료 = 가스량 × 가스 가격</h3>
+<label>사용 가스량</label><input id="gs-g" value="21,000">
+<label>가스 가격(gwei)</label><input id="gs-p" value="20">
+<label>ETH 가격(원)</label><input id="gs-e" value="4,000,000">
+<button onclick="gsCalc()">계산하기</button>
+<div class="cc-out" id="gs-o"></div>
+<div class="cc-note">1 gwei = 0.000000001 ETH. 컨트랙트 호출 거래의 가스량은 서비스와 작업에 따라 달라 지갑이 보여 주는 예상값을 확인해야 합니다. ETH 가격은 예시입니다.</div></div>
+<script>
+function gsCalc(){var g=ccn(document.getElementById("gs-g").value),p=ccn(document.getElementById("gs-p").value),e=ccn(document.getElementById("gs-e").value);
+if(!(g>0&&p>=0&&e>0)){document.getElementById("gs-o").innerHTML="값을 확인해 주세요.";return}
+var eth=g*p*1e-9;document.getElementById("gs-o").innerHTML="<p>수수료: <b>"+eth.toFixed(6)+" ETH</b> ≈ <span class='cc-big'>"+ccf(eth*e)+"원</span></p><table><tr><th>가스 가격</th><th>수수료(ETH)</th><th>원화</th></tr>"+[5,20,50,100].map(function(x){var y=g*x*1e-9;return "<tr><td>"+x+" gwei</td><td>"+y.toFixed(6)+"</td><td>"+ccf(y*e)+"원</td></tr>"}).join("")+"</table>"}
+gsCalc();
+</script>
+<h2>정리</h2>
+<p>이더리움 가스비는 사용한 가스량과 가스 가격의 곱으로 정해집니다. 단순 송금은 21,000 가스라서 가격만 알면 바로 계산되고, 혼잡하면 기본 수수료가 올라갑니다. 레이어2는 거래를 묶어 비용을 나누므로 수수료가 낮지만, 네트워크 선택과 브릿지 위험을 반드시 이해하고 써야 합니다.</p>
+<p>함께 읽으면 좋은 글: &lt;a href="/search?q=비트코인 송금 수수료"&gt;비트코인 송금 수수료와 컨펌&lt;/a&gt;, &lt;a href="/search?q=비트코인과 이더리움"&gt;비트코인과 이더리움의 차이&lt;/a&gt;, &lt;a href="/search?q=지갑 주소"&gt;지갑 주소 형식&lt;/a&gt;</p>
+<h2>참고한 자료</h2><ul><li>Ethereum.org 공식 문서: Gas and fees, EIP-1559, Layer 2</li><li>롤업별 출금 대기 시간과 수수료는 각 네트워크 공식 문서에서 확인</li></ul>
+<hr /><p style="font-size:.9em;color:#4b5563;">이 글은 암호화폐 투자를 권유하거나 특정 종목을 추천하지 않습니다. 가상자산은 가격 변동이 크고 원금 손실이 발생할 수 있으며, 제도와 거래소 정책은 수시로 바뀝니다. 실제로 거래하거나 신고하기 전에는 금융당국·국세청·해당 거래소의 최신 공지를 직접 확인하세요.</p>
