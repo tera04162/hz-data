@@ -1,12 +1,12 @@
 {
- "checked": "2026-11-24T19:09:09Z",
+ "checked": "2026-11-25T04:56:34Z",
  "series": [
   {
    "id": "kospi",
    "rows": 9516,
    "first": "1990-01-04",
    "last": "2026-11-24",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -15,61 +15,61 @@
    "rows": 7599,
    "first": "1996-07-02",
    "last": "2026-11-24",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
   {
    "id": "spx",
-   "rows": 13083,
+   "rows": 13084,
    "first": "1975-01-02",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "nasdaq",
-   "rows": 6913,
+   "rows": 6914,
    "first": "2000-01-03",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "vix",
-   "rows": 9322,
+   "rows": 9323,
    "first": "1990-01-02",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "hyg",
-   "rows": 4938,
+   "rows": 4939,
    "first": "2007-04-11",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "us10y",
-   "rows": 16208,
+   "rows": 16209,
    "first": "1962-01-02",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "us2y",
-   "rows": 12616,
+   "rows": 12617,
    "first": "1976-06-01",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -88,35 +88,33 @@
    "first": "2006-01-02",
    "last": "2026-11-06",
    "changed": 0,
-   "ok": false,
-   "errors": [
-    "dbnomics:FED/H10/JRXWTFB_N.B -> GET 실패: api.db.nomics.world :: The read operation timed out"
-   ]
+   "ok": true,
+   "errors": []
   },
   {
    "id": "wti",
-   "rows": 6593,
+   "rows": 6594,
    "first": "2000-08-23",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "gold",
-   "rows": 6582,
+   "rows": 6583,
    "first": "2000-08-30",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "btc",
-   "rows": 4145,
+   "rows": 4146,
    "first": "2015-07-20",
-   "last": "2026-11-23",
-   "changed": 0,
+   "last": "2026-11-24",
+   "changed": 1,
    "ok": true,
    "errors": []
   }
