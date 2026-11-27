@@ -11277,5 +11277,24 @@
   "priceBand": "3~5만원",
   "device": "",
   "brand": ""
+ },
+ {
+  "id": "hz218",
+  "site": "healthzzang",
+  "title": "퓨렉신 우로비콘 후기 리뷰 4,383건 | 가격·성분·효능 정리",
+  "url": "https://www.healthzzang.com/2026/11/purexin-urobicon-review-price-ingredients.html",
+  "labels": [
+   "건강식품"
+  ],
+  "date": "2026-11-27",
+  "tab": "건강",
+  "parts": [
+   "신장/비뇨"
+  ],
+  "type": "제품",
+  "price": 58800,
+  "priceBand": "5~10만원",
+  "device": "",
+  "brand": ""
  }
 ]
