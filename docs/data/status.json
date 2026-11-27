@@ -1,21 +1,21 @@
 {
- "checked": "2026-11-27T04:19:28Z",
+ "checked": "2026-11-27T17:40:44Z",
  "series": [
   {
    "id": "kospi",
-   "rows": 9518,
+   "rows": 9519,
    "first": "1990-01-04",
-   "last": "2026-11-26",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "kosdaq",
-   "rows": 7601,
+   "rows": 7602,
    "first": "1996-07-02",
-   "last": "2026-11-26",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -39,10 +39,10 @@
   },
   {
    "id": "vix",
-   "rows": 9324,
+   "rows": 9325,
    "first": "1990-01-02",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-26",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -75,9 +75,9 @@
   },
   {
    "id": "usdkrw",
-   "rows": 5608,
+   "rows": 5609,
    "first": "2004-04-12",
-   "last": "2026-11-26",
+   "last": "2026-11-27",
    "changed": 1,
    "ok": true,
    "errors": []
@@ -114,7 +114,7 @@
    "rows": 4148,
    "first": "2015-07-20",
    "last": "2026-11-26",
-   "changed": 2,
+   "changed": 1,
    "ok": true,
    "errors": []
   }
