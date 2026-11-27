@@ -1,12 +1,12 @@
 {
- "checked": "2026-11-26T17:55:02Z",
+ "checked": "2026-11-27T04:19:28Z",
  "series": [
   {
    "id": "kospi",
    "rows": 9518,
    "first": "1990-01-04",
    "last": "2026-11-26",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -15,7 +15,7 @@
    "rows": 7601,
    "first": "1996-07-02",
    "last": "2026-11-26",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -111,10 +111,10 @@
   },
   {
    "id": "btc",
-   "rows": 4147,
+   "rows": 4148,
    "first": "2015-07-20",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-26",
+   "changed": 2,
    "ok": true,
    "errors": []
   }
