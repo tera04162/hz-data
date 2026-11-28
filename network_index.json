@@ -11296,5 +11296,24 @@
   "priceBand": "5~10만원",
   "device": "",
   "brand": ""
+ },
+ {
+  "id": "ha177",
+  "site": "h.assetreport",
+  "title": "아시모토 젠 골드 후기 15,515건 분석 | 가격·성분·약국 총정리",
+  "url": "https://h.assetreport.kr/2026/11/ashimoto-zen-gold-review-price-ingredients.html",
+  "labels": [
+   "의약외품"
+  ],
+  "date": "2026-11-28",
+  "tab": "건강",
+  "parts": [
+   "다리/발"
+  ],
+  "type": "제품",
+  "price": 36800,
+  "priceBand": "3~5만원",
+  "device": "",
+  "brand": ""
  }
 ]
