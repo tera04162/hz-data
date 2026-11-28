@@ -11315,5 +11315,24 @@
   "priceBand": "3~5만원",
   "device": "",
   "brand": ""
+ },
+ {
+  "id": "hb192",
+  "site": "health.assetreport",
+  "title": "퍼시닌 바디워시 후기 34,645건 분석 | 성분·가격·단점 총정리",
+  "url": "https://health.assetreport.kr/2026/11/persinin-body-wash-review-ingredients-price-2026-11.html",
+  "labels": [
+   "생활용품"
+  ],
+  "date": "2026-11-29",
+  "tab": "건강",
+  "parts": [
+   "얼굴/피부"
+  ],
+  "type": "제품",
+  "price": 38900,
+  "priceBand": "3~5만원",
+  "device": "",
+  "brand": ""
  }
 ]
