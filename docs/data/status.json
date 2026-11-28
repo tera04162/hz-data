@@ -1,12 +1,12 @@
 {
- "checked": "2026-11-27T17:40:44Z",
+ "checked": "2026-11-28T03:59:03Z",
  "series": [
   {
    "id": "kospi",
    "rows": 9519,
    "first": "1990-01-04",
    "last": "2026-11-27",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
@@ -15,33 +15,33 @@
    "rows": 7602,
    "first": "1996-07-02",
    "last": "2026-11-27",
-   "changed": 1,
+   "changed": 0,
    "ok": true,
    "errors": []
   },
   {
    "id": "spx",
-   "rows": 13085,
+   "rows": 13086,
    "first": "1975-01-02",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "nasdaq",
-   "rows": 6915,
+   "rows": 6916,
    "first": "2000-01-03",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "vix",
-   "rows": 9325,
+   "rows": 9326,
    "first": "1990-01-02",
-   "last": "2026-11-26",
+   "last": "2026-11-27",
    "changed": 1,
    "ok": true,
    "errors": []
@@ -57,19 +57,19 @@
   },
   {
    "id": "us10y",
-   "rows": 16210,
+   "rows": 16211,
    "first": "1962-01-02",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "us2y",
-   "rows": 12618,
+   "rows": 12619,
    "first": "1976-06-01",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
@@ -93,27 +93,27 @@
   },
   {
    "id": "wti",
-   "rows": 6595,
+   "rows": 6596,
    "first": "2000-08-23",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "gold",
-   "rows": 6584,
+   "rows": 6585,
    "first": "2000-08-30",
-   "last": "2026-11-25",
-   "changed": 0,
+   "last": "2026-11-27",
+   "changed": 1,
    "ok": true,
    "errors": []
   },
   {
    "id": "btc",
-   "rows": 4148,
+   "rows": 4149,
    "first": "2015-07-20",
-   "last": "2026-11-26",
+   "last": "2026-11-27",
    "changed": 1,
    "ok": true,
    "errors": []
